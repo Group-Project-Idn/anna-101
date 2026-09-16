@@ -33,10 +33,7 @@ app.patch("/api/invites/:id/accept", ControllerInvite.accept);
 app.patch("/api/invites/:id/reject", ControllerInvite.reject);
 
 app.get("/api/conversations/:id", ControllerConversation.read);
-app.get(
-  "/api/conversations/:id/messages",
-  ControllerConversation.readMessages,
-);
+app.get("/api/conversations/:id/messages", ControllerConversation.readMessages);
 
 app.use(errorHandler);
 
