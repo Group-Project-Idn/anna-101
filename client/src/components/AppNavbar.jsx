@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { useAuth } from "../hooks/useAuth";
 
 /**
@@ -10,11 +10,18 @@ import { useAuth } from "../hooks/useAuth";
 export default function AppNavbar({ backTo }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   function handleLogout() {
     logout();
-    navigate("/login");
+    // Tandai navigasi ini berasal dari logout supaya guard halaman
+    // (Pathways/Lessons) tidak menampilkan toast "Silakan masuk dulu...".
+    navigate("/login", { state: { fromLogout: true }, replace: true });
   }
+
+  // Sembunyikan tombol Keluar di halaman yang tidak butuh auth
+  // (login/register) supaya tidak bisa diklik saat tidak ada user.
+  const hideLogout = ["/login", "/register"].includes(location.pathname);
 
   const initial = user?.name?.charAt(0)?.toUpperCase() ?? "?";
 
@@ -51,6 +58,7 @@ export default function AppNavbar({ backTo }) {
           <button
             type="button"
             onClick={handleLogout}
+            hidden={hideLogout}
             className="btn btn-ghost btn-sm rounded-xl text-xs font-bold text-slate-500"
           >
             Keluar

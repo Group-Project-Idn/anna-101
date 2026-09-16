@@ -7,6 +7,7 @@ export default function FormField({
   onBlur,
   error,
   autoComplete,
+  placeholder,
   className = "",
   accent = "sky",
 }) {
@@ -29,6 +30,7 @@ export default function FormField({
         onChange={onChange}
         onBlur={onBlur}
         autoComplete={autoComplete}
+        placeholder={placeholder}
         aria-invalid={Boolean(error)}
         className={`input w-full h-12 mt-1 rounded-2xl border-2 text-sm font-semibold text-slate-800 pl-4 focus:outline-none transition-colors duration-200 ${borderClass}`}
       />

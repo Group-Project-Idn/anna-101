@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import AppNavbar from "../components/AppNavbar";
 import PathwayCard from "../components/PathwayCard";
 import { useAuth } from "../hooks/useAuth";
@@ -11,11 +11,16 @@ export default function PathwaysPage() {
   const { token } = useAuth();
   const { pathways, status, error, fetchPathways } = usePathways();
   const navigate = useNavigate();
+  const location = useLocation();
   const isLoading = status === "idle" || status === "loading";
 
   useEffect(() => {
     if (!token) {
-      showErrorToast("Silakan masuk dulu untuk melihat pathway.");
+      // Jangan tampilkan toast kalau baru saja logout — user memang
+      // sengaja ke /login, bukan "ditolak masuk".
+      if (!location.state?.fromLogout) {
+        showErrorToast("Silakan masuk dulu untuk melihat pathway.");
+      }
       navigate("/login", { replace: true });
       return;
     }
@@ -32,7 +37,7 @@ export default function PathwaysPage() {
     return () => {
       cancelled = true;
     };
-  }, [token, fetchPathways, navigate]);
+  }, [token, fetchPathways, navigate, location.state]);
 
   return (
     <div className="bg-slate-100 min-h-screen font-sans text-slate-800">
@@ -54,12 +59,7 @@ export default function PathwaysPage() {
             </p>
           </div>
 
-          {/* Ringkasan Progress User (dummy, ikut template statis) */}
-          <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-2xl border-2 border-slate-200 text-[11px] font-bold text-slate-600">
-            <span>&#128293; 5 hari streak</span>
-            <span className="text-slate-300">&#8226;</span>
-            <span>&#9989; 4 lesson selesai</span>
-          </div>
+          {/* Ringkasan Progress User dihapus — menunggu endpoint progress resmi. */}
         </div>
 
         {isLoading ? (
