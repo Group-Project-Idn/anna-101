@@ -77,3 +77,46 @@ const DEFAULT_META = {
 export function getPathwayMeta(level) {
   return PATHWAY_META[level] ?? { ...DEFAULT_META };
 }
+
+/**
+ * Hitung label CTA + progress bar dari data progress server.
+ * Aturan sesuai api-contract (GET /api/pathways/progress):
+ * terkunci -> "Terkunci", 0 selesai -> "Mulai", sebagian -> "Lanjutkan",
+ * penuh -> "Ulangi". Tanpa progress (endpoint belum ada) -> pakai meta dummy.
+ */
+export function resolvePathwayCta(progress, meta) {
+  if (!progress) {
+    return {
+      cta: meta.cta,
+      ctaStyle: meta.ctaStyle,
+      done: meta.done,
+      total: meta.total,
+      locked: meta.locked,
+      lockNote: meta.lockNote,
+    };
+  }
+
+  const total = progress.total_lessons ?? 0;
+  const done = progress.completed_lessons ?? 0;
+
+  if (total <= 0 || meta.locked) {
+    return {
+      cta: "Terkunci",
+      ctaStyle: "disabled",
+      done,
+      total,
+      locked: true,
+      lockNote: meta.lockNote ?? "Selesaikan level sebelumnya dulu",
+    };
+  }
+
+  if (done <= 0) {
+    return { cta: "Mulai →", ctaStyle: "ghost", done, total, locked: false };
+  }
+
+  if (done < total) {
+    return { cta: "Lanjutkan →", ctaStyle: "emerald", done, total, locked: false };
+  }
+
+  return { cta: "Ulangi", ctaStyle: "ghost", done, total, locked: false };
+}

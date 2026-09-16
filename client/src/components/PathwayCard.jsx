@@ -7,10 +7,18 @@ const CTA_STYLES = {
     "bg-white hover:bg-slate-100 text-slate-700 border-2 border-slate-200 rounded-2xl",
 };
 
-export default function PathwayCard({ pathway, meta }) {
-  const percent = meta.total > 0 ? Math.round((meta.done / meta.total) * 100) : 0;
+export default function PathwayCard({ pathway, meta, resolved }) {
+  const view = resolved ?? {
+    cta: meta.cta,
+    ctaStyle: meta.ctaStyle,
+    done: meta.done,
+    total: meta.total,
+    locked: meta.locked,
+    lockNote: meta.lockNote,
+  };
+  const percent = view.total > 0 ? Math.round((view.done / view.total) * 100) : 0;
 
-  if (meta.locked) {
+  if (view.locked) {
     return (
       <article className="bg-white border-2 border-slate-200 rounded-3xl shadow-sm overflow-hidden flex flex-col opacity-80">
         <div className={`${meta.headerBg} px-5 py-4`}>
@@ -30,14 +38,14 @@ export default function PathwayCard({ pathway, meta }) {
             ></div>
           </div>
           <p className="text-[11px] font-bold text-slate-400 mt-2">
-            &#128274; {meta.lockNote}
+            &#128274; {view.lockNote}
           </p>
           <button
             type="button"
             disabled
             className="btn mt-4 w-full bg-slate-200 text-slate-400 border-none rounded-2xl cursor-not-allowed"
           >
-            &#128274; {meta.cta}
+            &#128274; {view.cta}
           </button>
         </div>
       </article>
@@ -65,13 +73,13 @@ export default function PathwayCard({ pathway, meta }) {
           ></div>
         </div>
         <p className="text-[11px] font-bold text-slate-400 mt-2">
-          {meta.done} dari {meta.total} lesson selesai
+          {view.done} dari {view.total} lesson selesai
         </p>
         <Link
           to={`/lessons/${pathway.id}`}
-          className={`btn mt-4 w-full font-display ${CTA_STYLES[meta.ctaStyle]}`}
+          className={`btn mt-4 w-full font-display ${CTA_STYLES[view.ctaStyle]}`}
         >
-          {meta.cta}
+          {view.cta}
         </Link>
       </div>
     </article>
