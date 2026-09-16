@@ -1,6 +1,6 @@
-# API Contract — English Learning Chat App
+# API Contract — Anna-101
 
-Base URL: `https://api.yourapp.com`
+Base URL: `https://api.anna101.com`
 Semua endpoint (kecuali auth) butuh header:
 
 ```
@@ -18,6 +18,7 @@ Authorization: Bearer <jwt_token>
 ```json
 {
   "name": "Budi",
+  "username": "budi99",
   "email": "budi@mail.com",
   "password": "secret123"
 }
@@ -27,7 +28,7 @@ Authorization: Bearer <jwt_token>
 
 ```json
 {
-  "user": { "id": 1, "name": "Budi", "email": "budi@mail.com" },
+  "user": { "id": 1, "name": "Budi", "username": "budi99" },
   "token": "jwt_token_here"
 }
 ```
@@ -44,17 +45,9 @@ Authorization: Bearer <jwt_token>
 
 ```json
 {
-  "user": { "id": 1, "name": "Budi", "email": "budi@mail.com" },
+  "user": { "id": 1, "name": "Budi", "username": "budi99" },
   "token": "jwt_token_here"
 }
-```
-
-### GET `/api/auth/me`
-
-**Response** `200`
-
-```json
-{ "id": 1, "name": "Budi", "email": "budi@mail.com", "current_pathway_id": 1 }
 ```
 
 ---
@@ -62,8 +55,6 @@ Authorization: Bearer <jwt_token>
 ## 2. Pathways & Lessons
 
 ### GET `/api/pathways`
-
-List semua pathway (Level 1-4).
 
 **Response** `200`
 
@@ -73,22 +64,12 @@ List semua pathway (Level 1-4).
     "id": 1,
     "name": "Level 1 American English",
     "level": 1,
-    "cefr_level": "A1",
-    "order": 1
-  },
-  {
-    "id": 2,
-    "name": "Level 2 American English",
-    "level": 2,
-    "cefr_level": "A2",
-    "order": 2
+    "cefr_level": "A1"
   }
 ]
 ```
 
 ### GET `/api/pathways/:id/lessons`
-
-List lesson dalam 1 pathway, sudah termasuk status progress user.
 
 **Response** `200`
 
@@ -97,16 +78,12 @@ List lesson dalam 1 pathway, sudah termasuk status progress user.
   {
     "id": 5,
     "title": "Talking About Sports",
-    "order": 5,
-    "estimated_minutes": 3,
     "status": "unlocked",
     "score": null
   },
   {
     "id": 4,
     "title": "Asking About Hobbies",
-    "order": 4,
-    "estimated_minutes": 3,
     "status": "completed",
     "score": 5
   }
@@ -115,59 +92,98 @@ List lesson dalam 1 pathway, sudah termasuk status progress user.
 
 > `status`: `locked` | `unlocked` | `completed`
 
-### GET `/api/lessons/:id`
-
-Detail 1 lesson (dipakai di halaman sebelum mulai chat).
-
-**Response** `200`
-
-```json
-{
-  "id": 5,
-  "pathway_id": 1,
-  "title": "Talking About Sports",
-  "estimated_minutes": 3,
-  "vocabulary": [
-    {
-      "word": "referee",
-      "meaning": "wasit",
-      "example_sentence": "The referee blew the whistle."
-    }
-  ]
-}
-```
-
-> `topic_prompt` **tidak** dikirim ke frontend — itu dipakai backend doang buat ngarahin Gemini.
-
 ---
 
-## 3. Conversation (Chat Session)
+## 3. Invite (mengundang partner by username)
 
-### POST `/api/conversations`
+### POST `/api/invites`
 
-Mulai sesi chat baru untuk 1 lesson.
+Mengundang user lain untuk berlatih bareng di 1 lesson.
 
 **Request**
 
 ```json
-{ "lesson_id": 5 }
+{ "lesson_id": 5, "to_username": "sari_21" }
 ```
 
 **Response** `201`
 
 ```json
+{ "id": 30, "lesson_id": 5, "to_username": "sari_21", "status": "pending" }
+```
+
+> `400` kalau username tidak ditemukan atau lesson masih `locked`.
+
+### GET `/api/invites`
+
+List undangan masuk & keluar milik user yang sedang login.
+
+**Response** `200`
+
+```json
 {
-  "id": 101,
-  "lesson_id": 5,
-  "started_at": "2026-09-16T10:00:00Z"
+  "incoming": [
+    {
+      "id": 31,
+      "from_username": "andi",
+      "lesson_title": "Talking About Sports",
+      "status": "pending"
+    }
+  ],
+  "outgoing": [
+    {
+      "id": 30,
+      "to_username": "sari_21",
+      "lesson_title": "Talking About Sports",
+      "status": "pending"
+    }
+  ]
 }
 ```
 
-Frontend lanjut `join room` socket.io pakai `conversation_id` ini.
+### PATCH `/api/invites/:id/accept`
+
+Menerima undangan → otomatis membuat `conversation` baru.
+
+**Response** `200`
+
+```json
+{ "invite_id": 31, "status": "accepted", "conversation_id": 101 }
+```
+
+Frontend langsung `join room` socket.io pakai `conversation_id` ini.
+
+### PATCH `/api/invites/:id/reject`
+
+**Response** `200`
+
+```json
+{ "invite_id": 31, "status": "rejected" }
+```
+
+---
+
+## 4. Conversation (Chat Session)
+
+### GET `/api/conversations/:id`
+
+**Response** `200`
+
+```json
+{
+  "id": 101,
+  "lesson_id": 5,
+  "status": "active",
+  "participants": [
+    { "user_id": 1, "username": "budi99" },
+    { "user_id": 2, "username": "sari_21" }
+  ]
+}
+```
 
 ### GET `/api/conversations/:id/messages`
 
-Ambil history chat (dipakai kalau user refresh halaman).
+Ambil history chat asli (di luar demo, karena demo tidak disimpan).
 
 **Response** `200`
 
@@ -175,104 +191,94 @@ Ambil history chat (dipakai kalau user refresh halaman).
 [
   {
     "id": 1,
-    "role": "ai",
-    "content": "Hi! Do you follow any sports?",
-    "created_at": "2026-09-16T10:00:05Z"
+    "sender_type": "user",
+    "sender_id": 1,
+    "message_type": "chat",
+    "content": "Hi Sari, do you follow any sports?"
   },
   {
     "id": 2,
-    "role": "user",
-    "content": "Yes, I like football.",
-    "created_at": "2026-09-16T10:00:20Z"
+    "sender_type": "ai",
+    "sender_id": null,
+    "message_type": "suggestion",
+    "content": "Try: 'Yes, I love football!'"
   }
 ]
 ```
 
-### PATCH `/api/conversations/:id/end`
-
-Tandai sesi selesai + trigger penilaian (AI kasih skor).
-
-**Response** `200`
-
-```json
-{
-  "id": 101,
-  "ended_at": "2026-09-16T10:05:00Z",
-  "score": 5,
-  "lesson_status": "completed"
-}
-```
-
-Ini juga yang meng-update `user_lesson_progress` di belakang layar.
-
 ---
 
-## 4. Progress
+## 5. Socket.io Events
 
-### GET `/api/users/me/progress`
-
-Ringkasan progress user (buat dashboard/journey view).
-
-**Response** `200`
-
-```json
-[
-  { "lesson_id": 1, "status": "completed", "score": 5 },
-  { "lesson_id": 2, "status": "completed", "score": 4 },
-  { "lesson_id": 3, "status": "unlocked", "score": null }
-]
-```
-
----
-
-## 5. Socket.io Events (Real-time Chat)
-
-**Connect & join room**
+### Join room
 
 ```js
 socket.emit("conversation:join", { conversationId: 101 });
 ```
 
-**Client → Server** — kirim pesan user
+### Fase demo (opening greeting contoh)
+
+Digenerate AI saat room baru terbentuk, **tidak disimpan ke DB** — cuma ditampilkan sementara.
+
+```js
+socket.on("demo:script", (data) => {
+  // data.lines = [{ speaker: "A", text: "..." }, { speaker: "B", text: "..." }, ...] min 10 kalimat/orang
+});
+```
+
+Setelah user siap, kirim:
+
+```js
+socket.emit("demo:ready", { conversationId: 101 });
+// server hapus demo dari state, ubah conversation.status jadi "active", broadcast ke kedua user
+socket.on("conversation:active", () => {
+  /* mulai real chat */
+});
+```
+
+### Chat asli antar 2 user
 
 ```js
 socket.emit("message:send", {
   conversationId: 101,
-  content: "Yes, I like football.",
+  content: "Hi Sari, do you follow any sports?",
 });
-```
 
-**Server → Client** — balasan tersimpan dari user (echo/ack)
-
-```js
 socket.on("message:new", (msg) => {
-  // { id: 2, conversationId: 101, role: "user", content: "...", created_at: "..." }
+  // { id, conversationId, sender_type: "user", sender_id, message_type: "chat", content, created_at }
 });
 ```
 
-**Server → Client** — AI lagi mikir (opsional, buat UX "typing...")
+### Minta saran ke AI ("Anna, minta saran jawaban")
 
 ```js
-socket.on("ai:typing", () => {
-  /* show typing indicator */
-});
-```
+socket.emit("suggestion:request", { conversationId: 101 });
 
-**Server → Client** — balasan AI (Gemini)
-
-```js
 socket.on("message:new", (msg) => {
-  // { id: 3, conversationId: 101, role: "ai", content: "...", created_at: "..." }
+  // { id, sender_type: "ai", sender_id: null, message_type: "suggestion", content: "Try: '...'" }
 });
 ```
 
-> Event `message:new` dipakai bareng buat pesan user & AI — frontend bedain lewat field `role`.
+> Pesan saran ini ikut tersimpan di `MESSAGES` (beda dari demo) supaya kelihatan di history — tapi ditandai `message_type: "suggestion"` biar frontend bisa styling beda (misal warna berbeda, ga dihitung sebagai giliran chat).
 
-**Server → Client** — error (misal Gemini API gagal)
+### Selesai sesi ("Anna finish")
+
+```js
+socket.emit("session:finish", { conversationId: 101 });
+
+socket.on("session:evaluation", (data) => {
+  // dikirim ke MASING-MASING user, isinya evaluasi dia sendiri
+  // { conversationId: 101, user_id: 1, strengths: "...", evaluation: "...", score: 4 }
+});
+```
+
+Event ini yang men-trigger insert ke `SESSION_EVALUATIONS` (1 baris per partisipan) dan update `USER_LESSON_PROGRESS.status` jadi `completed`.
+
+### Error
 
 ```js
 socket.on("error", (err) => {
-  // { message: "Failed to get AI response, please retry." }
+  /* { message: "..." } */
 });
 ```
 
@@ -280,12 +286,12 @@ socket.on("error", (err) => {
 
 ## Ringkasan Status Code
 
-| Code | Arti                                            |
-| ---- | ----------------------------------------------- |
-| 200  | OK                                              |
-| 201  | Created                                         |
-| 400  | Request tidak valid (field kosong/salah format) |
-| 401  | Token tidak ada/invalid                         |
-| 403  | Lesson masih `locked`, tidak boleh diakses      |
-| 404  | Data tidak ditemukan                            |
-| 500  | Server/Gemini API error                         |
+| Code | Arti                                                          |
+| ---- | ------------------------------------------------------------- |
+| 200  | OK                                                            |
+| 201  | Created                                                       |
+| 400  | Request tidak valid / username tidak ditemukan                |
+| 401  | Token tidak ada/invalid                                       |
+| 403  | Lesson masih `locked`, atau bukan partisipan conversation ini |
+| 404  | Data tidak ditemukan                                          |
+| 500  | Server/Gemini API error                                       |
