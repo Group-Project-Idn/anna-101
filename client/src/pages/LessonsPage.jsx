@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import { Link, useLocation, useNavigate, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import AppNavbar from "../components/AppNavbar";
 import LessonRow from "../components/LessonRow";
 import { useAuth } from "../hooks/useAuth";
 import { useLessons } from "../hooks/useLessons";
 import { usePathways } from "../hooks/usePathways";
 import { getPathwayMeta } from "../constant/pathwayMeta";
+import { consumeJustLoggedOut } from "../utils/logoutFlag";
 import { showErrorToast } from "../utils/toast";
 
 export default function LessonsPage() {
@@ -15,7 +16,6 @@ export default function LessonsPage() {
   const { pathways } = usePathways();
   const { lessons, status, error, fetchLessons } = useLessons();
   const navigate = useNavigate();
-  const location = useLocation();
   const isLoading = status === "idle" || status === "loading";
 
   const pathway = pathways.find((item) => item.id === pathwayId);
@@ -23,7 +23,7 @@ export default function LessonsPage() {
 
   useEffect(() => {
     if (!token) {
-      if (!location.state?.fromLogout) {
+      if (!consumeJustLoggedOut()) {
         showErrorToast("Silakan masuk dulu untuk melihat lesson.");
       }
       navigate("/login", { replace: true });
@@ -47,7 +47,7 @@ export default function LessonsPage() {
     return () => {
       cancelled = true;
     };
-  }, [token, pathwayId, fetchLessons, navigate, location.state]);
+  }, [token, pathwayId, fetchLessons, navigate]);
 
   return (
     <div className="bg-slate-100 min-h-screen font-sans text-slate-800">
