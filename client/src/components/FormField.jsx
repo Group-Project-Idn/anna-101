@@ -8,10 +8,13 @@ export default function FormField({
   error,
   autoComplete,
   className = "",
+  accent = "sky",
 }) {
+  const focusClass =
+    accent === "emerald" ? "focus:border-emerald-400" : "focus:border-sky-400";
   const borderClass = error
     ? "border-rose-400 focus:border-rose-500"
-    : "border-slate-200 focus:border-sky-400";
+    : `border-slate-200 ${focusClass}`;
 
   return (
     <label className={`block ${className}`} htmlFor={id}>

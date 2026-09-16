@@ -37,3 +37,22 @@ export function validateRegisterForm({ name, username, email, password }) {
 
   return errors;
 }
+
+export function validateLoginForm({ email, password }) {
+  const errors = {};
+  const cleanEmail = email.trim();
+
+  if (!cleanEmail) {
+    errors.email = "Email wajib diisi.";
+  } else if (!EMAIL_PATTERN.test(cleanEmail)) {
+    errors.email = "Format email belum benar.";
+  }
+
+  if (!password) {
+    errors.password = "Password wajib diisi.";
+  } else if (password.length < 6) {
+    errors.password = "Password minimal 6 karakter.";
+  }
+
+  return errors;
+}

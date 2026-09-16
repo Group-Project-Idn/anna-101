@@ -3,7 +3,6 @@ import AuthNavbar from "../components/AuthNavbar";
 import { useAuth } from "../hooks/useAuth";
 
 const PAGE_LABELS = {
-  "/login": "Halaman masuk",
   "/pathways": "Halaman pathways",
 };
 
