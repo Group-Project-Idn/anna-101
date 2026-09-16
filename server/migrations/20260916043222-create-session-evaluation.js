@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Messages', {
+    await queryInterface.createTable('SessionEvaluations', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -17,25 +17,37 @@ module.exports = {
           key: 'id'
         }
       },
-      role: {
-        type: Sequelize.STRING,
-        allowNull: false
+      user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Users',
+          key: 'id'
+        }
       },
-      content: {
-        type: Sequelize.TEXT,
-        allowNull: false
+      strengths: {
+        type: Sequelize.TEXT
+      },
+      evaluation: {
+        type: Sequelize.TEXT
+      },
+      score: {
+        type: Sequelize.INTEGER
       },
       created_at: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        field: 'created_at'
       },
       updated_at: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        field: 'updated_at'
       }
     });
   },
+
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Messages');
+    await queryInterface.dropTable('SessionEvaluations');
   }
 };

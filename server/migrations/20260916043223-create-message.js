@@ -2,35 +2,45 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Conversations', {
+    await queryInterface.createTable('Messages', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user_id: {
+      conversation_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {
+          model: 'Conversations',
+          key: 'id'
+        }
+      },
+      sender_id: {
+        type: Sequelize.INTEGER,
         references: {
           model: 'Users',
           key: 'id'
         }
       },
-      lesson_id: {
-        type: Sequelize.INTEGER,
+      sender_type: {
+        type: Sequelize.STRING,
         allowNull: false,
-        references: {
-          model: 'Lessons',
-          key: 'id'
-        }
+        defaultValue: 'user'
       },
-      started_at: {
-        type: Sequelize.DATE,
+      message_type: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue: 'chat'
+      },
+      role: {
+        type: Sequelize.STRING,
         allowNull: false
       },
-      ended_at: {
-        type: Sequelize.DATE
+      content: {
+        type: Sequelize.TEXT,
+        allowNull: false
       },
       created_at: {
         allowNull: false,
@@ -44,7 +54,8 @@ module.exports = {
       }
     });
   },
+
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Conversations');
+    await queryInterface.dropTable('Messages');
   }
 };

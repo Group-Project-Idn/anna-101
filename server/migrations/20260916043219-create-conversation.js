@@ -2,37 +2,40 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Users", {
+    await queryInterface.createTable("Conversations", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      username: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true,
-      },
-      email: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true,
-      },
-      password: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      current_pathway_id: {
+      invite_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
-          model: "Pathways",
+          model: "ConversationInvites",
           key: "id",
         },
+      },
+      lesson_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: "Lessons",
+          key: "id",
+        },
+      },
+      status: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue: "pending",
+      },
+      started_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      ended_at: {
+        type: Sequelize.DATE,
       },
       created_at: {
         allowNull: false,
@@ -46,8 +49,7 @@ module.exports = {
       },
     });
   },
-
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Users");
+    await queryInterface.dropTable("Conversations");
   },
 };
