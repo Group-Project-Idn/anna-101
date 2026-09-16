@@ -2,12 +2,16 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { useAuth } from "../hooks/useAuth";
 
 /**
- * Navbar journey-only: brand + tombol kembali opsional + chip user.
- * TIDAK ada menu Pathways/Lesson/Invite/Chat/Evaluasi — navigasi antar
- * halaman hanya lewat CTA journey (Mulai/Lanjutkan/Jelajahi, Latihan/Ulangi,
- * Terima undangan). Lihat README alur belajar.
+ * Navbar journey: brand + menu Pathways/Invite + chip user.
+ * Lesson/Chat Room/Evaluasi TETAP tidak ada — hanya bisa dicapai lewat
+ * CTA journey (Latihan/Ulangi -> Invite -> Terima -> Chat Room).
  */
-export default function AppNavbar({ backTo }) {
+const NAV_LINKS = [
+  { key: "pathways", to: "/pathways", label: "Pathways" },
+  { key: "invite", to: "/invite", label: "Invite" },
+];
+
+export default function AppNavbar({ backTo, active }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -44,7 +48,23 @@ export default function AppNavbar({ backTo }) {
           >
             &#8592; Kembali
           </Link>
-        ) : null}
+        ) : (
+          <nav className="hidden md:flex items-center gap-1 text-xs font-bold text-slate-500">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.key}
+                to={link.to}
+                className={
+                  active === link.key
+                    ? "px-3 py-2 rounded-xl bg-amber-100 text-amber-900"
+                    : "px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-slate-800"
+                }
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        )}
         <div className="flex items-center gap-2">
           <div className="hidden sm:block text-right leading-tight">
             <p className="text-xs font-bold text-slate-700">{user?.name ?? "Teman"}</p>
@@ -63,6 +83,24 @@ export default function AppNavbar({ backTo }) {
           </button>
         </div>
       </div>
+      {/* Nav mobile hanya untuk menu utama (tanpa tombol kembali). */}
+      {!backTo ? (
+        <nav className="md:hidden flex items-center gap-1 overflow-x-auto px-4 pb-2 text-xs font-bold text-slate-500">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.key}
+              to={link.to}
+              className={
+                active === link.key
+                  ? "px-3 py-1.5 rounded-xl bg-amber-100 text-amber-900 shrink-0"
+                  : "px-3 py-1.5 rounded-xl bg-slate-100 shrink-0"
+              }
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+      ) : null}
     </header>
   );
 }

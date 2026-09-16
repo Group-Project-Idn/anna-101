@@ -150,7 +150,15 @@ Mengundang user lain untuk berlatih bareng di 1 lesson.
 
 ### GET `/api/invites`
 
-List undangan masuk & keluar milik user yang sedang login.
+List undangan masuk & keluar milik user yang sedang login. Mendukung
+pagination untuk scroll riwayat (terbaru paling atas, `created_at` desc).
+
+**Query params (opsional)**
+
+| Param | Default | Arti |
+| --- | --- | --- |
+| `limit` | `20` | Jumlah item per sisi (incoming/outgoing) |
+| `offset` | `0` | Loncat N item terbaru |
 
 **Response** `200`
 
@@ -159,21 +167,36 @@ List undangan masuk & keluar milik user yang sedang login.
   "incoming": [
     {
       "id": 31,
+      "from_user_id": 3,
       "from_username": "andi",
+      "lesson_id": 5,
       "lesson_title": "Talking About Sports",
-      "status": "pending"
+      "pathway_id": 1,
+      "pathway_level": 1,
+      "status": "pending",
+      "created_at": "2026-09-16T10:00:00.000Z"
     }
   ],
   "outgoing": [
     {
       "id": 30,
+      "to_user_id": 2,
       "to_username": "sari_21",
+      "lesson_id": 5,
       "lesson_title": "Talking About Sports",
-      "status": "pending"
+      "pathway_id": 1,
+      "pathway_level": 1,
+      "status": "pending",
+      "created_at": "2026-09-16T09:00:00.000Z"
     }
-  ]
+  ],
+  "meta": { "limit": 20, "offset": 0 }
 }
 ```
+
+> Field `pathway_id`/`pathway_level` dipakai dropdown level di form kirim
+> undangan. Field `created_at` dipakai untuk urutan terbaru-paling-atas.
+> `status`: `pending` | `accepted` | `rejected`.
 
 ### PATCH `/api/invites/:id/accept`
 
@@ -243,6 +266,93 @@ Ambil history chat asli (di luar demo, karena demo tidak disimpan).
 ---
 
 ## 5. Socket.io Events
+
+### Invite realtime (status undangan masuk & terkirim)
+
+Invite memakai **Socket.io penuh** supaya kedua sisi realtime — pengirim
+maupun penerima tidak perlu refresh/polling. REST (`POST/PATCH/GET /api/invites`)
+tetap ada sebagai fallback & untuk load awal, tapi semua perubahan status
+di-broadcast lewat event di bawah.
+
+**Join room saat halaman invite dibuka:**
+
+```js
+// Frontend kirim sekali setelah connect + login
+socket.emit("invite:join", { userId: 2 });
+// Server gabungkan socket ke:
+//   - room "user:2" (user-room milik user ini)
+//   - room "invite:pending:2" bila user 2 masih punya invite pending (masuk/keluar)
+//     - room sementara ini dipakai untuk broadcast status pending
+//     - server hapus room ini (leave) saat invite sudah tidak pending lagi
+```
+
+> Aturan room: `user:{id}` bersifat permanen selama socket connect
+> (untuk event personal). `invite:pending:{id}` bersifat sementara —
+> server menambahkan saat invite baru dibuat dan menghapus saat invite
+> di-respond (diterima/ditolak), supaya broadcast pending tidak bocor ke
+> user yang sudah tidak punya invite pending.
+
+**Kirim undangan (tombol "Kirim Undangan" di card kirim undangan):**
+
+```js
+socket.emit("invite:send", { lesson_id: 5, to_username: "sari_21" });
+
+// Server validasi (username ada, lesson unlocked), simpan invite status pending,
+// lalu broadcast ke KEDUA sisi:
+//   - ke penerima: room "user:{to_user_id}"
+//   - ke pengirim: room "user:{from_user_id}"
+//   - ke room "invite:pending:{to_user_id}" + "invite:pending:{from_user_id}"
+//     (bila room pending-nya aktif) untuk update badge pending
+socket.on("invite:new", (invite) => {
+  // { id, lesson_id, lesson_title, pathway_id, pathway_level,
+  //   from_user_id, from_username, to_user_id, to_username,
+  //   status: "pending", created_at }
+  // Frontend: prepend ke list yang sesuai (masuk/terkirim), terbaru paling atas,
+  // tambah badge pending +1
+});
+```
+
+**Terima undangan (tombol "Terima" di card undangan masuk):**
+
+```js
+socket.emit("invite:respond", { inviteId: 31, action: "accept" });
+
+// Server: update invite jadi accepted, buat conversation baru,
+// hapus room "invite:pending:{id}" bila user tsb sudah tidak punya pending lain,
+// lalu broadcast ke KEDUA sisi (room user masing-masing):
+socket.on("invite:status", (data) => {
+  // { invite_id, status: "accepted", conversation_id: 101,
+  //   lesson_id: 5, from_username: "andi", to_username: "budi99" }
+  // Frontend pengirim: ubah badge pending -> diterima (+ conversation_id tersimpan)
+  // Frontend penerima: tombol berubah -> "Masuk Room" (navigate /chat-room/101)
+});
+```
+
+**Tolak undangan (tombol "Tolak" di card undangan masuk):**
+
+```js
+socket.emit("invite:respond", { inviteId: 31, action: "reject" });
+
+// Server: update invite jadi rejected, hapus room pending bila sudah kosong,
+// broadcast ke KEDUA sisi:
+socket.on("invite:status", (data) => {
+  // { invite_id, status: "rejected", lesson_id: 5,
+  //   from_username: "andi", to_username: "budi99" }
+  // Frontend kedua sisi: ubah badge pending -> ditolak
+});
+```
+
+**Aturan tampilan list (berlaku untuk Undangan Masuk & Terkirim):**
+
+- `pending` selalu dihitung dari invite berstatus pending yang belum di-respond
+  (`badge "N pending"` = jumlah item pending saat ini).
+- Item pending tampil menonjol di atas (highlight + tombol aksi); item yang
+  sudah di-respond (accepted/rejected) tampil redup di bawahnya sebagai riwayat.
+- Urutan: terbaru paling atas (`created_at` desc). List bisa di-scroll untuk
+  melihat riwayat terdahulu.
+- Event `invite:new` → prepend item + badge pending +1 (tanpa reload).
+- Event `invite:status` → update item yang sama di KEDUA sisi
+  (pending → diterima/ditolak) + badge pending −1 (tanpa reload).
 
 ### Join room
 

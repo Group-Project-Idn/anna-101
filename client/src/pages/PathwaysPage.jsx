@@ -42,7 +42,7 @@ export default function PathwaysPage() {
 
   return (
     <div className="bg-slate-100 min-h-screen font-sans text-slate-800">
-      <AppNavbar />
+      <AppNavbar active="pathways" />
 
       {/* KONTEN PATHWAYS */}
       <main className="max-w-5xl mx-auto px-4 py-8 sm:py-10">
