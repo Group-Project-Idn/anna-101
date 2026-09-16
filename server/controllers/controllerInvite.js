@@ -74,7 +74,7 @@ class ControllerInvite {
         throw { name: "BadRequest", message: "You cannot invite yourself." };
       }
 
-      const lessonStatus = await InviteController.lessonStatusForUser(
+      const lessonStatus = await ControllerInvite.lessonStatusForUser(
         lesson,
         user_id,
       );
