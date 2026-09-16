@@ -38,6 +38,11 @@ const errorHandler = (err, req, res, next) => {
     message = "You don't have any access";
   }
 
+  if (err.name === "BadRequest") {
+    status = 400;
+    message = err.message || "Bad request";
+  }
+
   if (err.name === "NotFound") {
     status = 404;
     message = "Data not found";

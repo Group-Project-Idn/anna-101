@@ -1,6 +1,11 @@
-const { Conversation, ConversationParticipant, Message, User } = require("../models");
+const {
+  Conversation,
+  ConversationParticipant,
+  Message,
+  User,
+} = require("../models");
 
-class Controller {
+class ControllerConversation {
   static async read(req, res, next) {
     try {
       const { id } = req.params;
@@ -74,4 +79,4 @@ class Controller {
   }
 }
 
-module.exports = Controller;
+module.exports = ControllerConversation;

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="cupcake">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anna-101 — Daftar Akun</title>
+  <!-- Tailwind CSS & DaisyUI CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Fredoka', 'sans-serif'],
+            sans: ['Nunito', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-100 min-h-screen font-sans text-slate-800">
+
+  <!-- NAVIGASI UTAMA -->
+  <header class="bg-white border-b-2 border-slate-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-5xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
+      <a href="./pathways.html" class="flex items-center gap-2.5 shrink-0">
+        <div class="w-9 h-9 rounded-2xl bg-amber-400 flex items-center justify-center text-lg shadow-sm">🦉</div>
+        <div class="leading-tight">
+          <p class="font-display font-bold text-base text-slate-800">Anna-101</p>
+          <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Belajar Berdua + AI</p>
+        </div>
+      </a>
+      <div class="flex items-center gap-2">
+        <a href="./login.html" class="btn btn-ghost btn-sm rounded-xl text-xs font-bold text-slate-500">Masuk</a>
+        <a href="./register.html" class="btn btn-sm bg-emerald-500 hover:bg-emerald-600 text-white font-display border-b-2 border-emerald-700 rounded-xl shadow-sm text-xs active:scale-95">Daftar Gratis</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- KONTEN REGISTER -->
+  <main class="max-w-5xl mx-auto px-4 py-8 sm:py-12 grid lg:grid-cols-2 gap-8 items-start">
+
+    <!-- Sisi Kiri: Cara Kerja Belajar -->
+    <section>
+      <span class="badge bg-sky-400 text-white border-none font-extrabold text-[11px] px-3 py-2">
+        &#128640; MULAI DARI LEVEL 1 • CEFR A1
+      </span>
+      <h1 class="font-display font-bold text-4xl sm:text-5xl leading-tight mt-4">
+        Dua orang belajar.<br /><span class="text-sky-600">Satu percakapan.</span>
+      </h1>
+      <p class="mt-3 text-sm font-semibold text-slate-500 max-w-md">
+        Username kamu bersifat unik — partner akan mengundangmu lewat username tersebut.
+      </p>
+
+      <div class="mt-6 space-y-3 max-w-md">
+        <div class="bg-white border-2 border-slate-200 rounded-3xl p-4 shadow-sm flex items-start gap-3">
+          <span class="text-xl">📚</span>
+          <div>
+            <p class="text-xs font-extrabold text-slate-700">Pathway terstruktur</p>
+            <p class="text-[11px] font-semibold text-slate-500">Level 1–4 American English, lesson terbuka berurutan.</p>
+          </div>
+        </div>
+        <div class="bg-white border-2 border-slate-200 rounded-3xl p-4 shadow-sm flex items-start gap-3">
+          <span class="text-xl">👥</span>
+          <div>
+            <p class="text-xs font-extrabold text-slate-700">Latihan dengan partner</p>
+            <p class="text-[11px] font-semibold text-slate-500">Undang teman by username, bertemu di room chat live.</p>
+          </div>
+        </div>
+        <div class="bg-white border-2 border-slate-200 rounded-3xl p-4 shadow-sm flex items-start gap-3">
+          <span class="text-xl">🤖</span>
+          <div>
+            <p class="text-xs font-extrabold text-slate-700">Anna membimbing &amp; menilai</p>
+            <p class="text-[11px] font-semibold text-slate-500">Demo dialog, saran jawaban, dan evaluasi akhir sesi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sisi Kanan: Form Register -->
+    <section class="bg-white border-2 border-slate-200 rounded-3xl p-6 sm:p-7 shadow-sm">
+      <h2 class="font-display font-bold text-2xl text-slate-800">Buat akun baru</h2>
+      <p class="text-xs font-bold text-slate-400 mt-1">Gratis, hanya butuh 4 data di bawah ini.</p>
+
+      <form action="./pathways.html" class="mt-5 grid sm:grid-cols-2 gap-4">
+        <label class="block">
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Nama</span>
+          <input value="Budi"
+            class="input input-bordered w-full h-12 mt-1 rounded-2xl border-2 border-slate-200 focus:border-sky-400 focus:outline-none text-sm font-semibold text-slate-800 pl-4" />
+        </label>
+        <label class="block">
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Username</span>
+          <input value="budi99"
+            class="input input-bordered w-full h-12 mt-1 rounded-2xl border-2 border-slate-200 focus:border-sky-400 focus:outline-none text-sm font-semibold text-slate-800 pl-4" />
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Email</span>
+          <input type="email" value="budi@mail.com"
+            class="input input-bordered w-full h-12 mt-1 rounded-2xl border-2 border-slate-200 focus:border-sky-400 focus:outline-none text-sm font-semibold text-slate-800 pl-4" />
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Password</span>
+          <input type="password" value="secret123"
+            class="input input-bordered w-full h-12 mt-1 rounded-2xl border-2 border-slate-200 focus:border-sky-400 focus:outline-none text-sm font-semibold text-slate-800 pl-4" />
+        </label>
+        <button type="submit"
+          class="btn w-full bg-sky-500 hover:bg-sky-600 text-white font-display border-b-4 border-sky-700 active:border-b-0 rounded-2xl shadow h-12 sm:col-span-2">
+          Daftar Sekarang ✨
+        </button>
+      </form>
+
+      <p class="text-xs font-bold text-slate-500 mt-4 text-center">
+        Sudah punya akun? <a href="./login.html" class="text-sky-700 underline">Masuk di sini</a>
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>
