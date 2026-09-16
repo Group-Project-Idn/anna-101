@@ -7,6 +7,7 @@ import AuthProvider from "./context/AuthProvider.jsx";
 import PathwayProvider from "./context/PathwayProvider.jsx";
 import LessonProvider from "./context/LessonProvider.jsx";
 import InviteProvider from "./context/InviteProvider.jsx";
+import ChatProvider from "./context/ChatProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -14,7 +15,9 @@ createRoot(document.getElementById("root")).render(
       <PathwayProvider>
         <LessonProvider>
           <InviteProvider>
-            <App />
+            <ChatProvider>
+              <App />
+            </ChatProvider>
           </InviteProvider>
         </LessonProvider>
       </PathwayProvider>
