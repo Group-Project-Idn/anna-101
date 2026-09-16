@@ -1,0 +1,239 @@
+  <!DOCTYPE html>
+<html lang="id" data-theme="cupcake">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anna-101 — Chat Room Latihan Percakapan (2 User + AI Anna)</title>
+  <!-- Tailwind CSS & DaisyUI CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Fredoka', 'sans-serif'],
+            sans: ['Nunito', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-100 min-h-screen font-sans text-slate-800 flex flex-col justify-between">
+
+  <!-- Top Navigation / Room Control Bar -->
+  <header class="bg-white border-b-2 border-slate-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-5xl mx-auto px-4 py-2.5 flex items-center justify-between">
+
+      <!-- Back to lessons & Topic info -->
+      <div class="flex items-center gap-3">
+        <a href="./lessons.html" class="btn btn-ghost btn-circle btn-sm text-slate-500 hover:text-slate-800" title="Kembali ke Lesson">
+          <span class="text-lg">&#8592;</span>
+        </a>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="badge badge-warning badge-xs font-bold text-[10px]">Lesson 5</span>
+            <span class="text-xs font-bold text-slate-400">Level 1 American English</span>
+          </div>
+          <h1 class="font-display font-bold text-base sm:text-lg text-slate-800 leading-tight">
+            Talking About Sports &amp; Favorite Teams
+          </h1>
+        </div>
+      </div>
+
+      <!-- Right participants indicator & Finish Session button -->
+      <div class="flex items-center gap-3">
+
+        <!-- Active Participants Pill -->
+        <div class="hidden sm:flex items-center gap-2 bg-slate-100 px-3 py-1.5 rounded-2xl border border-slate-200 text-xs">
+          <div class="flex -space-x-2">
+            <div class="w-7 h-7 rounded-full bg-amber-400 border-2 border-white flex items-center justify-center font-bold text-xs" title="Budi (You)">B</div>
+            <div class="w-7 h-7 rounded-full bg-sky-400 border-2 border-white flex items-center justify-center font-bold text-xs text-white" title="Sari (Partner)">S</div>
+            <div class="w-7 h-7 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center font-bold text-xs text-white" title="Anna (AI Mentor)">&#129302;</div>
+          </div>
+          <span class="font-bold text-slate-600">3 di room</span>
+        </div>
+
+        <!-- Tombol Akhiri Sesi ("Anna finish") -> direct ke evaluation.html -->
+        <a href="./evaluation.html" class="btn btn-sm bg-rose-500 hover:bg-rose-600 text-white font-display border-b-2 border-rose-700 rounded-xl px-3 sm:px-4 shadow-sm text-xs">
+          <span>&#127937;</span>
+          <span class="hidden sm:inline">Selesai Sesi ("Anna finish")</span>
+          <span class="sm:hidden">Selesai</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Chat Area Container -->
+  <main class="max-w-4xl w-full mx-auto p-4 flex-1 flex flex-col justify-between gap-4">
+
+    <!-- 1. SECTION DEMO PERCAKAPAN (Ephemeral Script dari Anna AI sebelum "Anna ready") -->
+    <section class="bg-gradient-to-r from-amber-50 via-sky-50 to-emerald-50 border-2 border-amber-300 rounded-3xl p-5 sm:p-6 shadow-sm relative overflow-hidden">
+      <!-- Watermark / Tag -->
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3 pb-2 border-b border-amber-200/70">
+        <div class="flex items-center gap-2">
+          <span class="badge bg-amber-400 text-slate-900 border-none font-extrabold text-xs px-2.5 py-1">
+            &#129302; PANDUAN DEMO ANNA (AI)
+          </span>
+          <span class="text-xs font-bold text-slate-500">
+            Contoh dialog pembuka sebelum latihan mandiri
+          </span>
+        </div>
+        <span class="text-[11px] font-bold text-amber-700 bg-amber-100/80 px-2 py-0.5 rounded-lg">
+          Demo bersifat sementara (akan dihapus setelah siap)
+        </span>
+      </div>
+
+      <!-- Demo Script Content (Minimal contoh dialog pembuka) -->
+      <div class="space-y-2.5 text-xs sm:text-sm my-3 font-medium bg-white/70 backdrop-blur-sm p-4 rounded-2xl border border-amber-200">
+        <div class="flex items-start gap-2">
+          <span class="badge badge-warning badge-xs font-bold shrink-0 mt-0.5">Speaker A (Budi):</span>
+          <p class="text-slate-700"><span class="italic font-semibold">"Hi Sari! Do you like watching football on weekends?"</span></p>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="badge badge-info text-white badge-xs font-bold shrink-0 mt-0.5">Speaker B (Sari):</span>
+          <p class="text-slate-700"><span class="italic font-semibold">"Yes, absolutely! I always cheer for Manchester United. What about you?"</span></p>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="badge badge-warning badge-xs font-bold shrink-0 mt-0.5">Speaker A (Budi):</span>
+          <p class="text-slate-700"><span class="italic font-semibold">"I prefer basketball, but tournament matches are always thrilling to watch!"</span></p>
+        </div>
+      </div>
+
+      <!-- Action Bar: Tombol "Anna Ready" -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+        <p class="text-xs text-slate-600 font-semibold text-center sm:text-left">
+          Kedua user klik <span class="font-bold text-emerald-700 font-mono">"Anna ready"</span> untuk menghapus dialog demo dan memulai obrolan asli.
+        </p>
+        <button class="btn btn-sm bg-emerald-500 hover:bg-emerald-600 text-white font-display border-b-2 border-emerald-700 rounded-xl px-5 shadow text-xs flex items-center gap-1.5 active:scale-95">
+          <span>&#10024;</span>
+          <span>Anna Ready (Saya Siap)</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 2. MESSAGES STREAM (User 1, User 2, AI Suggestion, AI System) -->
+    <section class="space-y-4 my-2 px-1">
+
+      <!-- System Notification -->
+      <div class="text-center my-2">
+        <span class="bg-slate-200/80 text-slate-600 text-[11px] font-bold px-3 py-1 rounded-full">
+          Obrolan dimulai • Sesi topik: Talking About Sports
+        </span>
+      </div>
+
+      <!-- Chat Bubble: Partner (User 2: Sari - Kiri) -->
+      <div class="chat chat-start">
+        <div class="chat-image avatar">
+          <div class="w-10 h-10 rounded-2xl bg-sky-400 text-white flex items-center justify-center font-display font-bold shadow-sm">S</div>
+        </div>
+        <div class="chat-header text-xs text-slate-500 font-bold mb-1 flex items-center gap-1.5">
+          <span>Sari</span>
+          <span class="text-[10px] font-mono text-slate-400">@sari_21 • 14:02</span>
+        </div>
+        <div class="chat-bubble bg-white text-slate-800 border-2 border-slate-200 rounded-2xl shadow-sm text-sm font-medium py-2.5 px-4 leading-relaxed">
+          Hello Budi! Nice to practice together. What sports do you usually play on Saturday? &#127936;
+        </div>
+      </div>
+
+      <!-- Chat Bubble: Current User (User 1: Budi - Kanan) -->
+      <div class="chat chat-end">
+        <div class="chat-image avatar">
+          <div class="w-10 h-10 rounded-2xl bg-amber-400 text-slate-900 flex items-center justify-center font-display font-bold shadow-sm">B</div>
+        </div>
+        <div class="chat-header text-xs text-slate-500 font-bold mb-1 flex items-center gap-1.5">
+          <span class="text-[10px] font-mono text-slate-400">14:03 • Kamu</span>
+          <span>Budi</span>
+        </div>
+        <div class="chat-bubble bg-emerald-500 text-white rounded-2xl shadow-sm text-sm font-medium py-2.5 px-4 leading-relaxed border-b-2 border-emerald-700">
+          Hi Sari! I usually play badminton with my brother, but sometimes I cheer for my local basketball team. How about you?
+        </div>
+        <div class="chat-footer text-[10px] text-slate-400 mt-1 font-semibold">Terkirim &#10003;</div>
+      </div>
+
+      <!-- Chat Bubble: Partner (User 2 - Kiri) -->
+      <div class="chat chat-start">
+        <div class="chat-image avatar">
+          <div class="w-10 h-10 rounded-2xl bg-sky-400 text-white flex items-center justify-center font-display font-bold shadow-sm">S</div>
+        </div>
+        <div class="chat-header text-xs text-slate-500 font-bold mb-1 flex items-center gap-1.5">
+          <span>Sari</span>
+          <span class="text-[10px] font-mono text-slate-400">@sari_21 • 14:04</span>
+        </div>
+        <div class="chat-bubble bg-white text-slate-800 border-2 border-slate-200 rounded-2xl shadow-sm text-sm font-medium py-2.5 px-4 leading-relaxed">
+          I'm a big fan of running. Have you ever joined any marathon competition in your city?
+        </div>
+      </div>
+
+      <!-- AI SUGGESTION BUBBLE (message_type: "suggestion" dari Anna) -->
+      <div class="my-4 max-w-lg mx-auto bg-gradient-to-r from-amber-100 via-orange-50 to-amber-100 border-2 border-amber-300 rounded-3xl p-4 shadow-sm relative">
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center gap-2">
+            <div class="w-7 h-7 rounded-xl bg-amber-400 text-slate-900 flex items-center justify-center text-sm font-bold shadow-sm">&#129302;</div>
+            <span class="font-display font-bold text-xs text-amber-900 uppercase tracking-wider">
+              Saran Jawaban dari Anna (AI)
+            </span>
+          </div>
+          <span class="badge badge-warning badge-xs text-[10px] font-bold">Minta Saran</span>
+        </div>
+
+        <p class="text-xs text-slate-600 mb-2">
+          Kamu bisa pakai atau sesuaikan kalimat rekomendasi berikut:
+        </p>
+
+        <div class="bg-white/90 rounded-2xl p-3 border border-amber-200 text-xs sm:text-sm font-medium text-slate-800 space-y-2">
+          <div class="flex items-center justify-between gap-2 p-1.5 hover:bg-amber-50 rounded-xl cursor-pointer transition-colors group">
+            <span class="font-semibold text-slate-800">"I haven't joined a full marathon yet, but I participated in a 5K fun run last year!"</span>
+            <button type="button" class="btn btn-xs bg-amber-400 text-slate-900 border-none rounded-lg font-bold group-hover:inline-flex">Pakai</button>
+          </div>
+          <div class="flex items-center justify-between gap-2 p-1.5 hover:bg-amber-50 rounded-xl cursor-pointer transition-colors group">
+            <span class="font-semibold text-slate-800">"Not yet, running sounds challenging! Do you run every morning?"</span>
+            <button type="button" class="btn btn-xs bg-amber-400 text-slate-900 border-none rounded-lg font-bold group-hover:inline-flex">Pakai</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indikator Loading / Menunggu Balasan AI -->
+      <div class="flex items-center gap-2 text-xs font-bold text-slate-400 bg-white/80 w-fit px-3 py-1.5 rounded-full border border-slate-200 shadow-sm mx-auto">
+        <span class="loading loading-dots loading-xs text-amber-500"></span>
+        <span>Anna sedang menyiapkan evaluasi real-time...</span>
+      </div>
+
+    </section>
+
+    <!-- 3. INPUT BOX & QUICK AI ACTION BAR -->
+    <footer class="sticky bottom-3 bg-white/90 backdrop-blur-md border-2 border-slate-200 rounded-3xl p-3 shadow-lg">
+
+      <!-- Quick Action Pills (Minta Saran & Anna Finish) -->
+      <div class="flex items-center gap-2 mb-2 pb-2 border-b border-slate-100 overflow-x-auto text-xs">
+        <span class="text-slate-400 font-extrabold uppercase text-[10px] tracking-wider shrink-0">Bantuan Cepat:</span>
+        <button type="button" class="btn btn-xs bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 rounded-xl font-bold gap-1 shrink-0">
+          <span>&#128161;</span> "Anna, minta saran jawaban"
+        </button>
+        <a href="./evaluation.html" class="btn btn-xs bg-slate-100 hover:bg-rose-50 text-slate-700 hover:text-rose-700 border border-slate-200 rounded-xl font-bold gap-1 shrink-0">
+          <span>&#128721;</span> "Anna finish" (Akhiri Sesi)
+        </a>
+      </div>
+
+      <!-- Main Input Bar -->
+      <form action="#" onsubmit="return false;" class="flex items-center gap-2">
+        <div class="relative flex-1">
+          <input type="text" placeholder="Ketik pesan dalam bahasa Inggris atau ketik 'Anna, minta saran jawaban'..." value="I haven't joined a full marathon yet, but I did a 5K fun run!" class="input input-bordered w-full rounded-2xl border-2 border-slate-200 focus:border-emerald-400 focus:outline-none pl-4 pr-10 text-sm font-semibold text-slate-800 h-12" />
+          <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-amber-500 text-lg" title="Minta saran AI">&#128161;</button>
+        </div>
+        <button type="button" class="btn bg-emerald-500 hover:bg-emerald-600 text-white font-display border-b-4 border-emerald-700 active:border-b-0 rounded-2xl h-12 px-5 shadow flex items-center gap-1.5">
+          <span class="hidden sm:inline">Kirim</span>
+          <span class="text-base">&#128640;</span>
+        </button>
+      </form>
+    </footer>
+
+  </main>
+
+</body>
+</html>
