@@ -1,18 +1,17 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, Navigate, useNavigate } from "react-router";
 import AuthNavbar from "../components/AuthNavbar";
 import FormField from "../components/FormField";
 import { useAuth } from "../hooks/useAuth";
 import { validateRegisterForm } from "../utils/validation";
 import { showErrorToast, showSuccessToast } from "../utils/toast";
 
-// Nilai awal sengaja disamakan dengan template /static/register.html
-// supaya tampilannya identik. Kosongkan object ini kalau mau form mulai blank.
+// Form mulai kosong dengan placeholder — value tidak di-prefill lagi.
 const INITIAL_FORM = {
-  name: "Budi",
-  username: "budi99",
-  email: "budi@mail.com",
-  password: "secret123",
+  name: "",
+  username: "",
+  email: "",
+  password: "",
 };
 
 const BENEFITS = [
@@ -36,9 +35,14 @@ const BENEFITS = [
 export default function RegisterPage() {
   const [form, setForm] = useState(INITIAL_FORM);
   const [errors, setErrors] = useState({});
-  const { register, status } = useAuth();
+  const { token, register, status } = useAuth();
   const navigate = useNavigate();
   const isSubmitting = status === "loading";
+
+  // Sudah login = pathways adalah home, jangan tampilkan form lagi.
+  if (token) {
+    return <Navigate to="/pathways" replace />;
+  }
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -96,8 +100,8 @@ export default function RegisterPage() {
             <span className="text-sky-600">Satu percakapan.</span>
           </h1>
           <p className="mt-3 text-sm font-semibold text-slate-500 max-w-md">
-            Username kamu bersifat unik — partner akan mengundangmu lewat username
-            tersebut.
+            Username kamu bersifat unik — partner akan mengundangmu lewat
+            username tersebut.
           </p>
 
           <div className="mt-6 space-y-3 max-w-md">
@@ -121,7 +125,9 @@ export default function RegisterPage() {
         </section>
         {/* Sisi Kanan: Form Register */}
         <section className="bg-white border-2 border-slate-200 rounded-3xl p-6 sm:p-7 shadow-sm">
-          <h2 className="font-display font-bold text-2xl text-slate-800">Buat akun baru</h2>
+          <h2 className="font-display font-bold text-2xl text-slate-800">
+            Buat akun baru
+          </h2>
           <p className="text-xs font-bold text-slate-400 mt-1">
             Gratis, hanya butuh 4 data di bawah ini.
           </p>
@@ -134,6 +140,7 @@ export default function RegisterPage() {
             <FormField
               id="name"
               label="Nama"
+              placeholder="Nama lengkapmu"
               value={form.name}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -143,6 +150,7 @@ export default function RegisterPage() {
             <FormField
               id="username"
               label="Username"
+              placeholder="huruf kecil tanpa spasi"
               value={form.username}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -153,6 +161,7 @@ export default function RegisterPage() {
               id="email"
               label="Email"
               type="email"
+              placeholder="nama@email.com"
               value={form.email}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -164,6 +173,7 @@ export default function RegisterPage() {
               id="password"
               label="Password"
               type="password"
+              placeholder="Minimal 6 karakter"
               value={form.password}
               onChange={handleChange}
               onBlur={handleBlur}

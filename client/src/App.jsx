@@ -1,16 +1,18 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import PathwaysPage from "./pages/PathwaysPage";
 import LessonsPage from "./pages/LessonsPage";
 import NotFound from "./pages/NotFound";
+import HomeRoute from "./components/HomeRoute";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/register" replace />} />
+          {/* pathways adalah home — / mengarah ke sana, guard token di dalam */}
+          <Route path="/" element={<HomeRoute />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/pathways" element={<PathwaysPage />} />

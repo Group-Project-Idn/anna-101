@@ -1,16 +1,15 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, Navigate, useNavigate } from "react-router";
 import AuthNavbar from "../components/AuthNavbar";
 import FormField from "../components/FormField";
 import { useAuth } from "../hooks/useAuth";
 import { validateLoginForm } from "../utils/validation";
 import { showErrorToast, showSuccessToast } from "../utils/toast";
 
-// Nilai awal sengaja disamakan dengan template /static/login.html
-// supaya tampilannya identik. Kosongkan object ini kalau mau form mulai blank.
+// Form mulai kosong dengan placeholder — value tidak di-prefill lagi.
 const INITIAL_FORM = {
-  email: "budi@mail.com",
-  password: "secret123",
+  email: "",
+  password: "",
 };
 
 const FEATURE_PILLS = [
@@ -22,9 +21,14 @@ const FEATURE_PILLS = [
 export default function LoginPage() {
   const [form, setForm] = useState(INITIAL_FORM);
   const [errors, setErrors] = useState({});
-  const { login, status } = useAuth();
+  const { token, login, status } = useAuth();
   const navigate = useNavigate();
   const isSubmitting = status === "loading";
+
+  // Sudah login = pathways adalah home, jangan tampilkan form lagi.
+  if (token) {
+    return <Navigate to="/pathways" replace />;
+  }
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -126,6 +130,7 @@ export default function LoginPage() {
               type="email"
               autoComplete="email"
               accent="emerald"
+              placeholder="nama@email.com"
               value={form.email}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -137,6 +142,7 @@ export default function LoginPage() {
               type="password"
               autoComplete="current-password"
               accent="emerald"
+              placeholder="Minimal 6 karakter"
               value={form.password}
               onChange={handleChange}
               onBlur={handleBlur}

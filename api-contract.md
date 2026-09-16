@@ -69,6 +69,40 @@ Authorization: Bearer <jwt_token>
 ]
 ```
 
+> Catatan frontend: response ini belum membawa progress user, jadi label
+> CTA kartu pathway ("Mulai" / "Lanjutkan") dan progress bar untuk saat ini
+> memakai data presentasi lokal di client. Kalau nanti butuh progress nyata,
+> ajukan endpoint `GET /api/pathways/progress` (usulan response di bawah)
+> agar label CTA bisa dihitung dari data server, bukan dummy.
+
+### GET `/api/pathways/progress` (USULAN — belum diimplementasikan)
+
+Agregat progres user login per pathway, dipakai untuk menentukan label CTA
+kartu ("Mulai" vs "Lanjutkan") dan mengisi progress bar tanpa 4x request
+`GET /api/pathways/:id/lessons`.
+
+**Response** `200` (usulan)
+
+```json
+[
+  {
+    "pathway_id": 1,
+    "total_lessons": 6,
+    "completed_lessons": 4,
+    "unlocked_lesson_id": 5
+  }
+]
+```
+
+Aturan label CTA yang disepakati (dihitung di client dari response di atas):
+
+| Kondisi | Label CTA |
+| --- | --- |
+| `total_lessons === 0` atau pathway terkunci | `Terkunci` (tombol disabled) |
+| `completed_lessons === 0` | `Mulai` |
+| `0 < completed_lessons < total_lessons` | `Lanjutkan` |
+| `completed_lessons === total_lessons` | `Ulangi` |
+
 ### GET `/api/pathways/:id/lessons`
 
 **Response** `200`

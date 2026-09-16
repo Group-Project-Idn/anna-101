@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router";
+import { Link, useLocation, useNavigate, useParams } from "react-router";
 import AppNavbar from "../components/AppNavbar";
 import LessonRow from "../components/LessonRow";
 import { useAuth } from "../hooks/useAuth";
@@ -15,6 +15,7 @@ export default function LessonsPage() {
   const { pathways } = usePathways();
   const { lessons, status, error, fetchLessons } = useLessons();
   const navigate = useNavigate();
+  const location = useLocation();
   const isLoading = status === "idle" || status === "loading";
 
   const pathway = pathways.find((item) => item.id === pathwayId);
@@ -22,7 +23,9 @@ export default function LessonsPage() {
 
   useEffect(() => {
     if (!token) {
-      showErrorToast("Silakan masuk dulu untuk melihat lesson.");
+      if (!location.state?.fromLogout) {
+        showErrorToast("Silakan masuk dulu untuk melihat lesson.");
+      }
       navigate("/login", { replace: true });
       return;
     }
@@ -44,7 +47,7 @@ export default function LessonsPage() {
     return () => {
       cancelled = true;
     };
-  }, [token, pathwayId, fetchLessons, navigate]);
+  }, [token, pathwayId, fetchLessons, navigate, location.state]);
 
   return (
     <div className="bg-slate-100 min-h-screen font-sans text-slate-800">
