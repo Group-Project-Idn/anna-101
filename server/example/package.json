@@ -1,0 +1,36 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "S&P 500 AI Dashboard API Server",
+  "main": "bin/www.js",
+  "scripts": {
+    "dev": "node --watch bin/www.js",
+    "start": "node bin/www.js",
+    "test": "jest --detectOpenHandles --forceExit --testPathPatterns='__test__/(auth|stocks|market|watchlist|stockDetail|error|middleware|constants|errorHandler|stockController|finnhubService|twelveDataService|geminiService|app|marketControllerUnit|watchlistControllerUnit|models)'",
+    "db:setup": "npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@google/genai": "^2.21.0",
+    "axios": "^1.7.9",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "google-auth-library": "^9.15.1",
+    "jsonwebtoken": "^9.0.3",
+    "node-cron": "^3.0.3",
+    "pg": "^8.23.0",
+    "sequelize": "^6.37.8",
+    "socket.io": "^4.8.1",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "jest": "^30.5.1",
+    "sequelize-cli": "^6.6.5",
+    "supertest": "^7.2.2"
+  }
+}
