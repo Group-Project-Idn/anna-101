@@ -16,8 +16,8 @@ app.use(
 app.use(express.json());
 app.use(cors());
 
-app.post("/register", Controller.register);
-app.post("/login", Controller.login);
+app.post("/api/auth/register", Controller.register);
+app.post("/api/auth/login", Controller.login);
 
 app.use(authentication);
 

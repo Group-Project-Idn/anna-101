@@ -1,0 +1,4578 @@
+[
+  {
+    "lesson_id": 1,
+    "word": "fine",
+    "meaning": "well or okay",
+    "example_sentence": "I'm fine, thank you.",
+    "created_at": "2024-01-15T10:02:00.000Z",
+    "updated_at": "2024-01-15T10:02:00.000Z"
+  },
+  {
+    "lesson_id": 1,
+    "word": "great",
+    "meaning": "very good",
+    "example_sentence": "That's great news!",
+    "created_at": "2024-01-15T11:04:00.000Z",
+    "updated_at": "2024-01-15T11:04:00.000Z"
+  },
+  {
+    "lesson_id": 1,
+    "word": "not bad",
+    "meaning": "okay; better than expected",
+    "example_sentence": "I'm not bad, thanks for asking.",
+    "created_at": "2024-01-15T12:06:00.000Z",
+    "updated_at": "2024-01-15T12:06:00.000Z"
+  },
+  {
+    "lesson_id": 1,
+    "word": "so-so",
+    "meaning": "neither good nor bad",
+    "example_sentence": "I'm so-so today, a bit tired.",
+    "created_at": "2024-01-15T13:08:00.000Z",
+    "updated_at": "2024-01-15T13:08:00.000Z"
+  },
+  {
+    "lesson_id": 1,
+    "word": "thank you",
+    "meaning": "words used to show gratitude",
+    "example_sentence": "Thank you for asking, and you?",
+    "created_at": "2024-01-15T14:10:00.000Z",
+    "updated_at": "2024-01-15T14:10:00.000Z"
+  },
+  {
+    "lesson_id": 2,
+    "word": "job",
+    "meaning": "the work someone does for money",
+    "example_sentence": "What's your job?",
+    "created_at": "2024-01-15T15:12:00.000Z",
+    "updated_at": "2024-01-15T15:12:00.000Z"
+  },
+  {
+    "lesson_id": 2,
+    "word": "occupation",
+    "meaning": "a person's profession",
+    "example_sentence": "My occupation is teaching.",
+    "created_at": "2024-01-15T16:14:00.000Z",
+    "updated_at": "2024-01-15T16:14:00.000Z"
+  },
+  {
+    "lesson_id": 2,
+    "word": "engineer",
+    "meaning": "a person who designs machines or structures",
+    "example_sentence": "He's a software engineer.",
+    "created_at": "2024-01-15T17:16:00.000Z",
+    "updated_at": "2024-01-15T17:16:00.000Z"
+  },
+  {
+    "lesson_id": 2,
+    "word": "student",
+    "meaning": "a person who studies at a school",
+    "example_sentence": "I'm a college student.",
+    "created_at": "2024-01-15T18:18:00.000Z",
+    "updated_at": "2024-01-15T18:18:00.000Z"
+  },
+  {
+    "lesson_id": 2,
+    "word": "work",
+    "meaning": "the activity of doing a job",
+    "example_sentence": "I work at a bank downtown.",
+    "created_at": "2024-01-15T19:20:00.000Z",
+    "updated_at": "2024-01-15T19:20:00.000Z"
+  },
+  {
+    "lesson_id": 3,
+    "word": "hobby",
+    "meaning": "an activity done for pleasure in free time",
+    "example_sentence": "Do you have any hobbies?",
+    "created_at": "2024-01-15T20:22:00.000Z",
+    "updated_at": "2024-01-15T20:22:00.000Z"
+  },
+  {
+    "lesson_id": 3,
+    "word": "free time",
+    "meaning": "time when you are not working",
+    "example_sentence": "I cook in my free time.",
+    "created_at": "2024-01-15T21:24:00.000Z",
+    "updated_at": "2024-01-15T21:24:00.000Z"
+  },
+  {
+    "lesson_id": 3,
+    "word": "enjoy",
+    "meaning": "to like doing something",
+    "example_sentence": "I enjoy gardening on Sundays.",
+    "created_at": "2024-01-15T22:26:00.000Z",
+    "updated_at": "2024-01-15T22:26:00.000Z"
+  },
+  {
+    "lesson_id": 3,
+    "word": "gardening",
+    "meaning": "the activity of growing plants",
+    "example_sentence": "Gardening helps me relax.",
+    "created_at": "2024-01-15T23:28:00.000Z",
+    "updated_at": "2024-01-15T23:28:00.000Z"
+  },
+  {
+    "lesson_id": 3,
+    "word": "photography",
+    "meaning": "the art of taking pictures",
+    "example_sentence": "My hobby is photography.",
+    "created_at": "2024-01-16T00:30:00.000Z",
+    "updated_at": "2024-01-16T00:30:00.000Z"
+  },
+  {
+    "lesson_id": 4,
+    "word": "from",
+    "meaning": "used to show origin",
+    "example_sentence": "Where are you from?",
+    "created_at": "2024-01-16T01:32:00.000Z",
+    "updated_at": "2024-01-16T01:32:00.000Z"
+  },
+  {
+    "lesson_id": 4,
+    "word": "country",
+    "meaning": "a nation with its own government",
+    "example_sentence": "I'm from a small country in Asia.",
+    "created_at": "2024-01-16T02:34:00.000Z",
+    "updated_at": "2024-01-16T02:34:00.000Z"
+  },
+  {
+    "lesson_id": 4,
+    "word": "hometown",
+    "meaning": "the town where you grew up",
+    "example_sentence": "My hometown is near the coast.",
+    "created_at": "2024-01-16T03:36:00.000Z",
+    "updated_at": "2024-01-16T03:36:00.000Z"
+  },
+  {
+    "lesson_id": 4,
+    "word": "originally",
+    "meaning": "at first; in the beginning",
+    "example_sentence": "I'm originally from Canada.",
+    "created_at": "2024-01-16T04:38:00.000Z",
+    "updated_at": "2024-01-16T04:38:00.000Z"
+  },
+  {
+    "lesson_id": 4,
+    "word": "city",
+    "meaning": "a large town",
+    "example_sentence": "I live in a busy city.",
+    "created_at": "2024-01-16T05:40:00.000Z",
+    "updated_at": "2024-01-16T05:40:00.000Z"
+  },
+  {
+    "lesson_id": 5,
+    "word": "name",
+    "meaning": "the word people call you",
+    "example_sentence": "What's your name?",
+    "created_at": "2024-01-16T06:42:00.000Z",
+    "updated_at": "2024-01-16T06:42:00.000Z"
+  },
+  {
+    "lesson_id": 5,
+    "word": "nickname",
+    "meaning": "a short or friendly name",
+    "example_sentence": "My nickname is Dee.",
+    "created_at": "2024-01-16T07:44:00.000Z",
+    "updated_at": "2024-01-16T07:44:00.000Z"
+  },
+  {
+    "lesson_id": 5,
+    "word": "first name",
+    "meaning": "the name given to you at birth",
+    "example_sentence": "My first name is Michael.",
+    "created_at": "2024-01-16T08:46:00.000Z",
+    "updated_at": "2024-01-16T08:46:00.000Z"
+  },
+  {
+    "lesson_id": 5,
+    "word": "last name",
+    "meaning": "your family name",
+    "example_sentence": "My last name is Brown.",
+    "created_at": "2024-01-16T09:48:00.000Z",
+    "updated_at": "2024-01-16T09:48:00.000Z"
+  },
+  {
+    "lesson_id": 5,
+    "word": "spell",
+    "meaning": "to say the letters of a word in order",
+    "example_sentence": "Could you spell your name, please?",
+    "created_at": "2024-01-16T10:50:00.000Z",
+    "updated_at": "2024-01-16T10:50:00.000Z"
+  },
+  {
+    "lesson_id": 6,
+    "word": "phone number",
+    "meaning": "the digits used to call someone",
+    "example_sentence": "What's your phone number?",
+    "created_at": "2024-01-16T11:52:00.000Z",
+    "updated_at": "2024-01-16T11:52:00.000Z"
+  },
+  {
+    "lesson_id": 6,
+    "word": "email address",
+    "meaning": "the online address for messages",
+    "example_sentence": "Can I get your email address?",
+    "created_at": "2024-01-16T12:54:00.000Z",
+    "updated_at": "2024-01-16T12:54:00.000Z"
+  },
+  {
+    "lesson_id": 6,
+    "word": "contact",
+    "meaning": "information used to reach someone",
+    "example_sentence": "I'll send you my contact details.",
+    "created_at": "2024-01-16T13:56:00.000Z",
+    "updated_at": "2024-01-16T13:56:00.000Z"
+  },
+  {
+    "lesson_id": 6,
+    "word": "digits",
+    "meaning": "the numbers from 0 to 9",
+    "example_sentence": "Let me repeat the digits slowly.",
+    "created_at": "2024-01-16T14:58:00.000Z",
+    "updated_at": "2024-01-16T14:58:00.000Z"
+  },
+  {
+    "lesson_id": 6,
+    "word": "reach",
+    "meaning": "to be able to contact someone",
+    "example_sentence": "You can reach me after six.",
+    "created_at": "2024-01-16T16:00:00.000Z",
+    "updated_at": "2024-01-16T16:00:00.000Z"
+  },
+  {
+    "lesson_id": 7,
+    "word": "live",
+    "meaning": "to have your home in a place",
+    "example_sentence": "Where do you live?",
+    "created_at": "2024-01-16T17:02:00.000Z",
+    "updated_at": "2024-01-16T17:02:00.000Z"
+  },
+  {
+    "lesson_id": 7,
+    "word": "neighborhood",
+    "meaning": "the area around your home",
+    "example_sentence": "I live in a quiet neighborhood.",
+    "created_at": "2024-01-16T18:04:00.000Z",
+    "updated_at": "2024-01-16T18:04:00.000Z"
+  },
+  {
+    "lesson_id": 7,
+    "word": "apartment",
+    "meaning": "a set of rooms to live in a building",
+    "example_sentence": "I rent a small apartment.",
+    "created_at": "2024-01-16T19:06:00.000Z",
+    "updated_at": "2024-01-16T19:06:00.000Z"
+  },
+  {
+    "lesson_id": 7,
+    "word": "address",
+    "meaning": "the details of where a place is",
+    "example_sentence": "What's your address?",
+    "created_at": "2024-01-16T20:08:00.000Z",
+    "updated_at": "2024-01-16T20:08:00.000Z"
+  },
+  {
+    "lesson_id": 7,
+    "word": "downtown",
+    "meaning": "the central part of a city",
+    "example_sentence": "I live downtown near the station.",
+    "created_at": "2024-01-16T21:10:00.000Z",
+    "updated_at": "2024-01-16T21:10:00.000Z"
+  },
+  {
+    "lesson_id": 8,
+    "word": "school",
+    "meaning": "a place where children learn",
+    "example_sentence": "I went to school in Boston.",
+    "created_at": "2024-01-16T22:12:00.000Z",
+    "updated_at": "2024-01-16T22:12:00.000Z"
+  },
+  {
+    "lesson_id": 8,
+    "word": "college",
+    "meaning": "a place to study after high school",
+    "example_sentence": "I studied art at college.",
+    "created_at": "2024-01-16T23:14:00.000Z",
+    "updated_at": "2024-01-16T23:14:00.000Z"
+  },
+  {
+    "lesson_id": 8,
+    "word": "university",
+    "meaning": "an institution for higher education",
+    "example_sentence": "She goes to a state university.",
+    "created_at": "2024-01-17T00:16:00.000Z",
+    "updated_at": "2024-01-17T00:16:00.000Z"
+  },
+  {
+    "lesson_id": 8,
+    "word": "graduate",
+    "meaning": "to finish your studies",
+    "example_sentence": "I graduated in 2019.",
+    "created_at": "2024-01-17T01:18:00.000Z",
+    "updated_at": "2024-01-17T01:18:00.000Z"
+  },
+  {
+    "lesson_id": 8,
+    "word": "major",
+    "meaning": "the main subject you study",
+    "example_sentence": "My major was history.",
+    "created_at": "2024-01-17T02:20:00.000Z",
+    "updated_at": "2024-01-17T02:20:00.000Z"
+  },
+  {
+    "lesson_id": 9,
+    "word": "family",
+    "meaning": "a group of related people",
+    "example_sentence": "Tell me about your family.",
+    "created_at": "2024-01-17T03:22:00.000Z",
+    "updated_at": "2024-01-17T03:22:00.000Z"
+  },
+  {
+    "lesson_id": 9,
+    "word": "brother",
+    "meaning": "a male sibling",
+    "example_sentence": "I have one older brother.",
+    "created_at": "2024-01-17T04:24:00.000Z",
+    "updated_at": "2024-01-17T04:24:00.000Z"
+  },
+  {
+    "lesson_id": 9,
+    "word": "sister",
+    "meaning": "a female sibling",
+    "example_sentence": "My sister lives in Chicago.",
+    "created_at": "2024-01-17T05:26:00.000Z",
+    "updated_at": "2024-01-17T05:26:00.000Z"
+  },
+  {
+    "lesson_id": 9,
+    "word": "married",
+    "meaning": "having a husband or wife",
+    "example_sentence": "My brother is married.",
+    "created_at": "2024-01-17T06:28:00.000Z",
+    "updated_at": "2024-01-17T06:28:00.000Z"
+  },
+  {
+    "lesson_id": 9,
+    "word": "children",
+    "meaning": "young people; sons or daughters",
+    "example_sentence": "They have three children.",
+    "created_at": "2024-01-17T07:30:00.000Z",
+    "updated_at": "2024-01-17T07:30:00.000Z"
+  },
+  {
+    "lesson_id": 10,
+    "word": "single",
+    "meaning": "not married",
+    "example_sentence": "I'm single at the moment.",
+    "created_at": "2024-01-17T08:32:00.000Z",
+    "updated_at": "2024-01-17T08:32:00.000Z"
+  },
+  {
+    "lesson_id": 10,
+    "word": "married",
+    "meaning": "having a spouse",
+    "example_sentence": "Are you married?",
+    "created_at": "2024-01-17T09:34:00.000Z",
+    "updated_at": "2024-01-17T09:34:00.000Z"
+  },
+  {
+    "lesson_id": 10,
+    "word": "partner",
+    "meaning": "the person you are in a relationship with",
+    "example_sentence": "I live with my partner.",
+    "created_at": "2024-01-17T10:36:00.000Z",
+    "updated_at": "2024-01-17T10:36:00.000Z"
+  },
+  {
+    "lesson_id": 10,
+    "word": "engaged",
+    "meaning": "having promised to marry someone",
+    "example_sentence": "They just got engaged.",
+    "created_at": "2024-01-17T11:38:00.000Z",
+    "updated_at": "2024-01-17T11:38:00.000Z"
+  },
+  {
+    "lesson_id": 10,
+    "word": "divorced",
+    "meaning": "no longer married",
+    "example_sentence": "My parents are divorced.",
+    "created_at": "2024-01-17T12:40:00.000Z",
+    "updated_at": "2024-01-17T12:40:00.000Z"
+  },
+  {
+    "lesson_id": 11,
+    "word": "compliment",
+    "meaning": "a nice thing you say about someone",
+    "example_sentence": "That's a lovely compliment.",
+    "created_at": "2024-01-17T13:42:00.000Z",
+    "updated_at": "2024-01-17T13:42:00.000Z"
+  },
+  {
+    "lesson_id": 11,
+    "word": "outfit",
+    "meaning": "a set of clothes worn together",
+    "example_sentence": "I love your outfit!",
+    "created_at": "2024-01-17T14:44:00.000Z",
+    "updated_at": "2024-01-17T14:44:00.000Z"
+  },
+  {
+    "lesson_id": 11,
+    "word": "lovely",
+    "meaning": "very nice or beautiful",
+    "example_sentence": "That jacket looks lovely.",
+    "created_at": "2024-01-17T15:46:00.000Z",
+    "updated_at": "2024-01-17T15:46:00.000Z"
+  },
+  {
+    "lesson_id": 11,
+    "word": "accessory",
+    "meaning": "an item worn to complete an outfit",
+    "example_sentence": "I like your accessories.",
+    "created_at": "2024-01-17T16:48:00.000Z",
+    "updated_at": "2024-01-17T16:48:00.000Z"
+  },
+  {
+    "lesson_id": 11,
+    "word": "suit",
+    "meaning": "to look good on someone",
+    "example_sentence": "That color really suits you.",
+    "created_at": "2024-01-17T17:50:00.000Z",
+    "updated_at": "2024-01-17T17:50:00.000Z"
+  },
+  {
+    "lesson_id": 12,
+    "word": "weekend",
+    "meaning": "Saturday and Sunday",
+    "example_sentence": "What did you do on the weekend?",
+    "created_at": "2024-01-17T18:52:00.000Z",
+    "updated_at": "2024-01-17T18:52:00.000Z"
+  },
+  {
+    "lesson_id": 12,
+    "word": "get up to",
+    "meaning": "to do an activity",
+    "example_sentence": "What do you usually get up to?",
+    "created_at": "2024-01-17T19:54:00.000Z",
+    "updated_at": "2024-01-17T19:54:00.000Z"
+  },
+  {
+    "lesson_id": 12,
+    "word": "relax",
+    "meaning": "to rest and do nothing tiring",
+    "example_sentence": "I just relaxed at home.",
+    "created_at": "2024-01-17T20:56:00.000Z",
+    "updated_at": "2024-01-17T20:56:00.000Z"
+  },
+  {
+    "lesson_id": 12,
+    "word": "errands",
+    "meaning": "short trips to do small tasks",
+    "example_sentence": "I ran some errands on Saturday.",
+    "created_at": "2024-01-17T21:58:00.000Z",
+    "updated_at": "2024-01-17T21:58:00.000Z"
+  },
+  {
+    "lesson_id": 12,
+    "word": "hang out",
+    "meaning": "to spend time with people",
+    "example_sentence": "I hung out with friends.",
+    "created_at": "2024-01-17T23:00:00.000Z",
+    "updated_at": "2024-01-17T23:00:00.000Z"
+  },
+  {
+    "lesson_id": 13,
+    "word": "music",
+    "meaning": "sounds made by voices or instruments",
+    "example_sentence": "What sort of music are you into?",
+    "created_at": "2024-01-18T00:02:00.000Z",
+    "updated_at": "2024-01-18T00:02:00.000Z"
+  },
+  {
+    "lesson_id": 13,
+    "word": "genre",
+    "meaning": "a type or style of music",
+    "example_sentence": "My favorite genre is jazz.",
+    "created_at": "2024-01-18T01:04:00.000Z",
+    "updated_at": "2024-01-18T01:04:00.000Z"
+  },
+  {
+    "lesson_id": 13,
+    "word": "band",
+    "meaning": "a group of musicians",
+    "example_sentence": "I love that rock band.",
+    "created_at": "2024-01-18T02:06:00.000Z",
+    "updated_at": "2024-01-18T02:06:00.000Z"
+  },
+  {
+    "lesson_id": 13,
+    "word": "concert",
+    "meaning": "a live music performance",
+    "example_sentence": "I went to a concert last night.",
+    "created_at": "2024-01-18T03:08:00.000Z",
+    "updated_at": "2024-01-18T03:08:00.000Z"
+  },
+  {
+    "lesson_id": 13,
+    "word": "playlist",
+    "meaning": "a list of songs",
+    "example_sentence": "I made a playlist for the drive.",
+    "created_at": "2024-01-18T04:10:00.000Z",
+    "updated_at": "2024-01-18T04:10:00.000Z"
+  },
+  {
+    "lesson_id": 14,
+    "word": "food",
+    "meaning": "things people eat",
+    "example_sentence": "Do you like Italian food?",
+    "created_at": "2024-01-18T05:12:00.000Z",
+    "updated_at": "2024-01-18T05:12:00.000Z"
+  },
+  {
+    "lesson_id": 14,
+    "word": "dish",
+    "meaning": "food prepared in a certain way",
+    "example_sentence": "This dish is very spicy.",
+    "created_at": "2024-01-18T06:14:00.000Z",
+    "updated_at": "2024-01-18T06:14:00.000Z"
+  },
+  {
+    "lesson_id": 14,
+    "word": "seafood",
+    "meaning": "fish and shellfish as food",
+    "example_sentence": "Do you like seafood?",
+    "created_at": "2024-01-18T07:16:00.000Z",
+    "updated_at": "2024-01-18T07:16:00.000Z"
+  },
+  {
+    "lesson_id": 14,
+    "word": "vegetarian",
+    "meaning": "someone who does not eat meat",
+    "example_sentence": "My sister is a vegetarian.",
+    "created_at": "2024-01-18T08:18:00.000Z",
+    "updated_at": "2024-01-18T08:18:00.000Z"
+  },
+  {
+    "lesson_id": 14,
+    "word": "delicious",
+    "meaning": "tasting very good",
+    "example_sentence": "That soup was delicious.",
+    "created_at": "2024-01-18T09:20:00.000Z",
+    "updated_at": "2024-01-18T09:20:00.000Z"
+  },
+  {
+    "lesson_id": 15,
+    "word": "vacation",
+    "meaning": "time away from work to travel or rest",
+    "example_sentence": "Are you going on vacation this year?",
+    "created_at": "2024-01-18T10:22:00.000Z",
+    "updated_at": "2024-01-18T10:22:00.000Z"
+  },
+  {
+    "lesson_id": 15,
+    "word": "trip",
+    "meaning": "a journey to a place",
+    "example_sentence": "We took a trip to Florida.",
+    "created_at": "2024-01-18T11:24:00.000Z",
+    "updated_at": "2024-01-18T11:24:00.000Z"
+  },
+  {
+    "lesson_id": 15,
+    "word": "travel",
+    "meaning": "to go from place to place",
+    "example_sentence": "I love to travel in summer.",
+    "created_at": "2024-01-18T12:26:00.000Z",
+    "updated_at": "2024-01-18T12:26:00.000Z"
+  },
+  {
+    "lesson_id": 15,
+    "word": "abroad",
+    "meaning": "in or to a foreign country",
+    "example_sentence": "They went abroad last winter.",
+    "created_at": "2024-01-18T13:28:00.000Z",
+    "updated_at": "2024-01-18T13:28:00.000Z"
+  },
+  {
+    "lesson_id": 15,
+    "word": "book",
+    "meaning": "to reserve a place or ticket",
+    "example_sentence": "I booked a flight for June.",
+    "created_at": "2024-01-18T14:30:00.000Z",
+    "updated_at": "2024-01-18T14:30:00.000Z"
+  },
+  {
+    "lesson_id": 16,
+    "word": "know",
+    "meaning": "to be familiar with someone",
+    "example_sentence": "How do you know Anna?",
+    "created_at": "2024-01-18T15:32:00.000Z",
+    "updated_at": "2024-01-18T15:32:00.000Z"
+  },
+  {
+    "lesson_id": 16,
+    "word": "colleague",
+    "meaning": "a person you work with",
+    "example_sentence": "We're colleagues at the bank.",
+    "created_at": "2024-01-18T16:34:00.000Z",
+    "updated_at": "2024-01-18T16:34:00.000Z"
+  },
+  {
+    "lesson_id": 16,
+    "word": "mutual friend",
+    "meaning": "a friend shared by two people",
+    "example_sentence": "We met through a mutual friend.",
+    "created_at": "2024-01-18T17:36:00.000Z",
+    "updated_at": "2024-01-18T17:36:00.000Z"
+  },
+  {
+    "lesson_id": 16,
+    "word": "introduce",
+    "meaning": "to help two people meet",
+    "example_sentence": "Let me introduce my friend.",
+    "created_at": "2024-01-18T18:38:00.000Z",
+    "updated_at": "2024-01-18T18:38:00.000Z"
+  },
+  {
+    "lesson_id": 16,
+    "word": "met",
+    "meaning": "came together with someone",
+    "example_sentence": "We met at a wedding.",
+    "created_at": "2024-01-18T19:40:00.000Z",
+    "updated_at": "2024-01-18T19:40:00.000Z"
+  },
+  {
+    "lesson_id": 17,
+    "word": "sports",
+    "meaning": "physical games or activities",
+    "example_sentence": "Do you follow sports?",
+    "created_at": "2024-01-18T20:42:00.000Z",
+    "updated_at": "2024-01-18T20:42:00.000Z"
+  },
+  {
+    "lesson_id": 17,
+    "word": "team",
+    "meaning": "a group that plays together",
+    "example_sentence": "My favorite team is from Boston.",
+    "created_at": "2024-01-18T21:44:00.000Z",
+    "updated_at": "2024-01-18T21:44:00.000Z"
+  },
+  {
+    "lesson_id": 17,
+    "word": "follow",
+    "meaning": "to watch or support regularly",
+    "example_sentence": "I follow basketball closely.",
+    "created_at": "2024-01-18T22:46:00.000Z",
+    "updated_at": "2024-01-18T22:46:00.000Z"
+  },
+  {
+    "lesson_id": 17,
+    "word": "match",
+    "meaning": "a game between two sides",
+    "example_sentence": "The match starts at seven.",
+    "created_at": "2024-01-18T23:48:00.000Z",
+    "updated_at": "2024-01-18T23:48:00.000Z"
+  },
+  {
+    "lesson_id": 17,
+    "word": "player",
+    "meaning": "a person who plays a sport",
+    "example_sentence": "He's a great player.",
+    "created_at": "2024-01-19T00:50:00.000Z",
+    "updated_at": "2024-01-19T00:50:00.000Z"
+  },
+  {
+    "lesson_id": 18,
+    "word": "visiting",
+    "meaning": "staying in a place for a while",
+    "example_sentence": "I'm visiting for a week.",
+    "created_at": "2024-01-19T01:52:00.000Z",
+    "updated_at": "2024-01-19T01:52:00.000Z"
+  },
+  {
+    "lesson_id": 18,
+    "word": "business trip",
+    "meaning": "a journey for work",
+    "example_sentence": "I'm here on a business trip.",
+    "created_at": "2024-01-19T02:54:00.000Z",
+    "updated_at": "2024-01-19T02:54:00.000Z"
+  },
+  {
+    "lesson_id": 18,
+    "word": "tourist",
+    "meaning": "a person who travels for pleasure",
+    "example_sentence": "Many tourists come here in July.",
+    "created_at": "2024-01-19T03:56:00.000Z",
+    "updated_at": "2024-01-19T03:56:00.000Z"
+  },
+  {
+    "lesson_id": 18,
+    "word": "stay",
+    "meaning": "to remain in a place",
+    "example_sentence": "Where are you staying?",
+    "created_at": "2024-01-19T04:58:00.000Z",
+    "updated_at": "2024-01-19T04:58:00.000Z"
+  },
+  {
+    "lesson_id": 18,
+    "word": "attend",
+    "meaning": "to go to an event",
+    "example_sentence": "I'm attending a conference.",
+    "created_at": "2024-01-19T06:00:00.000Z",
+    "updated_at": "2024-01-19T06:00:00.000Z"
+  },
+  {
+    "lesson_id": 19,
+    "word": "movie",
+    "meaning": "a film shown at a cinema",
+    "example_sentence": "Have you seen this movie?",
+    "created_at": "2024-01-19T07:02:00.000Z",
+    "updated_at": "2024-01-19T07:02:00.000Z"
+  },
+  {
+    "lesson_id": 19,
+    "word": "film",
+    "meaning": "a movie; also the material for movies",
+    "example_sentence": "That film won an award.",
+    "created_at": "2024-01-19T08:04:00.000Z",
+    "updated_at": "2024-01-19T08:04:00.000Z"
+  },
+  {
+    "lesson_id": 19,
+    "word": "seen",
+    "meaning": "past participle of see",
+    "example_sentence": "I haven't seen it yet.",
+    "created_at": "2024-01-19T09:06:00.000Z",
+    "updated_at": "2024-01-19T09:06:00.000Z"
+  },
+  {
+    "lesson_id": 19,
+    "word": "actor",
+    "meaning": "a person who performs in films",
+    "example_sentence": "My favorite actor is in it.",
+    "created_at": "2024-01-19T10:08:00.000Z",
+    "updated_at": "2024-01-19T10:08:00.000Z"
+  },
+  {
+    "lesson_id": 19,
+    "word": "recommend",
+    "meaning": "to suggest something good",
+    "example_sentence": "Can you recommend a movie?",
+    "created_at": "2024-01-19T11:10:00.000Z",
+    "updated_at": "2024-01-19T11:10:00.000Z"
+  },
+  {
+    "lesson_id": 20,
+    "word": "age",
+    "meaning": "how old a person is",
+    "example_sentence": "Do you mind me asking your age?",
+    "created_at": "2024-01-19T12:12:00.000Z",
+    "updated_at": "2024-01-19T12:12:00.000Z"
+  },
+  {
+    "lesson_id": 20,
+    "word": "old",
+    "meaning": "having lived for many years",
+    "example_sentence": "How old are you?",
+    "created_at": "2024-01-19T13:14:00.000Z",
+    "updated_at": "2024-01-19T13:14:00.000Z"
+  },
+  {
+    "lesson_id": 20,
+    "word": "birthday",
+    "meaning": "the day you were born",
+    "example_sentence": "My birthday is in May.",
+    "created_at": "2024-01-19T14:16:00.000Z",
+    "updated_at": "2024-01-19T14:16:00.000Z"
+  },
+  {
+    "lesson_id": 20,
+    "word": "twenties",
+    "meaning": "the years from 20 to 29",
+    "example_sentence": "She's in her early twenties.",
+    "created_at": "2024-01-19T15:18:00.000Z",
+    "updated_at": "2024-01-19T15:18:00.000Z"
+  },
+  {
+    "lesson_id": 20,
+    "word": "mind",
+    "meaning": "to be bothered by something",
+    "example_sentence": "I don't mind you asking.",
+    "created_at": "2024-01-19T16:20:00.000Z",
+    "updated_at": "2024-01-19T16:20:00.000Z"
+  },
+  {
+    "lesson_id": 21,
+    "word": "news",
+    "meaning": "reports about recent events",
+    "example_sentence": "Did you hear about the news?",
+    "created_at": "2024-01-19T17:22:00.000Z",
+    "updated_at": "2024-01-19T17:22:00.000Z"
+  },
+  {
+    "lesson_id": 21,
+    "word": "hear about",
+    "meaning": "to learn of something",
+    "example_sentence": "I heard about it this morning.",
+    "created_at": "2024-01-19T18:24:00.000Z",
+    "updated_at": "2024-01-19T18:24:00.000Z"
+  },
+  {
+    "lesson_id": 21,
+    "word": "headline",
+    "meaning": "the title of a news story",
+    "example_sentence": "The headline was surprising.",
+    "created_at": "2024-01-19T19:26:00.000Z",
+    "updated_at": "2024-01-19T19:26:00.000Z"
+  },
+  {
+    "lesson_id": 21,
+    "word": "update",
+    "meaning": "new information about something",
+    "example_sentence": "Give me an update later.",
+    "created_at": "2024-01-19T20:28:00.000Z",
+    "updated_at": "2024-01-19T20:28:00.000Z"
+  },
+  {
+    "lesson_id": 21,
+    "word": "happened",
+    "meaning": "took place",
+    "example_sentence": "What happened yesterday?",
+    "created_at": "2024-01-19T21:30:00.000Z",
+    "updated_at": "2024-01-19T21:30:00.000Z"
+  },
+  {
+    "lesson_id": 22,
+    "word": "travel",
+    "meaning": "to go on a journey",
+    "example_sentence": "Have you ever traveled alone?",
+    "created_at": "2024-01-19T22:32:00.000Z",
+    "updated_at": "2024-01-19T22:32:00.000Z"
+  },
+  {
+    "lesson_id": 22,
+    "word": "been to",
+    "meaning": "visited a place",
+    "example_sentence": "I've been to New York twice.",
+    "created_at": "2024-01-19T23:34:00.000Z",
+    "updated_at": "2024-01-19T23:34:00.000Z"
+  },
+  {
+    "lesson_id": 22,
+    "word": "abroad",
+    "meaning": "outside your own country",
+    "example_sentence": "She studied abroad for a year.",
+    "created_at": "2024-01-20T00:36:00.000Z",
+    "updated_at": "2024-01-20T00:36:00.000Z"
+  },
+  {
+    "lesson_id": 22,
+    "word": "sightseeing",
+    "meaning": "visiting interesting places",
+    "example_sentence": "We went sightseeing all day.",
+    "created_at": "2024-01-20T01:38:00.000Z",
+    "updated_at": "2024-01-20T01:38:00.000Z"
+  },
+  {
+    "lesson_id": 22,
+    "word": "itinerary",
+    "meaning": "a plan for a journey",
+    "example_sentence": "Our itinerary is very full.",
+    "created_at": "2024-01-20T02:40:00.000Z",
+    "updated_at": "2024-01-20T02:40:00.000Z"
+  },
+  {
+    "lesson_id": 23,
+    "word": "pet",
+    "meaning": "an animal kept at home",
+    "example_sentence": "Do you have any pets?",
+    "created_at": "2024-01-20T03:42:00.000Z",
+    "updated_at": "2024-01-20T03:42:00.000Z"
+  },
+  {
+    "lesson_id": 23,
+    "word": "dog",
+    "meaning": "a common animal kept as a pet",
+    "example_sentence": "I have a small dog.",
+    "created_at": "2024-01-20T04:44:00.000Z",
+    "updated_at": "2024-01-20T04:44:00.000Z"
+  },
+  {
+    "lesson_id": 23,
+    "word": "cat",
+    "meaning": "a small animal kept as a pet",
+    "example_sentence": "Her cat sleeps all day.",
+    "created_at": "2024-01-20T05:46:00.000Z",
+    "updated_at": "2024-01-20T05:46:00.000Z"
+  },
+  {
+    "lesson_id": 23,
+    "word": "breed",
+    "meaning": "a type of animal",
+    "example_sentence": "What breed is your dog?",
+    "created_at": "2024-01-20T06:48:00.000Z",
+    "updated_at": "2024-01-20T06:48:00.000Z"
+  },
+  {
+    "lesson_id": 23,
+    "word": "adopt",
+    "meaning": "to take an animal into your home",
+    "example_sentence": "We adopted a rescue dog.",
+    "created_at": "2024-01-20T07:50:00.000Z",
+    "updated_at": "2024-01-20T07:50:00.000Z"
+  },
+  {
+    "lesson_id": 24,
+    "word": "plans",
+    "meaning": "things you intend to do",
+    "example_sentence": "Do you have any plans for the weekend?",
+    "created_at": "2024-01-20T08:52:00.000Z",
+    "updated_at": "2024-01-20T08:52:00.000Z"
+  },
+  {
+    "lesson_id": 24,
+    "word": "busy",
+    "meaning": "having a lot to do",
+    "example_sentence": "I'm busy on Saturday.",
+    "created_at": "2024-01-20T09:54:00.000Z",
+    "updated_at": "2024-01-20T09:54:00.000Z"
+  },
+  {
+    "lesson_id": 24,
+    "word": "free",
+    "meaning": "available; not busy",
+    "example_sentence": "I'm free on Sunday.",
+    "created_at": "2024-01-20T10:56:00.000Z",
+    "updated_at": "2024-01-20T10:56:00.000Z"
+  },
+  {
+    "lesson_id": 24,
+    "word": "meet up",
+    "meaning": "to come together with someone",
+    "example_sentence": "Let's meet up for coffee.",
+    "created_at": "2024-01-20T11:58:00.000Z",
+    "updated_at": "2024-01-20T11:58:00.000Z"
+  },
+  {
+    "lesson_id": 24,
+    "word": "schedule",
+    "meaning": "a plan of times and activities",
+    "example_sentence": "My schedule is open Friday.",
+    "created_at": "2024-01-20T13:00:00.000Z",
+    "updated_at": "2024-01-20T13:00:00.000Z"
+  },
+  {
+    "lesson_id": 25,
+    "word": "filler word",
+    "meaning": "a word used to fill a pause",
+    "example_sentence": "Filler words are common in speech.",
+    "created_at": "2024-01-20T14:02:00.000Z",
+    "updated_at": "2024-01-20T14:02:00.000Z"
+  },
+  {
+    "lesson_id": 25,
+    "word": "y'know",
+    "meaning": "short for you know",
+    "example_sentence": "It was, y'know, pretty strange.",
+    "created_at": "2024-01-20T15:04:00.000Z",
+    "updated_at": "2024-01-20T15:04:00.000Z"
+  },
+  {
+    "lesson_id": 25,
+    "word": "like",
+    "meaning": "a filler word in casual speech",
+    "example_sentence": "It was like really cold.",
+    "created_at": "2024-01-20T16:06:00.000Z",
+    "updated_at": "2024-01-20T16:06:00.000Z"
+  },
+  {
+    "lesson_id": 25,
+    "word": "um",
+    "meaning": "a sound used when hesitating",
+    "example_sentence": "Um, let me think about that.",
+    "created_at": "2024-01-20T17:08:00.000Z",
+    "updated_at": "2024-01-20T17:08:00.000Z"
+  },
+  {
+    "lesson_id": 25,
+    "word": "pause",
+    "meaning": "a short stop in speaking",
+    "example_sentence": "She paused before answering.",
+    "created_at": "2024-01-20T18:10:00.000Z",
+    "updated_at": "2024-01-20T18:10:00.000Z"
+  },
+  {
+    "lesson_id": 26,
+    "word": "introduce",
+    "meaning": "to tell someone your name",
+    "example_sentence": "Let me introduce myself.",
+    "created_at": "2024-01-20T19:12:00.000Z",
+    "updated_at": "2024-01-20T19:12:00.000Z"
+  },
+  {
+    "lesson_id": 26,
+    "word": "pleased to meet you",
+    "meaning": "a polite greeting when meeting",
+    "example_sentence": "Pleased to meet you, Ana.",
+    "created_at": "2024-01-20T20:14:00.000Z",
+    "updated_at": "2024-01-20T20:14:00.000Z"
+  },
+  {
+    "lesson_id": 26,
+    "word": "background",
+    "meaning": "a person's history or experience",
+    "example_sentence": "Tell me about your background.",
+    "created_at": "2024-01-20T21:16:00.000Z",
+    "updated_at": "2024-01-20T21:16:00.000Z"
+  },
+  {
+    "lesson_id": 26,
+    "word": "role",
+    "meaning": "the job or function someone has",
+    "example_sentence": "My role is project manager.",
+    "created_at": "2024-01-20T22:18:00.000Z",
+    "updated_at": "2024-01-20T22:18:00.000Z"
+  },
+  {
+    "lesson_id": 26,
+    "word": "greeting",
+    "meaning": "words used when you meet someone",
+    "example_sentence": "A friendly greeting opens the door.",
+    "created_at": "2024-01-20T23:20:00.000Z",
+    "updated_at": "2024-01-20T23:20:00.000Z"
+  },
+  {
+    "lesson_id": 27,
+    "word": "describe",
+    "meaning": "to say what something is like",
+    "example_sentence": "How would you describe your hometown?",
+    "created_at": "2024-01-21T00:22:00.000Z",
+    "updated_at": "2024-01-21T00:22:00.000Z"
+  },
+  {
+    "lesson_id": 27,
+    "word": "region",
+    "meaning": "a large area of a country",
+    "example_sentence": "I'm from the northern region.",
+    "created_at": "2024-01-21T01:24:00.000Z",
+    "updated_at": "2024-01-21T01:24:00.000Z"
+  },
+  {
+    "lesson_id": 27,
+    "word": "population",
+    "meaning": "the number of people in a place",
+    "example_sentence": "The population is about two million.",
+    "created_at": "2024-01-21T02:26:00.000Z",
+    "updated_at": "2024-01-21T02:26:00.000Z"
+  },
+  {
+    "lesson_id": 27,
+    "word": "known for",
+    "meaning": "famous because of",
+    "example_sentence": "My city is known for its food.",
+    "created_at": "2024-01-21T03:28:00.000Z",
+    "updated_at": "2024-01-21T03:28:00.000Z"
+  },
+  {
+    "lesson_id": 27,
+    "word": "located",
+    "meaning": "situated in a place",
+    "example_sentence": "It's located near the mountains.",
+    "created_at": "2024-01-21T04:30:00.000Z",
+    "updated_at": "2024-01-21T04:30:00.000Z"
+  },
+  {
+    "lesson_id": 28,
+    "word": "passport",
+    "meaning": "an official document for travel",
+    "example_sentence": "Please show me your passport.",
+    "created_at": "2024-01-21T05:32:00.000Z",
+    "updated_at": "2024-01-21T05:32:00.000Z"
+  },
+  {
+    "lesson_id": 28,
+    "word": "customs",
+    "meaning": "the place that checks goods entering a country",
+    "example_sentence": "We went through customs quickly.",
+    "created_at": "2024-01-21T06:34:00.000Z",
+    "updated_at": "2024-01-21T06:34:00.000Z"
+  },
+  {
+    "lesson_id": 28,
+    "word": "officer",
+    "meaning": "a person with authority in an official job",
+    "example_sentence": "The officer asked a few questions.",
+    "created_at": "2024-01-21T07:36:00.000Z",
+    "updated_at": "2024-01-21T07:36:00.000Z"
+  },
+  {
+    "lesson_id": 28,
+    "word": "declare",
+    "meaning": "to officially report goods you carry",
+    "example_sentence": "Do you have anything to declare?",
+    "created_at": "2024-01-21T08:38:00.000Z",
+    "updated_at": "2024-01-21T08:38:00.000Z"
+  },
+  {
+    "lesson_id": 28,
+    "word": "purpose of visit",
+    "meaning": "the reason you are traveling",
+    "example_sentence": "My purpose of visit is tourism.",
+    "created_at": "2024-01-21T09:40:00.000Z",
+    "updated_at": "2024-01-21T09:40:00.000Z"
+  },
+  {
+    "lesson_id": 29,
+    "word": "contact information",
+    "meaning": "details used to reach someone",
+    "example_sentence": "Let's exchange contact information.",
+    "created_at": "2024-01-21T10:42:00.000Z",
+    "updated_at": "2024-01-21T10:42:00.000Z"
+  },
+  {
+    "lesson_id": 29,
+    "word": "business card",
+    "meaning": "a small card with your details",
+    "example_sentence": "Here's my business card.",
+    "created_at": "2024-01-21T11:44:00.000Z",
+    "updated_at": "2024-01-21T11:44:00.000Z"
+  },
+  {
+    "lesson_id": 29,
+    "word": "social media",
+    "meaning": "websites for sharing with others",
+    "example_sentence": "You can find me on social media.",
+    "created_at": "2024-01-21T12:46:00.000Z",
+    "updated_at": "2024-01-21T12:46:00.000Z"
+  },
+  {
+    "lesson_id": 29,
+    "word": "handle",
+    "meaning": "a username on a platform",
+    "example_sentence": "My handle is the same everywhere.",
+    "created_at": "2024-01-21T13:48:00.000Z",
+    "updated_at": "2024-01-21T13:48:00.000Z"
+  },
+  {
+    "lesson_id": 29,
+    "word": "stay in touch",
+    "meaning": "to keep contacting someone",
+    "example_sentence": "Let's stay in touch.",
+    "created_at": "2024-01-21T14:50:00.000Z",
+    "updated_at": "2024-01-21T14:50:00.000Z"
+  },
+  {
+    "lesson_id": 30,
+    "word": "check in",
+    "meaning": "to register at a hotel",
+    "example_sentence": "I'd like to check in, please.",
+    "created_at": "2024-01-21T15:52:00.000Z",
+    "updated_at": "2024-01-21T15:52:00.000Z"
+  },
+  {
+    "lesson_id": 30,
+    "word": "reservation",
+    "meaning": "an arrangement to keep a room",
+    "example_sentence": "I have a reservation under Lee.",
+    "created_at": "2024-01-21T16:54:00.000Z",
+    "updated_at": "2024-01-21T16:54:00.000Z"
+  },
+  {
+    "lesson_id": 30,
+    "word": "front desk",
+    "meaning": "the reception area of a hotel",
+    "example_sentence": "Ask at the front desk for a map.",
+    "created_at": "2024-01-21T17:56:00.000Z",
+    "updated_at": "2024-01-21T17:56:00.000Z"
+  },
+  {
+    "lesson_id": 30,
+    "word": "key card",
+    "meaning": "a card that opens your room",
+    "example_sentence": "Here is your key card.",
+    "created_at": "2024-01-21T18:58:00.000Z",
+    "updated_at": "2024-01-21T18:58:00.000Z"
+  },
+  {
+    "lesson_id": 30,
+    "word": "lobby",
+    "meaning": "the entrance hall of a hotel",
+    "example_sentence": "I'll wait in the lobby.",
+    "created_at": "2024-01-21T20:00:00.000Z",
+    "updated_at": "2024-01-21T20:00:00.000Z"
+  },
+  {
+    "lesson_id": 31,
+    "word": "register",
+    "meaning": "the place where you pay in a store",
+    "example_sentence": "Please pay at the register.",
+    "created_at": "2024-01-21T21:02:00.000Z",
+    "updated_at": "2024-01-21T21:02:00.000Z"
+  },
+  {
+    "lesson_id": 31,
+    "word": "cashier",
+    "meaning": "a person who takes payments",
+    "example_sentence": "The cashier gave me a receipt.",
+    "created_at": "2024-01-21T22:04:00.000Z",
+    "updated_at": "2024-01-21T22:04:00.000Z"
+  },
+  {
+    "lesson_id": 31,
+    "word": "receipt",
+    "meaning": "a paper proving you paid",
+    "example_sentence": "Keep your receipt for returns.",
+    "created_at": "2024-01-21T23:06:00.000Z",
+    "updated_at": "2024-01-21T23:06:00.000Z"
+  },
+  {
+    "lesson_id": 31,
+    "word": "cash",
+    "meaning": "money in coins and notes",
+    "example_sentence": "I'll pay in cash.",
+    "created_at": "2024-01-22T00:08:00.000Z",
+    "updated_at": "2024-01-22T00:08:00.000Z"
+  },
+  {
+    "lesson_id": 31,
+    "word": "change",
+    "meaning": "the money returned after paying",
+    "example_sentence": "Here's your change.",
+    "created_at": "2024-01-22T01:10:00.000Z",
+    "updated_at": "2024-01-22T01:10:00.000Z"
+  },
+  {
+    "lesson_id": 32,
+    "word": "appointment",
+    "meaning": "a planned meeting at a set time",
+    "example_sentence": "I have an appointment at three.",
+    "created_at": "2024-01-22T02:12:00.000Z",
+    "updated_at": "2024-01-22T02:12:00.000Z"
+  },
+  {
+    "lesson_id": 32,
+    "word": "schedule",
+    "meaning": "to arrange a time",
+    "example_sentence": "Can we schedule it for Friday?",
+    "created_at": "2024-01-22T03:14:00.000Z",
+    "updated_at": "2024-01-22T03:14:00.000Z"
+  },
+  {
+    "lesson_id": 32,
+    "word": "cancel",
+    "meaning": "to call off a plan",
+    "example_sentence": "I need to cancel my appointment.",
+    "created_at": "2024-01-22T04:16:00.000Z",
+    "updated_at": "2024-01-22T04:16:00.000Z"
+  },
+  {
+    "lesson_id": 32,
+    "word": "reschedule",
+    "meaning": "to move to a new time",
+    "example_sentence": "Can I reschedule for next week?",
+    "created_at": "2024-01-22T05:18:00.000Z",
+    "updated_at": "2024-01-22T05:18:00.000Z"
+  },
+  {
+    "lesson_id": 32,
+    "word": "confirm",
+    "meaning": "to say something is certain",
+    "example_sentence": "Please confirm the time by email.",
+    "created_at": "2024-01-22T06:20:00.000Z",
+    "updated_at": "2024-01-22T06:20:00.000Z"
+  },
+  {
+    "lesson_id": 33,
+    "word": "acquaintance",
+    "meaning": "someone you know a little",
+    "example_sentence": "He's an old acquaintance of mine.",
+    "created_at": "2024-01-22T07:22:00.000Z",
+    "updated_at": "2024-01-22T07:22:00.000Z"
+  },
+  {
+    "lesson_id": 33,
+    "word": "long time no see",
+    "meaning": "a greeting after a long absence",
+    "example_sentence": "Long time no see, Maria!",
+    "created_at": "2024-01-22T08:24:00.000Z",
+    "updated_at": "2024-01-22T08:24:00.000Z"
+  },
+  {
+    "lesson_id": 33,
+    "word": "catch up",
+    "meaning": "to share news after time apart",
+    "example_sentence": "Let's catch up over lunch.",
+    "created_at": "2024-01-22T09:26:00.000Z",
+    "updated_at": "2024-01-22T09:26:00.000Z"
+  },
+  {
+    "lesson_id": 33,
+    "word": "recognize",
+    "meaning": "to know someone you have seen before",
+    "example_sentence": "I didn't recognize you at first.",
+    "created_at": "2024-01-22T10:28:00.000Z",
+    "updated_at": "2024-01-22T10:28:00.000Z"
+  },
+  {
+    "lesson_id": 33,
+    "word": "remember",
+    "meaning": "to keep something in your mind",
+    "example_sentence": "I remember you from college.",
+    "created_at": "2024-01-22T11:30:00.000Z",
+    "updated_at": "2024-01-22T11:30:00.000Z"
+  },
+  {
+    "lesson_id": 34,
+    "word": "future",
+    "meaning": "the time still to come",
+    "example_sentence": "What are your future plans?",
+    "created_at": "2024-01-22T12:32:00.000Z",
+    "updated_at": "2024-01-22T12:32:00.000Z"
+  },
+  {
+    "lesson_id": 34,
+    "word": "plan",
+    "meaning": "an idea about what you will do",
+    "example_sentence": "My plan is to study abroad.",
+    "created_at": "2024-01-22T13:34:00.000Z",
+    "updated_at": "2024-01-22T13:34:00.000Z"
+  },
+  {
+    "lesson_id": 34,
+    "word": "intend to",
+    "meaning": "to have a plan to do something",
+    "example_sentence": "I intend to change jobs.",
+    "created_at": "2024-01-22T14:36:00.000Z",
+    "updated_at": "2024-01-22T14:36:00.000Z"
+  },
+  {
+    "lesson_id": 34,
+    "word": "hope to",
+    "meaning": "to want something to happen",
+    "example_sentence": "I hope to visit Japan next year.",
+    "created_at": "2024-01-22T15:38:00.000Z",
+    "updated_at": "2024-01-22T15:38:00.000Z"
+  },
+  {
+    "lesson_id": 34,
+    "word": "next year",
+    "meaning": "the year after this one",
+    "example_sentence": "I'll graduate next year.",
+    "created_at": "2024-01-22T16:40:00.000Z",
+    "updated_at": "2024-01-22T16:40:00.000Z"
+  },
+  {
+    "lesson_id": 35,
+    "word": "ticket",
+    "meaning": "a paper or card that lets you travel",
+    "example_sentence": "Where can I buy a ticket?",
+    "created_at": "2024-01-22T17:42:00.000Z",
+    "updated_at": "2024-01-22T17:42:00.000Z"
+  },
+  {
+    "lesson_id": 35,
+    "word": "fare",
+    "meaning": "the money you pay to travel",
+    "example_sentence": "The fare is two dollars.",
+    "created_at": "2024-01-22T18:44:00.000Z",
+    "updated_at": "2024-01-22T18:44:00.000Z"
+  },
+  {
+    "lesson_id": 35,
+    "word": "one-way",
+    "meaning": "traveling to a place without returning",
+    "example_sentence": "One ticket one-way, please.",
+    "created_at": "2024-01-22T19:46:00.000Z",
+    "updated_at": "2024-01-22T19:46:00.000Z"
+  },
+  {
+    "lesson_id": 35,
+    "word": "round trip",
+    "meaning": "traveling there and back",
+    "example_sentence": "A round trip ticket is cheaper.",
+    "created_at": "2024-01-22T20:48:00.000Z",
+    "updated_at": "2024-01-22T20:48:00.000Z"
+  },
+  {
+    "lesson_id": 35,
+    "word": "subway",
+    "meaning": "an underground train system",
+    "example_sentence": "Take the subway to the center.",
+    "created_at": "2024-01-22T21:50:00.000Z",
+    "updated_at": "2024-01-22T21:50:00.000Z"
+  },
+  {
+    "lesson_id": 36,
+    "word": "affirm",
+    "meaning": "to say that something is true",
+    "example_sentence": "Let me affirm what you just said.",
+    "created_at": "2024-01-22T22:52:00.000Z",
+    "updated_at": "2024-01-22T22:52:00.000Z"
+  },
+  {
+    "lesson_id": 36,
+    "word": "confirm",
+    "meaning": "to show that something is correct",
+    "example_sentence": "I can confirm that detail.",
+    "created_at": "2024-01-22T23:54:00.000Z",
+    "updated_at": "2024-01-22T23:54:00.000Z"
+  },
+  {
+    "lesson_id": 36,
+    "word": "statement",
+    "meaning": "something said or written",
+    "example_sentence": "Your statement is correct.",
+    "created_at": "2024-01-23T00:56:00.000Z",
+    "updated_at": "2024-01-23T00:56:00.000Z"
+  },
+  {
+    "lesson_id": 36,
+    "word": "exactly",
+    "meaning": "used to agree completely",
+    "example_sentence": "Exactly, that's what I mean.",
+    "created_at": "2024-01-23T01:58:00.000Z",
+    "updated_at": "2024-01-23T01:58:00.000Z"
+  },
+  {
+    "lesson_id": 36,
+    "word": "right",
+    "meaning": "correct; true",
+    "example_sentence": "You're right about that.",
+    "created_at": "2024-01-23T03:00:00.000Z",
+    "updated_at": "2024-01-23T03:00:00.000Z"
+  },
+  {
+    "lesson_id": 37,
+    "word": "first impression",
+    "meaning": "what someone thinks when they meet you",
+    "example_sentence": "A first impression lasts a lifetime.",
+    "created_at": "2024-01-23T04:02:00.000Z",
+    "updated_at": "2024-01-23T04:02:00.000Z"
+  },
+  {
+    "lesson_id": 37,
+    "word": "please",
+    "meaning": "a polite word used in requests",
+    "example_sentence": "Please sit down.",
+    "created_at": "2024-01-23T05:04:00.000Z",
+    "updated_at": "2024-01-23T05:04:00.000Z"
+  },
+  {
+    "lesson_id": 37,
+    "word": "polite",
+    "meaning": "showing good manners",
+    "example_sentence": "That was a very polite request.",
+    "created_at": "2024-01-23T06:06:00.000Z",
+    "updated_at": "2024-01-23T06:06:00.000Z"
+  },
+  {
+    "lesson_id": 37,
+    "word": "request",
+    "meaning": "the act of asking for something",
+    "example_sentence": "May I make a request?",
+    "created_at": "2024-01-23T07:08:00.000Z",
+    "updated_at": "2024-01-23T07:08:00.000Z"
+  },
+  {
+    "lesson_id": 37,
+    "word": "manners",
+    "meaning": "polite ways of behaving",
+    "example_sentence": "Good manners open doors.",
+    "created_at": "2024-01-23T08:10:00.000Z",
+    "updated_at": "2024-01-23T08:10:00.000Z"
+  },
+  {
+    "lesson_id": 38,
+    "word": "interrogative pronoun",
+    "meaning": "a question word like who or what",
+    "example_sentence": "Who, what, and which are interrogative pronouns.",
+    "created_at": "2024-01-23T09:12:00.000Z",
+    "updated_at": "2024-01-23T09:12:00.000Z"
+  },
+  {
+    "lesson_id": 38,
+    "word": "who",
+    "meaning": "used to ask about a person",
+    "example_sentence": "Who is your teacher?",
+    "created_at": "2024-01-23T10:14:00.000Z",
+    "updated_at": "2024-01-23T10:14:00.000Z"
+  },
+  {
+    "lesson_id": 38,
+    "word": "what",
+    "meaning": "used to ask about a thing",
+    "example_sentence": "What do you mean?",
+    "created_at": "2024-01-23T11:16:00.000Z",
+    "updated_at": "2024-01-23T11:16:00.000Z"
+  },
+  {
+    "lesson_id": 38,
+    "word": "which",
+    "meaning": "used to ask about a choice",
+    "example_sentence": "Which one do you prefer?",
+    "created_at": "2024-01-23T12:18:00.000Z",
+    "updated_at": "2024-01-23T12:18:00.000Z"
+  },
+  {
+    "lesson_id": 38,
+    "word": "why",
+    "meaning": "used to ask about a reason",
+    "example_sentence": "Why are you leaving so early?",
+    "created_at": "2024-01-23T13:20:00.000Z",
+    "updated_at": "2024-01-23T13:20:00.000Z"
+  },
+  {
+    "lesson_id": 39,
+    "word": "occupation",
+    "meaning": "a person's job",
+    "example_sentence": "What's your occupation?",
+    "created_at": "2024-01-23T14:22:00.000Z",
+    "updated_at": "2024-01-23T14:22:00.000Z"
+  },
+  {
+    "lesson_id": 39,
+    "word": "nurse",
+    "meaning": "a person who cares for patients",
+    "example_sentence": "She works as a nurse.",
+    "created_at": "2024-01-23T15:24:00.000Z",
+    "updated_at": "2024-01-23T15:24:00.000Z"
+  },
+  {
+    "lesson_id": 39,
+    "word": "accountant",
+    "meaning": "a person who works with money records",
+    "example_sentence": "He's an accountant downtown.",
+    "created_at": "2024-01-23T16:26:00.000Z",
+    "updated_at": "2024-01-23T16:26:00.000Z"
+  },
+  {
+    "lesson_id": 39,
+    "word": "lawyer",
+    "meaning": "a person trained in the law",
+    "example_sentence": "My cousin is a lawyer.",
+    "created_at": "2024-01-23T17:28:00.000Z",
+    "updated_at": "2024-01-23T17:28:00.000Z"
+  },
+  {
+    "lesson_id": 39,
+    "word": "chef",
+    "meaning": "a professional cook",
+    "example_sentence": "The chef made a great meal.",
+    "created_at": "2024-01-23T18:30:00.000Z",
+    "updated_at": "2024-01-23T18:30:00.000Z"
+  },
+  {
+    "lesson_id": 40,
+    "word": "weather",
+    "meaning": "the state of the sky and air",
+    "example_sentence": "How's the weather in New York?",
+    "created_at": "2024-01-23T19:32:00.000Z",
+    "updated_at": "2024-01-23T19:32:00.000Z"
+  },
+  {
+    "lesson_id": 40,
+    "word": "forecast",
+    "meaning": "a report about future weather",
+    "example_sentence": "The forecast says rain tomorrow.",
+    "created_at": "2024-01-23T20:34:00.000Z",
+    "updated_at": "2024-01-23T20:34:00.000Z"
+  },
+  {
+    "lesson_id": 40,
+    "word": "humid",
+    "meaning": "having a lot of water in the air",
+    "example_sentence": "Summer here is very humid.",
+    "created_at": "2024-01-23T21:36:00.000Z",
+    "updated_at": "2024-01-23T21:36:00.000Z"
+  },
+  {
+    "lesson_id": 40,
+    "word": "chilly",
+    "meaning": "uncomfortably cool",
+    "example_sentence": "It gets chilly at night.",
+    "created_at": "2024-01-23T22:38:00.000Z",
+    "updated_at": "2024-01-23T22:38:00.000Z"
+  },
+  {
+    "lesson_id": 40,
+    "word": "breeze",
+    "meaning": "a light wind",
+    "example_sentence": "There's a nice breeze today.",
+    "created_at": "2024-01-23T23:40:00.000Z",
+    "updated_at": "2024-01-23T23:40:00.000Z"
+  },
+  {
+    "lesson_id": 41,
+    "word": "personal details",
+    "meaning": "basic information about you",
+    "example_sentence": "May I take your personal details?",
+    "created_at": "2024-01-24T00:42:00.000Z",
+    "updated_at": "2024-01-24T00:42:00.000Z"
+  },
+  {
+    "lesson_id": 41,
+    "word": "deal",
+    "meaning": "an agreement between people",
+    "example_sentence": "Let's close the deal today.",
+    "created_at": "2024-01-24T01:44:00.000Z",
+    "updated_at": "2024-01-24T01:44:00.000Z"
+  },
+  {
+    "lesson_id": 41,
+    "word": "contract",
+    "meaning": "a written legal agreement",
+    "example_sentence": "Please read the contract first.",
+    "created_at": "2024-01-24T02:46:00.000Z",
+    "updated_at": "2024-01-24T02:46:00.000Z"
+  },
+  {
+    "lesson_id": 41,
+    "word": "signature",
+    "meaning": "your name written by yourself",
+    "example_sentence": "I need your signature here.",
+    "created_at": "2024-01-24T03:48:00.000Z",
+    "updated_at": "2024-01-24T03:48:00.000Z"
+  },
+  {
+    "lesson_id": 41,
+    "word": "agreement",
+    "meaning": "a shared decision",
+    "example_sentence": "We reached an agreement.",
+    "created_at": "2024-01-24T04:50:00.000Z",
+    "updated_at": "2024-01-24T04:50:00.000Z"
+  },
+  {
+    "lesson_id": 42,
+    "word": "customs counter",
+    "meaning": "the desk where bags are checked",
+    "example_sentence": "Please go to the customs counter.",
+    "created_at": "2024-01-24T05:52:00.000Z",
+    "updated_at": "2024-01-24T05:52:00.000Z"
+  },
+  {
+    "lesson_id": 42,
+    "word": "arrival",
+    "meaning": "the act of reaching a place",
+    "example_sentence": "Fill in the arrival card.",
+    "created_at": "2024-01-24T06:54:00.000Z",
+    "updated_at": "2024-01-24T06:54:00.000Z"
+  },
+  {
+    "lesson_id": 42,
+    "word": "declare",
+    "meaning": "to report goods to officials",
+    "example_sentence": "I have nothing to declare.",
+    "created_at": "2024-01-24T07:56:00.000Z",
+    "updated_at": "2024-01-24T07:56:00.000Z"
+  },
+  {
+    "lesson_id": 42,
+    "word": "form",
+    "meaning": "a paper with spaces for information",
+    "example_sentence": "Please complete this form.",
+    "created_at": "2024-01-24T08:58:00.000Z",
+    "updated_at": "2024-01-24T08:58:00.000Z"
+  },
+  {
+    "lesson_id": 42,
+    "word": "luggage",
+    "meaning": "bags you carry when traveling",
+    "example_sentence": "My luggage is on the belt.",
+    "created_at": "2024-01-24T10:00:00.000Z",
+    "updated_at": "2024-01-24T10:00:00.000Z"
+  },
+  {
+    "lesson_id": 43,
+    "word": "ticket machine",
+    "meaning": "a machine that sells tickets",
+    "example_sentence": "Use the ticket machine over there.",
+    "created_at": "2024-01-24T11:02:00.000Z",
+    "updated_at": "2024-01-24T11:02:00.000Z"
+  },
+  {
+    "lesson_id": 43,
+    "word": "single",
+    "meaning": "a one-way ticket",
+    "example_sentence": "One single to the city center, please.",
+    "created_at": "2024-01-24T12:04:00.000Z",
+    "updated_at": "2024-01-24T12:04:00.000Z"
+  },
+  {
+    "lesson_id": 43,
+    "word": "return",
+    "meaning": "a ticket going there and back",
+    "example_sentence": "A return ticket is cheaper.",
+    "created_at": "2024-01-24T13:06:00.000Z",
+    "updated_at": "2024-01-24T13:06:00.000Z"
+  },
+  {
+    "lesson_id": 43,
+    "word": "platform",
+    "meaning": "the area where you board a train",
+    "example_sentence": "The train leaves from platform four.",
+    "created_at": "2024-01-24T14:08:00.000Z",
+    "updated_at": "2024-01-24T14:08:00.000Z"
+  },
+  {
+    "lesson_id": 43,
+    "word": "fare",
+    "meaning": "the price of a trip",
+    "example_sentence": "The fare is three dollars.",
+    "created_at": "2024-01-24T15:10:00.000Z",
+    "updated_at": "2024-01-24T15:10:00.000Z"
+  },
+  {
+    "lesson_id": 44,
+    "word": "restroom",
+    "meaning": "a room with toilets in public places",
+    "example_sentence": "Where is the restroom?",
+    "created_at": "2024-01-24T16:12:00.000Z",
+    "updated_at": "2024-01-24T16:12:00.000Z"
+  },
+  {
+    "lesson_id": 44,
+    "word": "bathroom",
+    "meaning": "a room with a toilet or bath",
+    "example_sentence": "The bathroom is down the hall.",
+    "created_at": "2024-01-24T17:14:00.000Z",
+    "updated_at": "2024-01-24T17:14:00.000Z"
+  },
+  {
+    "lesson_id": 44,
+    "word": "public",
+    "meaning": "open to everyone",
+    "example_sentence": "This is a public building.",
+    "created_at": "2024-01-24T18:16:00.000Z",
+    "updated_at": "2024-01-24T18:16:00.000Z"
+  },
+  {
+    "lesson_id": 44,
+    "word": "sign",
+    "meaning": "a board with information",
+    "example_sentence": "Follow the signs to the exit.",
+    "created_at": "2024-01-24T19:18:00.000Z",
+    "updated_at": "2024-01-24T19:18:00.000Z"
+  },
+  {
+    "lesson_id": 44,
+    "word": "use",
+    "meaning": "to make use of something",
+    "example_sentence": "May I use the restroom?",
+    "created_at": "2024-01-24T20:20:00.000Z",
+    "updated_at": "2024-01-24T20:20:00.000Z"
+  },
+  {
+    "lesson_id": 45,
+    "word": "reception desk",
+    "meaning": "the desk where guests are helped",
+    "example_sentence": "Ask at the reception desk.",
+    "created_at": "2024-01-24T21:22:00.000Z",
+    "updated_at": "2024-01-24T21:22:00.000Z"
+  },
+  {
+    "lesson_id": 45,
+    "word": "upgrade",
+    "meaning": "a better room or service",
+    "example_sentence": "We got a free upgrade.",
+    "created_at": "2024-01-24T22:24:00.000Z",
+    "updated_at": "2024-01-24T22:24:00.000Z"
+  },
+  {
+    "lesson_id": 45,
+    "word": "vacancy",
+    "meaning": "a room that is available",
+    "example_sentence": "Do you have any vacancies?",
+    "created_at": "2024-01-24T23:26:00.000Z",
+    "updated_at": "2024-01-24T23:26:00.000Z"
+  },
+  {
+    "lesson_id": 45,
+    "word": "wake-up call",
+    "meaning": "a phone call that wakes you",
+    "example_sentence": "I'd like a wake-up call at seven.",
+    "created_at": "2024-01-25T00:28:00.000Z",
+    "updated_at": "2024-01-25T00:28:00.000Z"
+  },
+  {
+    "lesson_id": 45,
+    "word": "luggage",
+    "meaning": "bags you take on a trip",
+    "example_sentence": "Could you keep my luggage?",
+    "created_at": "2024-01-25T01:30:00.000Z",
+    "updated_at": "2024-01-25T01:30:00.000Z"
+  },
+  {
+    "lesson_id": 46,
+    "word": "freeze",
+    "meaning": "to become very cold",
+    "example_sentence": "It may freeze tonight.",
+    "created_at": "2024-01-25T02:32:00.000Z",
+    "updated_at": "2024-01-25T02:32:00.000Z"
+  },
+  {
+    "lesson_id": 46,
+    "word": "snow",
+    "meaning": "soft white ice falling from the sky",
+    "example_sentence": "It's going to snow tomorrow.",
+    "created_at": "2024-01-25T03:34:00.000Z",
+    "updated_at": "2024-01-25T03:34:00.000Z"
+  },
+  {
+    "lesson_id": 46,
+    "word": "wind",
+    "meaning": "moving air",
+    "example_sentence": "The wind is strong today.",
+    "created_at": "2024-01-25T04:36:00.000Z",
+    "updated_at": "2024-01-25T04:36:00.000Z"
+  },
+  {
+    "lesson_id": 46,
+    "word": "forecast",
+    "meaning": "a prediction of the weather",
+    "example_sentence": "The forecast looks better for Sunday.",
+    "created_at": "2024-01-25T05:38:00.000Z",
+    "updated_at": "2024-01-25T05:38:00.000Z"
+  },
+  {
+    "lesson_id": 46,
+    "word": "degree",
+    "meaning": "a unit for measuring temperature",
+    "example_sentence": "It's twenty degrees outside.",
+    "created_at": "2024-01-25T06:40:00.000Z",
+    "updated_at": "2024-01-25T06:40:00.000Z"
+  },
+  {
+    "lesson_id": 47,
+    "word": "directions",
+    "meaning": "instructions for finding a place",
+    "example_sentence": "Can you give me directions?",
+    "created_at": "2024-01-25T07:42:00.000Z",
+    "updated_at": "2024-01-25T07:42:00.000Z"
+  },
+  {
+    "lesson_id": 47,
+    "word": "turn left",
+    "meaning": "to go to the left side",
+    "example_sentence": "Turn left at the corner.",
+    "created_at": "2024-01-25T08:44:00.000Z",
+    "updated_at": "2024-01-25T08:44:00.000Z"
+  },
+  {
+    "lesson_id": 47,
+    "word": "straight ahead",
+    "meaning": "forward without turning",
+    "example_sentence": "Go straight ahead for two blocks.",
+    "created_at": "2024-01-25T09:46:00.000Z",
+    "updated_at": "2024-01-25T09:46:00.000Z"
+  },
+  {
+    "lesson_id": 47,
+    "word": "landmark",
+    "meaning": "a well-known building or place",
+    "example_sentence": "The church is a good landmark.",
+    "created_at": "2024-01-25T10:48:00.000Z",
+    "updated_at": "2024-01-25T10:48:00.000Z"
+  },
+  {
+    "lesson_id": 47,
+    "word": "block",
+    "meaning": "the area between two streets",
+    "example_sentence": "It's three blocks from here.",
+    "created_at": "2024-01-25T11:50:00.000Z",
+    "updated_at": "2024-01-25T11:50:00.000Z"
+  },
+  {
+    "lesson_id": 48,
+    "word": "colleague",
+    "meaning": "a person you work with",
+    "example_sentence": "This is my colleague, Mr. Ray.",
+    "created_at": "2024-01-25T12:52:00.000Z",
+    "updated_at": "2024-01-25T12:52:00.000Z"
+  },
+  {
+    "lesson_id": 48,
+    "word": "handshake",
+    "meaning": "holding hands as a greeting",
+    "example_sentence": "A firm handshake shows confidence.",
+    "created_at": "2024-01-25T13:54:00.000Z",
+    "updated_at": "2024-01-25T13:54:00.000Z"
+  },
+  {
+    "lesson_id": 48,
+    "word": "greeting",
+    "meaning": "words said when meeting someone",
+    "example_sentence": "A warm greeting is always welcome.",
+    "created_at": "2024-01-25T14:56:00.000Z",
+    "updated_at": "2024-01-25T14:56:00.000Z"
+  },
+  {
+    "lesson_id": 48,
+    "word": "acquaintance",
+    "meaning": "someone you know slightly",
+    "example_sentence": "He's a business acquaintance.",
+    "created_at": "2024-01-25T15:58:00.000Z",
+    "updated_at": "2024-01-25T15:58:00.000Z"
+  },
+  {
+    "lesson_id": 48,
+    "word": "honor",
+    "meaning": "a feeling of great respect",
+    "example_sentence": "It's an honor to meet you.",
+    "created_at": "2024-01-25T17:00:00.000Z",
+    "updated_at": "2024-01-25T17:00:00.000Z"
+  },
+  {
+    "lesson_id": 49,
+    "word": "schedule",
+    "meaning": "a plan of times for activities",
+    "example_sentence": "My schedule is full today.",
+    "created_at": "2024-01-25T18:02:00.000Z",
+    "updated_at": "2024-01-25T18:02:00.000Z"
+  },
+  {
+    "lesson_id": 49,
+    "word": "appointment",
+    "meaning": "a planned meeting",
+    "example_sentence": "I have an appointment at noon.",
+    "created_at": "2024-01-25T19:04:00.000Z",
+    "updated_at": "2024-01-25T19:04:00.000Z"
+  },
+  {
+    "lesson_id": 49,
+    "word": "agenda",
+    "meaning": "a list of things to discuss",
+    "example_sentence": "The agenda has five items.",
+    "created_at": "2024-01-25T20:06:00.000Z",
+    "updated_at": "2024-01-25T20:06:00.000Z"
+  },
+  {
+    "lesson_id": 49,
+    "word": "busy",
+    "meaning": "having many things to do",
+    "example_sentence": "I'm busy until four.",
+    "created_at": "2024-01-25T21:08:00.000Z",
+    "updated_at": "2024-01-25T21:08:00.000Z"
+  },
+  {
+    "lesson_id": 49,
+    "word": "available",
+    "meaning": "free to be used or seen",
+    "example_sentence": "Are you available on Monday?",
+    "created_at": "2024-01-25T22:10:00.000Z",
+    "updated_at": "2024-01-25T22:10:00.000Z"
+  },
+  {
+    "lesson_id": 50,
+    "word": "like",
+    "meaning": "to enjoy something",
+    "example_sentence": "I like jazz music.",
+    "created_at": "2024-01-25T23:12:00.000Z",
+    "updated_at": "2024-01-25T23:12:00.000Z"
+  },
+  {
+    "lesson_id": 50,
+    "word": "dislike",
+    "meaning": "to not enjoy something",
+    "example_sentence": "I dislike very loud places.",
+    "created_at": "2024-01-26T00:14:00.000Z",
+    "updated_at": "2024-01-26T00:14:00.000Z"
+  },
+  {
+    "lesson_id": 50,
+    "word": "prefer",
+    "meaning": "to like one thing more",
+    "example_sentence": "I prefer tea to coffee.",
+    "created_at": "2024-01-26T01:16:00.000Z",
+    "updated_at": "2024-01-26T01:16:00.000Z"
+  },
+  {
+    "lesson_id": 50,
+    "word": "favorite",
+    "meaning": "liked more than others",
+    "example_sentence": "This is my favorite song.",
+    "created_at": "2024-01-26T02:18:00.000Z",
+    "updated_at": "2024-01-26T02:18:00.000Z"
+  },
+  {
+    "lesson_id": 50,
+    "word": "enjoy",
+    "meaning": "to get pleasure from something",
+    "example_sentence": "I enjoy walking in the park.",
+    "created_at": "2024-01-26T03:20:00.000Z",
+    "updated_at": "2024-01-26T03:20:00.000Z"
+  },
+  {
+    "lesson_id": 51,
+    "word": "opinion",
+    "meaning": "what you think about something",
+    "example_sentence": "In my opinion, that's a good idea.",
+    "created_at": "2024-01-26T04:22:00.000Z",
+    "updated_at": "2024-01-26T04:22:00.000Z"
+  },
+  {
+    "lesson_id": 51,
+    "word": "invitation",
+    "meaning": "a request to come to an event",
+    "example_sentence": "Thanks for the invitation.",
+    "created_at": "2024-01-26T05:24:00.000Z",
+    "updated_at": "2024-01-26T05:24:00.000Z"
+  },
+  {
+    "lesson_id": 51,
+    "word": "accept",
+    "meaning": "to say yes to an offer",
+    "example_sentence": "I'd love to accept your invitation.",
+    "created_at": "2024-01-26T06:26:00.000Z",
+    "updated_at": "2024-01-26T06:26:00.000Z"
+  },
+  {
+    "lesson_id": 51,
+    "word": "decline",
+    "meaning": "to politely say no",
+    "example_sentence": "I have to decline this time.",
+    "created_at": "2024-01-26T07:28:00.000Z",
+    "updated_at": "2024-01-26T07:28:00.000Z"
+  },
+  {
+    "lesson_id": 51,
+    "word": "agree",
+    "meaning": "to have the same opinion",
+    "example_sentence": "I agree with you completely.",
+    "created_at": "2024-01-26T08:30:00.000Z",
+    "updated_at": "2024-01-26T08:30:00.000Z"
+  },
+  {
+    "lesson_id": 52,
+    "word": "surroundings",
+    "meaning": "the things around you",
+    "example_sentence": "Describe your surroundings to me.",
+    "created_at": "2024-01-26T09:32:00.000Z",
+    "updated_at": "2024-01-26T09:32:00.000Z"
+  },
+  {
+    "lesson_id": 52,
+    "word": "upstairs",
+    "meaning": "on a higher floor",
+    "example_sentence": "I'm upstairs in my room.",
+    "created_at": "2024-01-26T10:34:00.000Z",
+    "updated_at": "2024-01-26T10:34:00.000Z"
+  },
+  {
+    "lesson_id": 52,
+    "word": "nearby",
+    "meaning": "close to where you are",
+    "example_sentence": "There's a cafe nearby.",
+    "created_at": "2024-01-26T11:36:00.000Z",
+    "updated_at": "2024-01-26T11:36:00.000Z"
+  },
+  {
+    "lesson_id": 52,
+    "word": "corner",
+    "meaning": "the place where two lines meet",
+    "example_sentence": "I'm standing on the corner.",
+    "created_at": "2024-01-26T12:38:00.000Z",
+    "updated_at": "2024-01-26T12:38:00.000Z"
+  },
+  {
+    "lesson_id": 52,
+    "word": "area",
+    "meaning": "a part of a place",
+    "example_sentence": "This area is very quiet.",
+    "created_at": "2024-01-26T13:40:00.000Z",
+    "updated_at": "2024-01-26T13:40:00.000Z"
+  },
+  {
+    "lesson_id": 53,
+    "word": "pickup line",
+    "meaning": "a remark used to start a romance",
+    "example_sentence": "That pickup line made her laugh.",
+    "created_at": "2024-01-26T14:42:00.000Z",
+    "updated_at": "2024-01-26T14:42:00.000Z"
+  },
+  {
+    "lesson_id": 53,
+    "word": "charm",
+    "meaning": "to please someone with your manner",
+    "example_sentence": "He charmed the whole room.",
+    "created_at": "2024-01-26T15:44:00.000Z",
+    "updated_at": "2024-01-26T15:44:00.000Z"
+  },
+  {
+    "lesson_id": 53,
+    "word": "flirt",
+    "meaning": "to show romantic interest playfully",
+    "example_sentence": "They flirted all evening.",
+    "created_at": "2024-01-26T16:46:00.000Z",
+    "updated_at": "2024-01-26T16:46:00.000Z"
+  },
+  {
+    "lesson_id": 53,
+    "word": "compliment",
+    "meaning": "a nice remark about someone",
+    "example_sentence": "A sincere compliment works best.",
+    "created_at": "2024-01-26T17:48:00.000Z",
+    "updated_at": "2024-01-26T17:48:00.000Z"
+  },
+  {
+    "lesson_id": 53,
+    "word": "date",
+    "meaning": "a romantic meeting",
+    "example_sentence": "They went on a first date.",
+    "created_at": "2024-01-26T18:50:00.000Z",
+    "updated_at": "2024-01-26T18:50:00.000Z"
+  },
+  {
+    "lesson_id": 54,
+    "word": "sightseeing",
+    "meaning": "visiting famous places",
+    "example_sentence": "We'll do some sightseeing tomorrow.",
+    "created_at": "2024-01-26T19:52:00.000Z",
+    "updated_at": "2024-01-26T19:52:00.000Z"
+  },
+  {
+    "lesson_id": 54,
+    "word": "probably",
+    "meaning": "very likely",
+    "example_sentence": "I'll probably visit the museum.",
+    "created_at": "2024-01-26T20:54:00.000Z",
+    "updated_at": "2024-01-26T20:54:00.000Z"
+  },
+  {
+    "lesson_id": 54,
+    "word": "statue",
+    "meaning": "a figure made of stone or metal",
+    "example_sentence": "We saw the famous statue.",
+    "created_at": "2024-01-26T21:56:00.000Z",
+    "updated_at": "2024-01-26T21:56:00.000Z"
+  },
+  {
+    "lesson_id": 54,
+    "word": "museum",
+    "meaning": "a building with things to see",
+    "example_sentence": "The museum opens at ten.",
+    "created_at": "2024-01-26T22:58:00.000Z",
+    "updated_at": "2024-01-26T22:58:00.000Z"
+  },
+  {
+    "lesson_id": 54,
+    "word": "skyline",
+    "meaning": "the outline of buildings against the sky",
+    "example_sentence": "The skyline is beautiful at night.",
+    "created_at": "2024-01-27T00:00:00.000Z",
+    "updated_at": "2024-01-27T00:00:00.000Z"
+  },
+  {
+    "lesson_id": 55,
+    "word": "excuse me",
+    "meaning": "words used to get attention politely",
+    "example_sentence": "Excuse me, could you help me?",
+    "created_at": "2024-01-27T01:02:00.000Z",
+    "updated_at": "2024-01-27T01:02:00.000Z"
+  },
+  {
+    "lesson_id": 55,
+    "word": "o'clock",
+    "meaning": "used to tell the hour",
+    "example_sentence": "It's three o'clock.",
+    "created_at": "2024-01-27T02:04:00.000Z",
+    "updated_at": "2024-01-27T02:04:00.000Z"
+  },
+  {
+    "lesson_id": 55,
+    "word": "quarter",
+    "meaning": "fifteen minutes",
+    "example_sentence": "It's a quarter past six.",
+    "created_at": "2024-01-27T03:06:00.000Z",
+    "updated_at": "2024-01-27T03:06:00.000Z"
+  },
+  {
+    "lesson_id": 55,
+    "word": "sharp",
+    "meaning": "exactly at that time",
+    "example_sentence": "The meeting starts at nine sharp.",
+    "created_at": "2024-01-27T04:08:00.000Z",
+    "updated_at": "2024-01-27T04:08:00.000Z"
+  },
+  {
+    "lesson_id": 55,
+    "word": "midnight",
+    "meaning": "twelve o'clock at night",
+    "example_sentence": "The store closes at midnight.",
+    "created_at": "2024-01-27T05:10:00.000Z",
+    "updated_at": "2024-01-27T05:10:00.000Z"
+  },
+  {
+    "lesson_id": 56,
+    "word": "recommendation",
+    "meaning": "advice about something good",
+    "example_sentence": "Do you have a recommendation?",
+    "created_at": "2024-01-27T06:12:00.000Z",
+    "updated_at": "2024-01-27T06:12:00.000Z"
+  },
+  {
+    "lesson_id": 56,
+    "word": "appetizer",
+    "meaning": "a small dish before the main meal",
+    "example_sentence": "Let's share an appetizer.",
+    "created_at": "2024-01-27T07:14:00.000Z",
+    "updated_at": "2024-01-27T07:14:00.000Z"
+  },
+  {
+    "lesson_id": 56,
+    "word": "main course",
+    "meaning": "the largest part of a meal",
+    "example_sentence": "For my main course, I'll have chicken.",
+    "created_at": "2024-01-27T08:16:00.000Z",
+    "updated_at": "2024-01-27T08:16:00.000Z"
+  },
+  {
+    "lesson_id": 56,
+    "word": "tip",
+    "meaning": "extra money for good service",
+    "example_sentence": "We left a twenty percent tip.",
+    "created_at": "2024-01-27T09:18:00.000Z",
+    "updated_at": "2024-01-27T09:18:00.000Z"
+  },
+  {
+    "lesson_id": 56,
+    "word": "waiter",
+    "meaning": "a person who serves food",
+    "example_sentence": "The waiter brought the menu.",
+    "created_at": "2024-01-27T10:20:00.000Z",
+    "updated_at": "2024-01-27T10:20:00.000Z"
+  },
+  {
+    "lesson_id": 57,
+    "word": "these",
+    "meaning": "plural of this; near you",
+    "example_sentence": "These shoes are comfortable.",
+    "created_at": "2024-01-27T11:22:00.000Z",
+    "updated_at": "2024-01-27T11:22:00.000Z"
+  },
+  {
+    "lesson_id": 57,
+    "word": "those",
+    "meaning": "plural of that; farther away",
+    "example_sentence": "Those bags are on sale.",
+    "created_at": "2024-01-27T12:24:00.000Z",
+    "updated_at": "2024-01-27T12:24:00.000Z"
+  },
+  {
+    "lesson_id": 57,
+    "word": "on sale",
+    "meaning": "available at a lower price",
+    "example_sentence": "This jacket is on sale today.",
+    "created_at": "2024-01-27T13:26:00.000Z",
+    "updated_at": "2024-01-27T13:26:00.000Z"
+  },
+  {
+    "lesson_id": 57,
+    "word": "discount",
+    "meaning": "money taken off the price",
+    "example_sentence": "Is there a discount for cash?",
+    "created_at": "2024-01-27T14:28:00.000Z",
+    "updated_at": "2024-01-27T14:28:00.000Z"
+  },
+  {
+    "lesson_id": 57,
+    "word": "price tag",
+    "meaning": "a label showing the price",
+    "example_sentence": "The price tag says forty dollars.",
+    "created_at": "2024-01-27T15:30:00.000Z",
+    "updated_at": "2024-01-27T15:30:00.000Z"
+  },
+  {
+    "lesson_id": 58,
+    "word": "imperative",
+    "meaning": "the verb form used for commands",
+    "example_sentence": "Go and turn are imperatives.",
+    "created_at": "2024-01-27T16:32:00.000Z",
+    "updated_at": "2024-01-27T16:32:00.000Z"
+  },
+  {
+    "lesson_id": 58,
+    "word": "first",
+    "meaning": "coming before all others",
+    "example_sentence": "Take the first street on the right.",
+    "created_at": "2024-01-27T17:34:00.000Z",
+    "updated_at": "2024-01-27T17:34:00.000Z"
+  },
+  {
+    "lesson_id": 58,
+    "word": "second",
+    "meaning": "coming after the first",
+    "example_sentence": "The bank is on the second floor.",
+    "created_at": "2024-01-27T18:36:00.000Z",
+    "updated_at": "2024-01-27T18:36:00.000Z"
+  },
+  {
+    "lesson_id": 58,
+    "word": "third",
+    "meaning": "coming after the second",
+    "example_sentence": "Turn right at the third light.",
+    "created_at": "2024-01-27T19:38:00.000Z",
+    "updated_at": "2024-01-27T19:38:00.000Z"
+  },
+  {
+    "lesson_id": 58,
+    "word": "straight",
+    "meaning": "directly forward",
+    "example_sentence": "Walk straight for five minutes.",
+    "created_at": "2024-01-27T20:40:00.000Z",
+    "updated_at": "2024-01-27T20:40:00.000Z"
+  },
+  {
+    "lesson_id": 59,
+    "word": "here",
+    "meaning": "in this place",
+    "example_sentence": "I'm here at the cafe.",
+    "created_at": "2024-01-27T21:42:00.000Z",
+    "updated_at": "2024-01-27T21:42:00.000Z"
+  },
+  {
+    "lesson_id": 59,
+    "word": "there",
+    "meaning": "in that place",
+    "example_sentence": "Are you there yet?",
+    "created_at": "2024-01-27T22:44:00.000Z",
+    "updated_at": "2024-01-27T22:44:00.000Z"
+  },
+  {
+    "lesson_id": 59,
+    "word": "coming",
+    "meaning": "moving toward a place",
+    "example_sentence": "I'm coming in ten minutes.",
+    "created_at": "2024-01-27T23:46:00.000Z",
+    "updated_at": "2024-01-27T23:46:00.000Z"
+  },
+  {
+    "lesson_id": 59,
+    "word": "meeting",
+    "meaning": "coming together with someone",
+    "example_sentence": "I'm meeting Sam at six.",
+    "created_at": "2024-01-28T00:48:00.000Z",
+    "updated_at": "2024-01-28T00:48:00.000Z"
+  },
+  {
+    "lesson_id": 59,
+    "word": "waiting",
+    "meaning": "staying until something happens",
+    "example_sentence": "I'm waiting near the entrance.",
+    "created_at": "2024-01-28T01:50:00.000Z",
+    "updated_at": "2024-01-28T01:50:00.000Z"
+  },
+  {
+    "lesson_id": 60,
+    "word": "hospitality",
+    "meaning": "kind treatment of guests",
+    "example_sentence": "Thank you for your hospitality.",
+    "created_at": "2024-01-28T02:52:00.000Z",
+    "updated_at": "2024-01-28T02:52:00.000Z"
+  },
+  {
+    "lesson_id": 60,
+    "word": "help yourself",
+    "meaning": "to take what you want",
+    "example_sentence": "Please help yourself to dessert.",
+    "created_at": "2024-01-28T03:54:00.000Z",
+    "updated_at": "2024-01-28T03:54:00.000Z"
+  },
+  {
+    "lesson_id": 60,
+    "word": "delicious",
+    "meaning": "tasting very good",
+    "example_sentence": "This pie is delicious.",
+    "created_at": "2024-01-28T04:56:00.000Z",
+    "updated_at": "2024-01-28T04:56:00.000Z"
+  },
+  {
+    "lesson_id": 60,
+    "word": "recipe",
+    "meaning": "instructions for cooking a dish",
+    "example_sentence": "Could I have the recipe?",
+    "created_at": "2024-01-28T05:58:00.000Z",
+    "updated_at": "2024-01-28T05:58:00.000Z"
+  },
+  {
+    "lesson_id": 60,
+    "word": "compliment",
+    "meaning": "a nice remark about something",
+    "example_sentence": "The cook deserves a compliment.",
+    "created_at": "2024-01-28T07:00:00.000Z",
+    "updated_at": "2024-01-28T07:00:00.000Z"
+  },
+  {
+    "lesson_id": 61,
+    "word": "was",
+    "meaning": "past of am or is",
+    "example_sentence": "The soup was excellent.",
+    "created_at": "2024-01-28T08:02:00.000Z",
+    "updated_at": "2024-01-28T08:02:00.000Z"
+  },
+  {
+    "lesson_id": 61,
+    "word": "were",
+    "meaning": "past of are",
+    "example_sentence": "We were at their house last night.",
+    "created_at": "2024-01-28T09:04:00.000Z",
+    "updated_at": "2024-01-28T09:04:00.000Z"
+  },
+  {
+    "lesson_id": 61,
+    "word": "yesterday",
+    "meaning": "the day before today",
+    "example_sentence": "It was cold yesterday.",
+    "created_at": "2024-01-28T10:06:00.000Z",
+    "updated_at": "2024-01-28T10:06:00.000Z"
+  },
+  {
+    "lesson_id": 61,
+    "word": "last night",
+    "meaning": "the night before today",
+    "example_sentence": "Last night we watched a film.",
+    "created_at": "2024-01-28T11:08:00.000Z",
+    "updated_at": "2024-01-28T11:08:00.000Z"
+  },
+  {
+    "lesson_id": 61,
+    "word": "amazing",
+    "meaning": "very surprising and good",
+    "example_sentence": "The view was amazing.",
+    "created_at": "2024-01-28T12:10:00.000Z",
+    "updated_at": "2024-01-28T12:10:00.000Z"
+  },
+  {
+    "lesson_id": 62,
+    "word": "got",
+    "meaning": "past of get",
+    "example_sentence": "I got your message this morning.",
+    "created_at": "2024-01-28T13:12:00.000Z",
+    "updated_at": "2024-01-28T13:12:00.000Z"
+  },
+  {
+    "lesson_id": 62,
+    "word": "went",
+    "meaning": "past of go",
+    "example_sentence": "We went to the market yesterday.",
+    "created_at": "2024-01-28T14:14:00.000Z",
+    "updated_at": "2024-01-28T14:14:00.000Z"
+  },
+  {
+    "lesson_id": 62,
+    "word": "said",
+    "meaning": "past of say",
+    "example_sentence": "She said it was fine.",
+    "created_at": "2024-01-28T15:16:00.000Z",
+    "updated_at": "2024-01-28T15:16:00.000Z"
+  },
+  {
+    "lesson_id": 62,
+    "word": "made",
+    "meaning": "past of make",
+    "example_sentence": "He made dinner for us.",
+    "created_at": "2024-01-28T16:18:00.000Z",
+    "updated_at": "2024-01-28T16:18:00.000Z"
+  },
+  {
+    "lesson_id": 62,
+    "word": "took",
+    "meaning": "past of take",
+    "example_sentence": "I took the train home.",
+    "created_at": "2024-01-28T17:20:00.000Z",
+    "updated_at": "2024-01-28T17:20:00.000Z"
+  },
+  {
+    "lesson_id": 63,
+    "word": "can",
+    "meaning": "used to say something is possible",
+    "example_sentence": "We can visit the park today.",
+    "created_at": "2024-01-28T18:22:00.000Z",
+    "updated_at": "2024-01-28T18:22:00.000Z"
+  },
+  {
+    "lesson_id": 63,
+    "word": "could",
+    "meaning": "used for possibility or polite requests",
+    "example_sentence": "Could you check the time?",
+    "created_at": "2024-01-28T19:24:00.000Z",
+    "updated_at": "2024-01-28T19:24:00.000Z"
+  },
+  {
+    "lesson_id": 63,
+    "word": "possible",
+    "meaning": "able to happen",
+    "example_sentence": "It's possible to see it in one day.",
+    "created_at": "2024-01-28T20:26:00.000Z",
+    "updated_at": "2024-01-28T20:26:00.000Z"
+  },
+  {
+    "lesson_id": 63,
+    "word": "isn't it",
+    "meaning": "a tag question asking for agreement",
+    "example_sentence": "It's a great view, isn't it?",
+    "created_at": "2024-01-28T21:28:00.000Z",
+    "updated_at": "2024-01-28T21:28:00.000Z"
+  },
+  {
+    "lesson_id": 63,
+    "word": "right",
+    "meaning": "used to check agreement",
+    "example_sentence": "You've been here before, right?",
+    "created_at": "2024-01-28T22:30:00.000Z",
+    "updated_at": "2024-01-28T22:30:00.000Z"
+  },
+  {
+    "lesson_id": 64,
+    "word": "calling",
+    "meaning": "talking on the phone",
+    "example_sentence": "I'm calling from the airport.",
+    "created_at": "2024-01-28T23:32:00.000Z",
+    "updated_at": "2024-01-28T23:32:00.000Z"
+  },
+  {
+    "lesson_id": 64,
+    "word": "speaking",
+    "meaning": "talking; used on the phone",
+    "example_sentence": "Speaking, how can I help you?",
+    "created_at": "2024-01-29T00:34:00.000Z",
+    "updated_at": "2024-01-29T00:34:00.000Z"
+  },
+  {
+    "lesson_id": 64,
+    "word": "hold on",
+    "meaning": "to wait a moment",
+    "example_sentence": "Hold on, I'll check.",
+    "created_at": "2024-01-29T01:36:00.000Z",
+    "updated_at": "2024-01-29T01:36:00.000Z"
+  },
+  {
+    "lesson_id": 64,
+    "word": "message",
+    "meaning": "information you send to someone",
+    "example_sentence": "Can I leave a message?",
+    "created_at": "2024-01-29T02:38:00.000Z",
+    "updated_at": "2024-01-29T02:38:00.000Z"
+  },
+  {
+    "lesson_id": 64,
+    "word": "rang",
+    "meaning": "past of ring",
+    "example_sentence": "The phone rang twice.",
+    "created_at": "2024-01-29T03:40:00.000Z",
+    "updated_at": "2024-01-29T03:40:00.000Z"
+  },
+  {
+    "lesson_id": 65,
+    "word": "don't",
+    "meaning": "do not",
+    "example_sentence": "I don't want to leave yet.",
+    "created_at": "2024-01-29T04:42:00.000Z",
+    "updated_at": "2024-01-29T04:42:00.000Z"
+  },
+  {
+    "lesson_id": 65,
+    "word": "doesn't",
+    "meaning": "does not",
+    "example_sentence": "She doesn't like long goodbyes.",
+    "created_at": "2024-01-29T05:44:00.000Z",
+    "updated_at": "2024-01-29T05:44:00.000Z"
+  },
+  {
+    "lesson_id": 65,
+    "word": "can",
+    "meaning": "used to say ability",
+    "example_sentence": "I can come back next year.",
+    "created_at": "2024-01-29T06:46:00.000Z",
+    "updated_at": "2024-01-29T06:46:00.000Z"
+  },
+  {
+    "lesson_id": 65,
+    "word": "can't",
+    "meaning": "cannot",
+    "example_sentence": "I can't believe it's over.",
+    "created_at": "2024-01-29T07:48:00.000Z",
+    "updated_at": "2024-01-29T07:48:00.000Z"
+  },
+  {
+    "lesson_id": 65,
+    "word": "leave",
+    "meaning": "to go away from a place",
+    "example_sentence": "I'm sad to leave America.",
+    "created_at": "2024-01-29T08:50:00.000Z",
+    "updated_at": "2024-01-29T08:50:00.000Z"
+  },
+  {
+    "lesson_id": 66,
+    "word": "present tense",
+    "meaning": "the tense for facts and routines",
+    "example_sentence": "I work from home every day.",
+    "created_at": "2024-01-29T09:52:00.000Z",
+    "updated_at": "2024-01-29T09:52:00.000Z"
+  },
+  {
+    "lesson_id": 66,
+    "word": "base form",
+    "meaning": "the simple form of a verb",
+    "example_sentence": "Use the base form with I and you.",
+    "created_at": "2024-01-29T10:54:00.000Z",
+    "updated_at": "2024-01-29T10:54:00.000Z"
+  },
+  {
+    "lesson_id": 66,
+    "word": "conjugate",
+    "meaning": "to change a verb to match the subject",
+    "example_sentence": "You conjugate verbs by adding -s for he.",
+    "created_at": "2024-01-29T11:56:00.000Z",
+    "updated_at": "2024-01-29T11:56:00.000Z"
+  },
+  {
+    "lesson_id": 66,
+    "word": "he, she, it",
+    "meaning": "the subjects that take -s",
+    "example_sentence": "He works, she studies, it rains.",
+    "created_at": "2024-01-29T12:58:00.000Z",
+    "updated_at": "2024-01-29T12:58:00.000Z"
+  },
+  {
+    "lesson_id": 66,
+    "word": "every day",
+    "meaning": "used for habits",
+    "example_sentence": "She calls her mother every day.",
+    "created_at": "2024-01-29T14:00:00.000Z",
+    "updated_at": "2024-01-29T14:00:00.000Z"
+  },
+  {
+    "lesson_id": 67,
+    "word": "past tense",
+    "meaning": "the tense for finished actions",
+    "example_sentence": "We walked to the station.",
+    "created_at": "2024-01-29T15:02:00.000Z",
+    "updated_at": "2024-01-29T15:02:00.000Z"
+  },
+  {
+    "lesson_id": 67,
+    "word": "regular verb",
+    "meaning": "a verb that adds -ed in the past",
+    "example_sentence": "Work becomes worked.",
+    "created_at": "2024-01-29T16:04:00.000Z",
+    "updated_at": "2024-01-29T16:04:00.000Z"
+  },
+  {
+    "lesson_id": 67,
+    "word": "irregular verb",
+    "meaning": "a verb with an unusual past form",
+    "example_sentence": "Go becomes went.",
+    "created_at": "2024-01-29T17:06:00.000Z",
+    "updated_at": "2024-01-29T17:06:00.000Z"
+  },
+  {
+    "lesson_id": 67,
+    "word": "-ed",
+    "meaning": "the ending for regular past verbs",
+    "example_sentence": "They watched a film.",
+    "created_at": "2024-01-29T18:08:00.000Z",
+    "updated_at": "2024-01-29T18:08:00.000Z"
+  },
+  {
+    "lesson_id": 67,
+    "word": "yesterday",
+    "meaning": "the day before today",
+    "example_sentence": "I saw him yesterday.",
+    "created_at": "2024-01-29T19:10:00.000Z",
+    "updated_at": "2024-01-29T19:10:00.000Z"
+  },
+  {
+    "lesson_id": 68,
+    "word": "simple future",
+    "meaning": "the tense using will",
+    "example_sentence": "I will call you tomorrow.",
+    "created_at": "2024-01-29T20:12:00.000Z",
+    "updated_at": "2024-01-29T20:12:00.000Z"
+  },
+  {
+    "lesson_id": 68,
+    "word": "will",
+    "meaning": "used to talk about the future",
+    "example_sentence": "She will arrive at nine.",
+    "created_at": "2024-01-29T21:14:00.000Z",
+    "updated_at": "2024-01-29T21:14:00.000Z"
+  },
+  {
+    "lesson_id": 68,
+    "word": "prediction",
+    "meaning": "a guess about what will happen",
+    "example_sentence": "It will probably rain.",
+    "created_at": "2024-01-29T22:16:00.000Z",
+    "updated_at": "2024-01-29T22:16:00.000Z"
+  },
+  {
+    "lesson_id": 68,
+    "word": "promise",
+    "meaning": "a firm statement that you will do something",
+    "example_sentence": "I will help you, I promise.",
+    "created_at": "2024-01-29T23:18:00.000Z",
+    "updated_at": "2024-01-29T23:18:00.000Z"
+  },
+  {
+    "lesson_id": 68,
+    "word": "decide",
+    "meaning": "to choose at the moment of speaking",
+    "example_sentence": "I will take the early train.",
+    "created_at": "2024-01-30T00:20:00.000Z",
+    "updated_at": "2024-01-30T00:20:00.000Z"
+  },
+  {
+    "lesson_id": 69,
+    "word": "review",
+    "meaning": "to study something again",
+    "example_sentence": "Let's review the present tense.",
+    "created_at": "2024-01-30T01:22:00.000Z",
+    "updated_at": "2024-01-30T01:22:00.000Z"
+  },
+  {
+    "lesson_id": 69,
+    "word": "routine",
+    "meaning": "things you do regularly",
+    "example_sentence": "My morning routine is simple.",
+    "created_at": "2024-01-30T02:24:00.000Z",
+    "updated_at": "2024-01-30T02:24:00.000Z"
+  },
+  {
+    "lesson_id": 69,
+    "word": "habit",
+    "meaning": "something you do often",
+    "example_sentence": "Reading is a good habit.",
+    "created_at": "2024-01-30T03:26:00.000Z",
+    "updated_at": "2024-01-30T03:26:00.000Z"
+  },
+  {
+    "lesson_id": 69,
+    "word": "always",
+    "meaning": "every time",
+    "example_sentence": "I always drink coffee at breakfast.",
+    "created_at": "2024-01-30T04:28:00.000Z",
+    "updated_at": "2024-01-30T04:28:00.000Z"
+  },
+  {
+    "lesson_id": 69,
+    "word": "usually",
+    "meaning": "most of the time",
+    "example_sentence": "She usually walks to work.",
+    "created_at": "2024-01-30T05:30:00.000Z",
+    "updated_at": "2024-01-30T05:30:00.000Z"
+  },
+  {
+    "lesson_id": 70,
+    "word": "last week",
+    "meaning": "the week before this one",
+    "example_sentence": "I visited my aunt last week.",
+    "created_at": "2024-01-30T06:32:00.000Z",
+    "updated_at": "2024-01-30T06:32:00.000Z"
+  },
+  {
+    "lesson_id": 70,
+    "word": "ago",
+    "meaning": "before now",
+    "example_sentence": "They moved here two years ago.",
+    "created_at": "2024-01-30T07:34:00.000Z",
+    "updated_at": "2024-01-30T07:34:00.000Z"
+  },
+  {
+    "lesson_id": 70,
+    "word": "did",
+    "meaning": "past of do; also a helping verb",
+    "example_sentence": "Did you finish the report?",
+    "created_at": "2024-01-30T08:36:00.000Z",
+    "updated_at": "2024-01-30T08:36:00.000Z"
+  },
+  {
+    "lesson_id": 70,
+    "word": "finished",
+    "meaning": "completed",
+    "example_sentence": "I finished the project on Friday.",
+    "created_at": "2024-01-30T09:38:00.000Z",
+    "updated_at": "2024-01-30T09:38:00.000Z"
+  },
+  {
+    "lesson_id": 70,
+    "word": "was",
+    "meaning": "past of am or is",
+    "example_sentence": "The meeting was short.",
+    "created_at": "2024-01-30T10:40:00.000Z",
+    "updated_at": "2024-01-30T10:40:00.000Z"
+  },
+  {
+    "lesson_id": 71,
+    "word": "prediction",
+    "meaning": "a statement about the future",
+    "example_sentence": "My prediction is a busy season.",
+    "created_at": "2024-01-30T11:42:00.000Z",
+    "updated_at": "2024-01-30T11:42:00.000Z"
+  },
+  {
+    "lesson_id": 71,
+    "word": "promise",
+    "meaning": "a statement you must keep",
+    "example_sentence": "I will pay you back, I promise.",
+    "created_at": "2024-01-30T12:44:00.000Z",
+    "updated_at": "2024-01-30T12:44:00.000Z"
+  },
+  {
+    "lesson_id": 71,
+    "word": "guarantee",
+    "meaning": "a strong promise",
+    "example_sentence": "I can guarantee the price.",
+    "created_at": "2024-01-30T13:46:00.000Z",
+    "updated_at": "2024-01-30T13:46:00.000Z"
+  },
+  {
+    "lesson_id": 71,
+    "word": "I'll",
+    "meaning": "short for I will",
+    "example_sentence": "I'll be there at noon.",
+    "created_at": "2024-01-30T14:48:00.000Z",
+    "updated_at": "2024-01-30T14:48:00.000Z"
+  },
+  {
+    "lesson_id": 71,
+    "word": "soon",
+    "meaning": "in a short time",
+    "example_sentence": "We will hear from them soon.",
+    "created_at": "2024-01-30T15:50:00.000Z",
+    "updated_at": "2024-01-30T15:50:00.000Z"
+  },
+  {
+    "lesson_id": 72,
+    "word": "upcoming",
+    "meaning": "happening soon",
+    "example_sentence": "My upcoming appointment is on Tuesday.",
+    "created_at": "2024-01-30T16:52:00.000Z",
+    "updated_at": "2024-01-30T16:52:00.000Z"
+  },
+  {
+    "lesson_id": 72,
+    "word": "schedule",
+    "meaning": "to arrange a time",
+    "example_sentence": "Let's schedule the visit for Monday.",
+    "created_at": "2024-01-30T17:54:00.000Z",
+    "updated_at": "2024-01-30T17:54:00.000Z"
+  },
+  {
+    "lesson_id": 72,
+    "word": "next week",
+    "meaning": "the week after this one",
+    "example_sentence": "The doctor is free next week.",
+    "created_at": "2024-01-30T18:56:00.000Z",
+    "updated_at": "2024-01-30T18:56:00.000Z"
+  },
+  {
+    "lesson_id": 72,
+    "word": "arrange",
+    "meaning": "to organize something",
+    "example_sentence": "I'll arrange a meeting.",
+    "created_at": "2024-01-30T19:58:00.000Z",
+    "updated_at": "2024-01-30T19:58:00.000Z"
+  },
+  {
+    "lesson_id": 72,
+    "word": "confirm",
+    "meaning": "to make certain",
+    "example_sentence": "Please confirm the date.",
+    "created_at": "2024-01-30T21:00:00.000Z",
+    "updated_at": "2024-01-30T21:00:00.000Z"
+  },
+  {
+    "lesson_id": 73,
+    "word": "if",
+    "meaning": "used to introduce a condition",
+    "example_sentence": "If you hurry, you will catch it.",
+    "created_at": "2024-01-30T22:02:00.000Z",
+    "updated_at": "2024-01-30T22:02:00.000Z"
+  },
+  {
+    "lesson_id": 73,
+    "word": "clause",
+    "meaning": "a group of words with a subject and verb",
+    "example_sentence": "The if clause comes first here.",
+    "created_at": "2024-01-30T23:04:00.000Z",
+    "updated_at": "2024-01-30T23:04:00.000Z"
+  },
+  {
+    "lesson_id": 73,
+    "word": "condition",
+    "meaning": "something that must happen first",
+    "example_sentence": "Rain is the condition for staying in.",
+    "created_at": "2024-01-31T00:06:00.000Z",
+    "updated_at": "2024-01-31T00:06:00.000Z"
+  },
+  {
+    "lesson_id": 73,
+    "word": "result",
+    "meaning": "what happens because of something",
+    "example_sentence": "The result is a discount.",
+    "created_at": "2024-01-31T01:08:00.000Z",
+    "updated_at": "2024-01-31T01:08:00.000Z"
+  },
+  {
+    "lesson_id": 73,
+    "word": "unless",
+    "meaning": "except if",
+    "example_sentence": "We won't go unless it stops raining.",
+    "created_at": "2024-01-31T02:10:00.000Z",
+    "updated_at": "2024-01-31T02:10:00.000Z"
+  },
+  {
+    "lesson_id": 74,
+    "word": "present perfect",
+    "meaning": "the tense for past actions linked to now",
+    "example_sentence": "I have finished my homework.",
+    "created_at": "2024-01-31T03:12:00.000Z",
+    "updated_at": "2024-01-31T03:12:00.000Z"
+  },
+  {
+    "lesson_id": 74,
+    "word": "have",
+    "meaning": "the helping verb with I and you",
+    "example_sentence": "Have you eaten yet?",
+    "created_at": "2024-01-31T04:14:00.000Z",
+    "updated_at": "2024-01-31T04:14:00.000Z"
+  },
+  {
+    "lesson_id": 74,
+    "word": "since",
+    "meaning": "from a point in the past until now",
+    "example_sentence": "I have lived here since 2020.",
+    "created_at": "2024-01-31T05:16:00.000Z",
+    "updated_at": "2024-01-31T05:16:00.000Z"
+  },
+  {
+    "lesson_id": 74,
+    "word": "for",
+    "meaning": "used with a length of time",
+    "example_sentence": "She has worked there for five years.",
+    "created_at": "2024-01-31T06:18:00.000Z",
+    "updated_at": "2024-01-31T06:18:00.000Z"
+  },
+  {
+    "lesson_id": 74,
+    "word": "ever",
+    "meaning": "at any time",
+    "example_sentence": "Have you ever been to Boston?",
+    "created_at": "2024-01-31T07:20:00.000Z",
+    "updated_at": "2024-01-31T07:20:00.000Z"
+  },
+  {
+    "lesson_id": 75,
+    "word": "would",
+    "meaning": "used for polite requests",
+    "example_sentence": "Would you pass the salt?",
+    "created_at": "2024-01-31T08:22:00.000Z",
+    "updated_at": "2024-01-31T08:22:00.000Z"
+  },
+  {
+    "lesson_id": 75,
+    "word": "polite",
+    "meaning": "showing good manners",
+    "example_sentence": "That is a polite way to ask.",
+    "created_at": "2024-01-31T09:24:00.000Z",
+    "updated_at": "2024-01-31T09:24:00.000Z"
+  },
+  {
+    "lesson_id": 75,
+    "word": "request",
+    "meaning": "something you ask for",
+    "example_sentence": "May I make a small request?",
+    "created_at": "2024-01-31T10:26:00.000Z",
+    "updated_at": "2024-01-31T10:26:00.000Z"
+  },
+  {
+    "lesson_id": 75,
+    "word": "offer",
+    "meaning": "to say you can give something",
+    "example_sentence": "Would you like some water?",
+    "created_at": "2024-01-31T11:28:00.000Z",
+    "updated_at": "2024-01-31T11:28:00.000Z"
+  },
+  {
+    "lesson_id": 75,
+    "word": "prefer",
+    "meaning": "to like one thing more",
+    "example_sentence": "I would prefer the small one.",
+    "created_at": "2024-01-31T12:30:00.000Z",
+    "updated_at": "2024-01-31T12:30:00.000Z"
+  },
+  {
+    "lesson_id": 76,
+    "word": "should have",
+    "meaning": "used for past advice you did not follow",
+    "example_sentence": "I should have called first.",
+    "created_at": "2024-01-31T13:32:00.000Z",
+    "updated_at": "2024-01-31T13:32:00.000Z"
+  },
+  {
+    "lesson_id": 76,
+    "word": "regret",
+    "meaning": "a feeling of sadness about the past",
+    "example_sentence": "She regrets not studying more.",
+    "created_at": "2024-01-31T14:34:00.000Z",
+    "updated_at": "2024-01-31T14:34:00.000Z"
+  },
+  {
+    "lesson_id": 76,
+    "word": "in hindsight",
+    "meaning": "looking back at the past",
+    "example_sentence": "In hindsight, we left too late.",
+    "created_at": "2024-01-31T15:36:00.000Z",
+    "updated_at": "2024-01-31T15:36:00.000Z"
+  },
+  {
+    "lesson_id": 76,
+    "word": "mistake",
+    "meaning": "something done incorrectly",
+    "example_sentence": "Ordering that was a mistake.",
+    "created_at": "2024-01-31T16:38:00.000Z",
+    "updated_at": "2024-01-31T16:38:00.000Z"
+  },
+  {
+    "lesson_id": 76,
+    "word": "could have",
+    "meaning": "used for past possibility",
+    "example_sentence": "We could have taken a taxi.",
+    "created_at": "2024-01-31T17:40:00.000Z",
+    "updated_at": "2024-01-31T17:40:00.000Z"
+  },
+  {
+    "lesson_id": 77,
+    "word": "can",
+    "meaning": "used for ability",
+    "example_sentence": "I can speak a little Spanish.",
+    "created_at": "2024-01-31T18:42:00.000Z",
+    "updated_at": "2024-01-31T18:42:00.000Z"
+  },
+  {
+    "lesson_id": 77,
+    "word": "could",
+    "meaning": "used for past ability or possibility",
+    "example_sentence": "She could swim at four.",
+    "created_at": "2024-01-31T19:44:00.000Z",
+    "updated_at": "2024-01-31T19:44:00.000Z"
+  },
+  {
+    "lesson_id": 77,
+    "word": "may",
+    "meaning": "used for permission or possibility",
+    "example_sentence": "May I sit here?",
+    "created_at": "2024-01-31T20:46:00.000Z",
+    "updated_at": "2024-01-31T20:46:00.000Z"
+  },
+  {
+    "lesson_id": 77,
+    "word": "permission",
+    "meaning": "the right to do something",
+    "example_sentence": "You need permission to enter.",
+    "created_at": "2024-01-31T21:48:00.000Z",
+    "updated_at": "2024-01-31T21:48:00.000Z"
+  },
+  {
+    "lesson_id": 77,
+    "word": "possibility",
+    "meaning": "something that may happen",
+    "example_sentence": "There is a possibility of delay.",
+    "created_at": "2024-01-31T22:50:00.000Z",
+    "updated_at": "2024-01-31T22:50:00.000Z"
+  },
+  {
+    "lesson_id": 78,
+    "word": "review",
+    "meaning": "to look at something again",
+    "example_sentence": "Let's review the polite requests.",
+    "created_at": "2024-01-31T23:52:00.000Z",
+    "updated_at": "2024-01-31T23:52:00.000Z"
+  },
+  {
+    "lesson_id": 78,
+    "word": "request",
+    "meaning": "something asked for politely",
+    "example_sentence": "I have a special request.",
+    "created_at": "2024-02-01T00:54:00.000Z",
+    "updated_at": "2024-02-01T00:54:00.000Z"
+  },
+  {
+    "lesson_id": 78,
+    "word": "politely",
+    "meaning": "in a respectful way",
+    "example_sentence": "He politely asked for the bill.",
+    "created_at": "2024-02-01T01:56:00.000Z",
+    "updated_at": "2024-02-01T01:56:00.000Z"
+  },
+  {
+    "lesson_id": 78,
+    "word": "mind",
+    "meaning": "to be annoyed by something",
+    "example_sentence": "Would you mind waiting?",
+    "created_at": "2024-02-01T02:58:00.000Z",
+    "updated_at": "2024-02-01T02:58:00.000Z"
+  },
+  {
+    "lesson_id": 78,
+    "word": "would you",
+    "meaning": "a polite way to ask",
+    "example_sentence": "Would you help me with this?",
+    "created_at": "2024-02-01T04:00:00.000Z",
+    "updated_at": "2024-02-01T04:00:00.000Z"
+  },
+  {
+    "lesson_id": 79,
+    "word": "gerund",
+    "meaning": "a verb form ending in -ing used as a noun",
+    "example_sentence": "Swimming is good exercise.",
+    "created_at": "2024-02-01T05:02:00.000Z",
+    "updated_at": "2024-02-01T05:02:00.000Z"
+  },
+  {
+    "lesson_id": 79,
+    "word": "infinitive",
+    "meaning": "the to form of a verb",
+    "example_sentence": "I want to travel.",
+    "created_at": "2024-02-01T06:04:00.000Z",
+    "updated_at": "2024-02-01T06:04:00.000Z"
+  },
+  {
+    "lesson_id": 79,
+    "word": "enjoy doing",
+    "meaning": "to like an activity",
+    "example_sentence": "I enjoy reading at night.",
+    "created_at": "2024-02-01T07:06:00.000Z",
+    "updated_at": "2024-02-01T07:06:00.000Z"
+  },
+  {
+    "lesson_id": 79,
+    "word": "decide to",
+    "meaning": "to make a choice to do something",
+    "example_sentence": "He decided to move abroad.",
+    "created_at": "2024-02-01T08:08:00.000Z",
+    "updated_at": "2024-02-01T08:08:00.000Z"
+  },
+  {
+    "lesson_id": 79,
+    "word": "prefer",
+    "meaning": "to like one thing more",
+    "example_sentence": "I prefer walking to driving.",
+    "created_at": "2024-02-01T09:10:00.000Z",
+    "updated_at": "2024-02-01T09:10:00.000Z"
+  },
+  {
+    "lesson_id": 80,
+    "word": "present progressive",
+    "meaning": "the tense for actions happening now",
+    "example_sentence": "She is studying right now.",
+    "created_at": "2024-02-01T10:12:00.000Z",
+    "updated_at": "2024-02-01T10:12:00.000Z"
+  },
+  {
+    "lesson_id": 80,
+    "word": "be + -ing",
+    "meaning": "the pattern of the progressive",
+    "example_sentence": "They are eating lunch.",
+    "created_at": "2024-02-01T11:14:00.000Z",
+    "updated_at": "2024-02-01T11:14:00.000Z"
+  },
+  {
+    "lesson_id": 80,
+    "word": "now",
+    "meaning": "at this moment",
+    "example_sentence": "I am cooking now.",
+    "created_at": "2024-02-01T12:16:00.000Z",
+    "updated_at": "2024-02-01T12:16:00.000Z"
+  },
+  {
+    "lesson_id": 80,
+    "word": "at the moment",
+    "meaning": "right now",
+    "example_sentence": "He is busy at the moment.",
+    "created_at": "2024-02-01T13:18:00.000Z",
+    "updated_at": "2024-02-01T13:18:00.000Z"
+  },
+  {
+    "lesson_id": 80,
+    "word": "currently",
+    "meaning": "at the present time",
+    "example_sentence": "I am currently working on a project.",
+    "created_at": "2024-02-01T14:20:00.000Z",
+    "updated_at": "2024-02-01T14:20:00.000Z"
+  },
+  {
+    "lesson_id": 81,
+    "word": "present perfect",
+    "meaning": "the tense for experiences",
+    "example_sentence": "I have visited Texas twice.",
+    "created_at": "2024-02-01T15:22:00.000Z",
+    "updated_at": "2024-02-01T15:22:00.000Z"
+  },
+  {
+    "lesson_id": 81,
+    "word": "experience",
+    "meaning": "something you have done or felt",
+    "example_sentence": "That was a great experience.",
+    "created_at": "2024-02-01T16:24:00.000Z",
+    "updated_at": "2024-02-01T16:24:00.000Z"
+  },
+  {
+    "lesson_id": 81,
+    "word": "never",
+    "meaning": "not at any time",
+    "example_sentence": "I have never tried sushi.",
+    "created_at": "2024-02-01T17:26:00.000Z",
+    "updated_at": "2024-02-01T17:26:00.000Z"
+  },
+  {
+    "lesson_id": 81,
+    "word": "already",
+    "meaning": "before now; sooner than expected",
+    "example_sentence": "They have already left.",
+    "created_at": "2024-02-01T18:28:00.000Z",
+    "updated_at": "2024-02-01T18:28:00.000Z"
+  },
+  {
+    "lesson_id": 81,
+    "word": "yet",
+    "meaning": "until now, used in questions",
+    "example_sentence": "Have you finished yet?",
+    "created_at": "2024-02-01T19:30:00.000Z",
+    "updated_at": "2024-02-01T19:30:00.000Z"
+  },
+  {
+    "lesson_id": 82,
+    "word": "past progressive",
+    "meaning": "the tense for ongoing past actions",
+    "example_sentence": "I was cooking when you called.",
+    "created_at": "2024-02-01T20:32:00.000Z",
+    "updated_at": "2024-02-01T20:32:00.000Z"
+  },
+  {
+    "lesson_id": 82,
+    "word": "while",
+    "meaning": "during the time that",
+    "example_sentence": "He called while I was driving.",
+    "created_at": "2024-02-01T21:34:00.000Z",
+    "updated_at": "2024-02-01T21:34:00.000Z"
+  },
+  {
+    "lesson_id": 82,
+    "word": "when",
+    "meaning": "at the time that",
+    "example_sentence": "When I arrived, they were eating.",
+    "created_at": "2024-02-01T22:36:00.000Z",
+    "updated_at": "2024-02-01T22:36:00.000Z"
+  },
+  {
+    "lesson_id": 82,
+    "word": "interrupted",
+    "meaning": "stopped something in progress",
+    "example_sentence": "The rain interrupted our walk.",
+    "created_at": "2024-02-01T23:38:00.000Z",
+    "updated_at": "2024-02-01T23:38:00.000Z"
+  },
+  {
+    "lesson_id": 82,
+    "word": "background",
+    "meaning": "the situation behind an event",
+    "example_sentence": "The noise was just background.",
+    "created_at": "2024-02-02T00:40:00.000Z",
+    "updated_at": "2024-02-02T00:40:00.000Z"
+  },
+  {
+    "lesson_id": 83,
+    "word": "going to",
+    "meaning": "used for plans and evidence",
+    "example_sentence": "It is going to rain.",
+    "created_at": "2024-02-02T01:42:00.000Z",
+    "updated_at": "2024-02-02T01:42:00.000Z"
+  },
+  {
+    "lesson_id": 83,
+    "word": "plan",
+    "meaning": "something you intend to do",
+    "example_sentence": "We are going to visit Boston.",
+    "created_at": "2024-02-02T02:44:00.000Z",
+    "updated_at": "2024-02-02T02:44:00.000Z"
+  },
+  {
+    "lesson_id": 83,
+    "word": "intention",
+    "meaning": "what you mean to do",
+    "example_sentence": "My intention is to stay a week.",
+    "created_at": "2024-02-02T03:46:00.000Z",
+    "updated_at": "2024-02-02T03:46:00.000Z"
+  },
+  {
+    "lesson_id": 83,
+    "word": "forecast",
+    "meaning": "a prediction",
+    "example_sentence": "The forecast says snow.",
+    "created_at": "2024-02-02T04:48:00.000Z",
+    "updated_at": "2024-02-02T04:48:00.000Z"
+  },
+  {
+    "lesson_id": 83,
+    "word": "evidence",
+    "meaning": "signs that show something",
+    "example_sentence": "Look at those clouds as evidence.",
+    "created_at": "2024-02-02T05:50:00.000Z",
+    "updated_at": "2024-02-02T05:50:00.000Z"
+  },
+  {
+    "lesson_id": 84,
+    "word": "imply",
+    "meaning": "to suggest without saying directly",
+    "example_sentence": "Your question implies another one.",
+    "created_at": "2024-02-02T06:52:00.000Z",
+    "updated_at": "2024-02-02T06:52:00.000Z"
+  },
+  {
+    "lesson_id": 84,
+    "word": "politeness",
+    "meaning": "respectful behavior",
+    "example_sentence": "Politeness makes requests softer.",
+    "created_at": "2024-02-02T07:54:00.000Z",
+    "updated_at": "2024-02-02T07:54:00.000Z"
+  },
+  {
+    "lesson_id": 84,
+    "word": "indirect question",
+    "meaning": "a question asked politely",
+    "example_sentence": "Could you tell me where it is?",
+    "created_at": "2024-02-02T08:56:00.000Z",
+    "updated_at": "2024-02-02T08:56:00.000Z"
+  },
+  {
+    "lesson_id": 84,
+    "word": "wonder",
+    "meaning": "to want to know",
+    "example_sentence": "I wonder if you could help.",
+    "created_at": "2024-02-02T09:58:00.000Z",
+    "updated_at": "2024-02-02T09:58:00.000Z"
+  },
+  {
+    "lesson_id": 84,
+    "word": "do you know",
+    "meaning": "a polite way to ask",
+    "example_sentence": "Do you know when they close?",
+    "created_at": "2024-02-02T11:00:00.000Z",
+    "updated_at": "2024-02-02T11:00:00.000Z"
+  },
+  {
+    "lesson_id": 85,
+    "word": "imperative",
+    "meaning": "the verb form for commands",
+    "example_sentence": "Close the door, please.",
+    "created_at": "2024-02-02T12:02:00.000Z",
+    "updated_at": "2024-02-02T12:02:00.000Z"
+  },
+  {
+    "lesson_id": 85,
+    "word": "command",
+    "meaning": "an order",
+    "example_sentence": "That sounded like a command.",
+    "created_at": "2024-02-02T13:04:00.000Z",
+    "updated_at": "2024-02-02T13:04:00.000Z"
+  },
+  {
+    "lesson_id": 85,
+    "word": "advice",
+    "meaning": "an opinion about what to do",
+    "example_sentence": "Take my advice and rest.",
+    "created_at": "2024-02-02T14:06:00.000Z",
+    "updated_at": "2024-02-02T14:06:00.000Z"
+  },
+  {
+    "lesson_id": 85,
+    "word": "invitation",
+    "meaning": "a request to join something",
+    "example_sentence": "Come to dinner is an invitation.",
+    "created_at": "2024-02-02T15:08:00.000Z",
+    "updated_at": "2024-02-02T15:08:00.000Z"
+  },
+  {
+    "lesson_id": 85,
+    "word": "don't",
+    "meaning": "used for negative commands",
+    "example_sentence": "Don't touch that button.",
+    "created_at": "2024-02-02T16:10:00.000Z",
+    "updated_at": "2024-02-02T16:10:00.000Z"
+  },
+  {
+    "lesson_id": 86,
+    "word": "present perfect progressive",
+    "meaning": "the tense for ongoing actions with duration",
+    "example_sentence": "I have been working all day.",
+    "created_at": "2024-02-02T17:12:00.000Z",
+    "updated_at": "2024-02-02T17:12:00.000Z"
+  },
+  {
+    "lesson_id": 86,
+    "word": "has been -ing",
+    "meaning": "the pattern with he, she, it",
+    "example_sentence": "She has been calling for an hour.",
+    "created_at": "2024-02-02T18:14:00.000Z",
+    "updated_at": "2024-02-02T18:14:00.000Z"
+  },
+  {
+    "lesson_id": 86,
+    "word": "duration",
+    "meaning": "the length of time something lasts",
+    "example_sentence": "The duration was three hours.",
+    "created_at": "2024-02-02T19:16:00.000Z",
+    "updated_at": "2024-02-02T19:16:00.000Z"
+  },
+  {
+    "lesson_id": 86,
+    "word": "lately",
+    "meaning": "in recent times",
+    "example_sentence": "I have been tired lately.",
+    "created_at": "2024-02-02T20:18:00.000Z",
+    "updated_at": "2024-02-02T20:18:00.000Z"
+  },
+  {
+    "lesson_id": 86,
+    "word": "all day",
+    "meaning": "during the whole day",
+    "example_sentence": "It has been raining all day.",
+    "created_at": "2024-02-02T21:20:00.000Z",
+    "updated_at": "2024-02-02T21:20:00.000Z"
+  },
+  {
+    "lesson_id": 87,
+    "word": "direction",
+    "meaning": "the way to go somewhere",
+    "example_sentence": "Give me a direction, please.",
+    "created_at": "2024-02-02T22:22:00.000Z",
+    "updated_at": "2024-02-02T22:22:00.000Z"
+  },
+  {
+    "lesson_id": 87,
+    "word": "turn",
+    "meaning": "to change direction",
+    "example_sentence": "Turn left at the light.",
+    "created_at": "2024-02-02T23:24:00.000Z",
+    "updated_at": "2024-02-02T23:24:00.000Z"
+  },
+  {
+    "lesson_id": 87,
+    "word": "go past",
+    "meaning": "to pass by something",
+    "example_sentence": "Go past the bank and stop.",
+    "created_at": "2024-02-03T00:26:00.000Z",
+    "updated_at": "2024-02-03T00:26:00.000Z"
+  },
+  {
+    "lesson_id": 87,
+    "word": "follow",
+    "meaning": "to go behind or along",
+    "example_sentence": "Follow this street to the end.",
+    "created_at": "2024-02-03T01:28:00.000Z",
+    "updated_at": "2024-02-03T01:28:00.000Z"
+  },
+  {
+    "lesson_id": 87,
+    "word": "landmark",
+    "meaning": "a famous place used for guidance",
+    "example_sentence": "The tower is a good landmark.",
+    "created_at": "2024-02-03T02:30:00.000Z",
+    "updated_at": "2024-02-03T02:30:00.000Z"
+  },
+  {
+    "lesson_id": 88,
+    "word": "adverb",
+    "meaning": "a word that describes a verb",
+    "example_sentence": "She speaks quickly.",
+    "created_at": "2024-02-03T03:32:00.000Z",
+    "updated_at": "2024-02-03T03:32:00.000Z"
+  },
+  {
+    "lesson_id": 88,
+    "word": "quickly",
+    "meaning": "in a fast way",
+    "example_sentence": "He finished quickly.",
+    "created_at": "2024-02-03T04:34:00.000Z",
+    "updated_at": "2024-02-03T04:34:00.000Z"
+  },
+  {
+    "lesson_id": 88,
+    "word": "always",
+    "meaning": "at all times",
+    "example_sentence": "I always check the address.",
+    "created_at": "2024-02-03T05:36:00.000Z",
+    "updated_at": "2024-02-03T05:36:00.000Z"
+  },
+  {
+    "lesson_id": 88,
+    "word": "rarely",
+    "meaning": "almost never",
+    "example_sentence": "We rarely eat out.",
+    "created_at": "2024-02-03T06:38:00.000Z",
+    "updated_at": "2024-02-03T06:38:00.000Z"
+  },
+  {
+    "lesson_id": 88,
+    "word": "manner",
+    "meaning": "the way something is done",
+    "example_sentence": "He answered in a polite manner.",
+    "created_at": "2024-02-03T07:40:00.000Z",
+    "updated_at": "2024-02-03T07:40:00.000Z"
+  },
+  {
+    "lesson_id": 89,
+    "word": "phrasal verb",
+    "meaning": "a verb with a particle that changes meaning",
+    "example_sentence": "Pick up is a phrasal verb.",
+    "created_at": "2024-02-03T08:42:00.000Z",
+    "updated_at": "2024-02-03T08:42:00.000Z"
+  },
+  {
+    "lesson_id": 89,
+    "word": "pick up",
+    "meaning": "to collect or lift",
+    "example_sentence": "I'll pick up the tickets.",
+    "created_at": "2024-02-03T09:44:00.000Z",
+    "updated_at": "2024-02-03T09:44:00.000Z"
+  },
+  {
+    "lesson_id": 89,
+    "word": "give up",
+    "meaning": "to stop trying",
+    "example_sentence": "Don't give up on it.",
+    "created_at": "2024-02-03T10:46:00.000Z",
+    "updated_at": "2024-02-03T10:46:00.000Z"
+  },
+  {
+    "lesson_id": 89,
+    "word": "look after",
+    "meaning": "to take care of",
+    "example_sentence": "She looks after her brother.",
+    "created_at": "2024-02-03T11:48:00.000Z",
+    "updated_at": "2024-02-03T11:48:00.000Z"
+  },
+  {
+    "lesson_id": 89,
+    "word": "turn on",
+    "meaning": "to start a device",
+    "example_sentence": "Turn on the light, please.",
+    "created_at": "2024-02-03T12:50:00.000Z",
+    "updated_at": "2024-02-03T12:50:00.000Z"
+  },
+  {
+    "lesson_id": 90,
+    "word": "noun",
+    "meaning": "a word for a person, place, or thing",
+    "example_sentence": "Table is a noun.",
+    "created_at": "2024-02-03T13:52:00.000Z",
+    "updated_at": "2024-02-03T13:52:00.000Z"
+  },
+  {
+    "lesson_id": 90,
+    "word": "compound noun",
+    "meaning": "two nouns used as one idea",
+    "example_sentence": "Bus stop is a compound noun.",
+    "created_at": "2024-02-03T14:54:00.000Z",
+    "updated_at": "2024-02-03T14:54:00.000Z"
+  },
+  {
+    "lesson_id": 90,
+    "word": "combination",
+    "meaning": "two or more things joined",
+    "example_sentence": "This is a useful combination.",
+    "created_at": "2024-02-03T15:56:00.000Z",
+    "updated_at": "2024-02-03T15:56:00.000Z"
+  },
+  {
+    "lesson_id": 90,
+    "word": "bus stop",
+    "meaning": "a place where buses stop",
+    "example_sentence": "Meet me at the bus stop.",
+    "created_at": "2024-02-03T16:58:00.000Z",
+    "updated_at": "2024-02-03T16:58:00.000Z"
+  },
+  {
+    "lesson_id": 90,
+    "word": "coffee table",
+    "meaning": "a small table in a living room",
+    "example_sentence": "The book is on the coffee table.",
+    "created_at": "2024-02-03T18:00:00.000Z",
+    "updated_at": "2024-02-03T18:00:00.000Z"
+  },
+  {
+    "lesson_id": 91,
+    "word": "conditional",
+    "meaning": "a sentence with if and a result",
+    "example_sentence": "If I had time, I would travel.",
+    "created_at": "2024-02-03T19:02:00.000Z",
+    "updated_at": "2024-02-03T19:02:00.000Z"
+  },
+  {
+    "lesson_id": 91,
+    "word": "if",
+    "meaning": "used to start a condition",
+    "example_sentence": "If you ask, they will help.",
+    "created_at": "2024-02-03T20:04:00.000Z",
+    "updated_at": "2024-02-03T20:04:00.000Z"
+  },
+  {
+    "lesson_id": 91,
+    "word": "would",
+    "meaning": "used in the result of a condition",
+    "example_sentence": "I would buy it if I could.",
+    "created_at": "2024-02-03T21:06:00.000Z",
+    "updated_at": "2024-02-03T21:06:00.000Z"
+  },
+  {
+    "lesson_id": 91,
+    "word": "imaginary",
+    "meaning": "not real; only in the mind",
+    "example_sentence": "That is an imaginary situation.",
+    "created_at": "2024-02-03T22:08:00.000Z",
+    "updated_at": "2024-02-03T22:08:00.000Z"
+  },
+  {
+    "lesson_id": 91,
+    "word": "result",
+    "meaning": "what follows from something",
+    "example_sentence": "The result would be better.",
+    "created_at": "2024-02-03T23:10:00.000Z",
+    "updated_at": "2024-02-03T23:10:00.000Z"
+  },
+  {
+    "lesson_id": 92,
+    "word": "might",
+    "meaning": "used for a small possibility",
+    "example_sentence": "It might rain later.",
+    "created_at": "2024-02-04T00:12:00.000Z",
+    "updated_at": "2024-02-04T00:12:00.000Z"
+  },
+  {
+    "lesson_id": 92,
+    "word": "maybe",
+    "meaning": "perhaps",
+    "example_sentence": "Maybe we should wait.",
+    "created_at": "2024-02-04T01:14:00.000Z",
+    "updated_at": "2024-02-04T01:14:00.000Z"
+  },
+  {
+    "lesson_id": 92,
+    "word": "possibility",
+    "meaning": "something that may happen",
+    "example_sentence": "There is a possibility of snow.",
+    "created_at": "2024-02-04T02:16:00.000Z",
+    "updated_at": "2024-02-04T02:16:00.000Z"
+  },
+  {
+    "lesson_id": 92,
+    "word": "uncertain",
+    "meaning": "not sure",
+    "example_sentence": "I am uncertain about the time.",
+    "created_at": "2024-02-04T03:18:00.000Z",
+    "updated_at": "2024-02-04T03:18:00.000Z"
+  },
+  {
+    "lesson_id": 92,
+    "word": "perhaps",
+    "meaning": "possibly",
+    "example_sentence": "Perhaps they are still open.",
+    "created_at": "2024-02-04T04:20:00.000Z",
+    "updated_at": "2024-02-04T04:20:00.000Z"
+  },
+  {
+    "lesson_id": 93,
+    "word": "must",
+    "meaning": "used for strong obligation",
+    "example_sentence": "You must show your passport.",
+    "created_at": "2024-02-04T05:22:00.000Z",
+    "updated_at": "2024-02-04T05:22:00.000Z"
+  },
+  {
+    "lesson_id": 93,
+    "word": "obligation",
+    "meaning": "something you have to do",
+    "example_sentence": "Paying taxes is an obligation.",
+    "created_at": "2024-02-04T06:24:00.000Z",
+    "updated_at": "2024-02-04T06:24:00.000Z"
+  },
+  {
+    "lesson_id": 93,
+    "word": "rule",
+    "meaning": "something you must follow",
+    "example_sentence": "That is a customs rule.",
+    "created_at": "2024-02-04T07:26:00.000Z",
+    "updated_at": "2024-02-04T07:26:00.000Z"
+  },
+  {
+    "lesson_id": 93,
+    "word": "necessary",
+    "meaning": "needed",
+    "example_sentence": "It is necessary to declare it.",
+    "created_at": "2024-02-04T08:28:00.000Z",
+    "updated_at": "2024-02-04T08:28:00.000Z"
+  },
+  {
+    "lesson_id": 93,
+    "word": "have to",
+    "meaning": "used for obligations",
+    "example_sentence": "I have to be at the gate by nine.",
+    "created_at": "2024-02-04T09:30:00.000Z",
+    "updated_at": "2024-02-04T09:30:00.000Z"
+  },
+  {
+    "lesson_id": 94,
+    "word": "condition",
+    "meaning": "something that must be true",
+    "example_sentence": "The condition is a valid visa.",
+    "created_at": "2024-02-04T10:32:00.000Z",
+    "updated_at": "2024-02-04T10:32:00.000Z"
+  },
+  {
+    "lesson_id": 94,
+    "word": "possible",
+    "meaning": "able to happen",
+    "example_sentence": "It is possible to pay by card.",
+    "created_at": "2024-02-04T11:34:00.000Z",
+    "updated_at": "2024-02-04T11:34:00.000Z"
+  },
+  {
+    "lesson_id": 94,
+    "word": "real situation",
+    "meaning": "something that can actually happen",
+    "example_sentence": "In a real situation, ask the staff.",
+    "created_at": "2024-02-04T12:36:00.000Z",
+    "updated_at": "2024-02-04T12:36:00.000Z"
+  },
+  {
+    "lesson_id": 94,
+    "word": "if it rains",
+    "meaning": "a real condition example",
+    "example_sentence": "If it rains, we will stay inside.",
+    "created_at": "2024-02-04T13:38:00.000Z",
+    "updated_at": "2024-02-04T13:38:00.000Z"
+  },
+  {
+    "lesson_id": 94,
+    "word": "then",
+    "meaning": "used for the result in a condition",
+    "example_sentence": "If they call, then answer politely.",
+    "created_at": "2024-02-04T14:40:00.000Z",
+    "updated_at": "2024-02-04T14:40:00.000Z"
+  },
+  {
+    "lesson_id": 95,
+    "word": "should have",
+    "meaning": "used for past advice you missed",
+    "example_sentence": "I should have read the fine print.",
+    "created_at": "2024-02-04T15:42:00.000Z",
+    "updated_at": "2024-02-04T15:42:00.000Z"
+  },
+  {
+    "lesson_id": 95,
+    "word": "regret",
+    "meaning": "sadness about a past choice",
+    "example_sentence": "He regrets skipping the insurance.",
+    "created_at": "2024-02-04T16:44:00.000Z",
+    "updated_at": "2024-02-04T16:44:00.000Z"
+  },
+  {
+    "lesson_id": 95,
+    "word": "ought to have",
+    "meaning": "a stronger form of should have",
+    "example_sentence": "You ought to have asked first.",
+    "created_at": "2024-02-04T17:46:00.000Z",
+    "updated_at": "2024-02-04T17:46:00.000Z"
+  },
+  {
+    "lesson_id": 95,
+    "word": "criticism",
+    "meaning": "an opinion about what was wrong",
+    "example_sentence": "That is fair criticism.",
+    "created_at": "2024-02-04T18:48:00.000Z",
+    "updated_at": "2024-02-04T18:48:00.000Z"
+  },
+  {
+    "lesson_id": 95,
+    "word": "past advice",
+    "meaning": "advice about something already done",
+    "example_sentence": "My past advice was to take it.",
+    "created_at": "2024-02-04T19:50:00.000Z",
+    "updated_at": "2024-02-04T19:50:00.000Z"
+  },
+  {
+    "lesson_id": 96,
+    "word": "rhetorical question",
+    "meaning": "a question not meant to be answered",
+    "example_sentence": "Who knows? is often rhetorical.",
+    "created_at": "2024-02-04T20:52:00.000Z",
+    "updated_at": "2024-02-04T20:52:00.000Z"
+  },
+  {
+    "lesson_id": 96,
+    "word": "answer",
+    "meaning": "a reply to a question",
+    "example_sentence": "Some questions need no answer.",
+    "created_at": "2024-02-04T21:54:00.000Z",
+    "updated_at": "2024-02-04T21:54:00.000Z"
+  },
+  {
+    "lesson_id": 96,
+    "word": "effect",
+    "meaning": "the result you want to create",
+    "example_sentence": "It has a dramatic effect.",
+    "created_at": "2024-02-04T22:56:00.000Z",
+    "updated_at": "2024-02-04T22:56:00.000Z"
+  },
+  {
+    "lesson_id": 96,
+    "word": "obviously",
+    "meaning": "in a way that is clear",
+    "example_sentence": "Obviously, nobody would say yes.",
+    "created_at": "2024-02-04T23:58:00.000Z",
+    "updated_at": "2024-02-04T23:58:00.000Z"
+  },
+  {
+    "lesson_id": 96,
+    "word": "who knows",
+    "meaning": "a common rhetorical phrase",
+    "example_sentence": "Who knows what will happen?",
+    "created_at": "2024-02-05T01:00:00.000Z",
+    "updated_at": "2024-02-05T01:00:00.000Z"
+  },
+  {
+    "lesson_id": 97,
+    "word": "subject",
+    "meaning": "the person or thing doing the action",
+    "example_sentence": "The subject can be left out.",
+    "created_at": "2024-02-05T02:02:00.000Z",
+    "updated_at": "2024-02-05T02:02:00.000Z"
+  },
+  {
+    "lesson_id": 97,
+    "word": "imperative",
+    "meaning": "a sentence without a visible subject",
+    "example_sentence": "Sit down is an imperative.",
+    "created_at": "2024-02-05T03:04:00.000Z",
+    "updated_at": "2024-02-05T03:04:00.000Z"
+  },
+  {
+    "lesson_id": 97,
+    "word": "elliptical",
+    "meaning": "having words left out",
+    "example_sentence": "Elliptical sentences are common in speech.",
+    "created_at": "2024-02-05T04:06:00.000Z",
+    "updated_at": "2024-02-05T04:06:00.000Z"
+  },
+  {
+    "lesson_id": 97,
+    "word": "understood",
+    "meaning": "known without being said",
+    "example_sentence": "The subject is understood here.",
+    "created_at": "2024-02-05T05:08:00.000Z",
+    "updated_at": "2024-02-05T05:08:00.000Z"
+  },
+  {
+    "lesson_id": 97,
+    "word": "omit",
+    "meaning": "to leave something out",
+    "example_sentence": "We often omit the subject in English.",
+    "created_at": "2024-02-05T06:10:00.000Z",
+    "updated_at": "2024-02-05T06:10:00.000Z"
+  },
+  {
+    "lesson_id": 98,
+    "word": "have to",
+    "meaning": "used for necessity",
+    "example_sentence": "You have to study this lesson.",
+    "created_at": "2024-02-05T07:12:00.000Z",
+    "updated_at": "2024-02-05T07:12:00.000Z"
+  },
+  {
+    "lesson_id": 98,
+    "word": "obligation",
+    "meaning": "something you must do",
+    "example_sentence": "Attending class is an obligation.",
+    "created_at": "2024-02-05T08:14:00.000Z",
+    "updated_at": "2024-02-05T08:14:00.000Z"
+  },
+  {
+    "lesson_id": 98,
+    "word": "necessity",
+    "meaning": "something necessary",
+    "example_sentence": "Water is a necessity.",
+    "created_at": "2024-02-05T09:16:00.000Z",
+    "updated_at": "2024-02-05T09:16:00.000Z"
+  },
+  {
+    "lesson_id": 98,
+    "word": "don't have to",
+    "meaning": "used when something is not required",
+    "example_sentence": "You don't have to pay today.",
+    "created_at": "2024-02-05T10:18:00.000Z",
+    "updated_at": "2024-02-05T10:18:00.000Z"
+  },
+  {
+    "lesson_id": 98,
+    "word": "must",
+    "meaning": "used for strong necessity",
+    "example_sentence": "I must finish this tonight.",
+    "created_at": "2024-02-05T11:20:00.000Z",
+    "updated_at": "2024-02-05T11:20:00.000Z"
+  },
+  {
+    "lesson_id": 99,
+    "word": "passive voice",
+    "meaning": "the form where the object becomes the subject",
+    "example_sentence": "The letter was written by Ann.",
+    "created_at": "2024-02-05T12:22:00.000Z",
+    "updated_at": "2024-02-05T12:22:00.000Z"
+  },
+  {
+    "lesson_id": 99,
+    "word": "be + past participle",
+    "meaning": "the pattern of the passive",
+    "example_sentence": "The bill is paid monthly.",
+    "created_at": "2024-02-05T13:24:00.000Z",
+    "updated_at": "2024-02-05T13:24:00.000Z"
+  },
+  {
+    "lesson_id": 99,
+    "word": "by",
+    "meaning": "used to show who did the action",
+    "example_sentence": "The song was sung by her.",
+    "created_at": "2024-02-05T14:26:00.000Z",
+    "updated_at": "2024-02-05T14:26:00.000Z"
+  },
+  {
+    "lesson_id": 99,
+    "word": "focus",
+    "meaning": "the main attention",
+    "example_sentence": "The passive puts focus on the action.",
+    "created_at": "2024-02-05T15:28:00.000Z",
+    "updated_at": "2024-02-05T15:28:00.000Z"
+  },
+  {
+    "lesson_id": 99,
+    "word": "agent",
+    "meaning": "the person who does the action",
+    "example_sentence": "The agent can be left out.",
+    "created_at": "2024-02-05T16:30:00.000Z",
+    "updated_at": "2024-02-05T16:30:00.000Z"
+  },
+  {
+    "lesson_id": 100,
+    "word": "bill",
+    "meaning": "a piece of paper money",
+    "example_sentence": "I only have a ten dollar bill.",
+    "created_at": "2024-02-05T17:32:00.000Z",
+    "updated_at": "2024-02-05T17:32:00.000Z"
+  },
+  {
+    "lesson_id": 100,
+    "word": "coin",
+    "meaning": "metal money",
+    "example_sentence": "Do you have a coin for the machine?",
+    "created_at": "2024-02-05T18:34:00.000Z",
+    "updated_at": "2024-02-05T18:34:00.000Z"
+  },
+  {
+    "lesson_id": 100,
+    "word": "bucks",
+    "meaning": "a casual word for dollars",
+    "example_sentence": "That cost twenty bucks.",
+    "created_at": "2024-02-05T19:36:00.000Z",
+    "updated_at": "2024-02-05T19:36:00.000Z"
+  },
+  {
+    "lesson_id": 100,
+    "word": "ATM",
+    "meaning": "a machine that gives cash",
+    "example_sentence": "There's an ATM around the corner.",
+    "created_at": "2024-02-05T20:38:00.000Z",
+    "updated_at": "2024-02-05T20:38:00.000Z"
+  },
+  {
+    "lesson_id": 100,
+    "word": "cash",
+    "meaning": "money in notes and coins",
+    "example_sentence": "Can I pay in cash?",
+    "created_at": "2024-02-05T21:40:00.000Z",
+    "updated_at": "2024-02-05T21:40:00.000Z"
+  },
+  {
+    "lesson_id": 101,
+    "word": "noun as adjective",
+    "meaning": "a noun used to describe another noun",
+    "example_sentence": "Chicken soup uses a noun as adjective.",
+    "created_at": "2024-02-05T22:42:00.000Z",
+    "updated_at": "2024-02-05T22:42:00.000Z"
+  },
+  {
+    "lesson_id": 101,
+    "word": "chicken soup",
+    "meaning": "an example of noun plus noun",
+    "example_sentence": "Chicken soup is on the menu.",
+    "created_at": "2024-02-05T23:44:00.000Z",
+    "updated_at": "2024-02-05T23:44:00.000Z"
+  },
+  {
+    "lesson_id": 101,
+    "word": "adjective",
+    "meaning": "a word that describes a noun",
+    "example_sentence": "Cheap is an adjective.",
+    "created_at": "2024-02-06T00:46:00.000Z",
+    "updated_at": "2024-02-06T00:46:00.000Z"
+  },
+  {
+    "lesson_id": 101,
+    "word": "material",
+    "meaning": "what something is made of",
+    "example_sentence": "A leather bag uses material as adjective.",
+    "created_at": "2024-02-06T01:48:00.000Z",
+    "updated_at": "2024-02-06T01:48:00.000Z"
+  },
+  {
+    "lesson_id": 101,
+    "word": "purpose",
+    "meaning": "the reason something is used",
+    "example_sentence": "A coffee cup shows purpose.",
+    "created_at": "2024-02-06T02:50:00.000Z",
+    "updated_at": "2024-02-06T02:50:00.000Z"
+  },
+  {
+    "lesson_id": 102,
+    "word": "third conditional",
+    "meaning": "the form for unreal past situations",
+    "example_sentence": "If I had known, I would have come.",
+    "created_at": "2024-02-06T03:52:00.000Z",
+    "updated_at": "2024-02-06T03:52:00.000Z"
+  },
+  {
+    "lesson_id": 102,
+    "word": "had + past participle",
+    "meaning": "the pattern in the if clause",
+    "example_sentence": "If she had called, we would have waited.",
+    "created_at": "2024-02-06T04:54:00.000Z",
+    "updated_at": "2024-02-06T04:54:00.000Z"
+  },
+  {
+    "lesson_id": 102,
+    "word": "would have",
+    "meaning": "used in the result of a third conditional",
+    "example_sentence": "I would have helped you.",
+    "created_at": "2024-02-06T05:56:00.000Z",
+    "updated_at": "2024-02-06T05:56:00.000Z"
+  },
+  {
+    "lesson_id": 102,
+    "word": "regret",
+    "meaning": "sadness about the past",
+    "example_sentence": "They regret not leaving earlier.",
+    "created_at": "2024-02-06T06:58:00.000Z",
+    "updated_at": "2024-02-06T06:58:00.000Z"
+  },
+  {
+    "lesson_id": 102,
+    "word": "if only",
+    "meaning": "used to express a wish about the past",
+    "example_sentence": "If only we had left on time.",
+    "created_at": "2024-02-06T08:00:00.000Z",
+    "updated_at": "2024-02-06T08:00:00.000Z"
+  },
+  {
+    "lesson_id": 103,
+    "word": "imperative",
+    "meaning": "the verb form used for instructions",
+    "example_sentence": "Turn right at the corner.",
+    "created_at": "2024-02-06T09:02:00.000Z",
+    "updated_at": "2024-02-06T09:02:00.000Z"
+  },
+  {
+    "lesson_id": 103,
+    "word": "command",
+    "meaning": "an order given to someone",
+    "example_sentence": "That was a clear command.",
+    "created_at": "2024-02-06T10:04:00.000Z",
+    "updated_at": "2024-02-06T10:04:00.000Z"
+  },
+  {
+    "lesson_id": 103,
+    "word": "instruction",
+    "meaning": "directions for doing something",
+    "example_sentence": "Follow the instructions carefully.",
+    "created_at": "2024-02-06T11:06:00.000Z",
+    "updated_at": "2024-02-06T11:06:00.000Z"
+  },
+  {
+    "lesson_id": 103,
+    "word": "polite form",
+    "meaning": "a softer way to give a command",
+    "example_sentence": "Please take a seat.",
+    "created_at": "2024-02-06T12:08:00.000Z",
+    "updated_at": "2024-02-06T12:08:00.000Z"
+  },
+  {
+    "lesson_id": 103,
+    "word": "please",
+    "meaning": "a word that makes a command polite",
+    "example_sentence": "Please close the door.",
+    "created_at": "2024-02-06T13:10:00.000Z",
+    "updated_at": "2024-02-06T13:10:00.000Z"
+  },
+  {
+    "lesson_id": 104,
+    "word": "auxiliary verb",
+    "meaning": "a helping verb",
+    "example_sentence": "Do is an auxiliary verb.",
+    "created_at": "2024-02-06T14:12:00.000Z",
+    "updated_at": "2024-02-06T14:12:00.000Z"
+  },
+  {
+    "lesson_id": 104,
+    "word": "do",
+    "meaning": "used to form questions and negatives",
+    "example_sentence": "Do you understand?",
+    "created_at": "2024-02-06T15:14:00.000Z",
+    "updated_at": "2024-02-06T15:14:00.000Z"
+  },
+  {
+    "lesson_id": 104,
+    "word": "does",
+    "meaning": "the form with he, she, or it",
+    "example_sentence": "Does she speak Spanish?",
+    "created_at": "2024-02-06T16:16:00.000Z",
+    "updated_at": "2024-02-06T16:16:00.000Z"
+  },
+  {
+    "lesson_id": 104,
+    "word": "did",
+    "meaning": "the past form of do",
+    "example_sentence": "Did you finish it?",
+    "created_at": "2024-02-06T17:18:00.000Z",
+    "updated_at": "2024-02-06T17:18:00.000Z"
+  },
+  {
+    "lesson_id": 104,
+    "word": "emphasis",
+    "meaning": "stress on a word for effect",
+    "example_sentence": "I do want to go!",
+    "created_at": "2024-02-06T18:20:00.000Z",
+    "updated_at": "2024-02-06T18:20:00.000Z"
+  },
+  {
+    "lesson_id": 105,
+    "word": "phrasal verb",
+    "meaning": "a verb and a particle that act as one verb",
+    "example_sentence": "Catch up is a phrasal verb.",
+    "created_at": "2024-02-06T19:22:00.000Z",
+    "updated_at": "2024-02-06T19:22:00.000Z"
+  },
+  {
+    "lesson_id": 105,
+    "word": "catch up",
+    "meaning": "to get up to date",
+    "example_sentence": "Let's catch up on the news.",
+    "created_at": "2024-02-06T20:24:00.000Z",
+    "updated_at": "2024-02-06T20:24:00.000Z"
+  },
+  {
+    "lesson_id": 105,
+    "word": "bring up",
+    "meaning": "to mention or raise a topic",
+    "example_sentence": "Don't bring up that story.",
+    "created_at": "2024-02-06T21:26:00.000Z",
+    "updated_at": "2024-02-06T21:26:00.000Z"
+  },
+  {
+    "lesson_id": 105,
+    "word": "run into",
+    "meaning": "to meet someone by chance",
+    "example_sentence": "I ran into an old friend.",
+    "created_at": "2024-02-06T22:28:00.000Z",
+    "updated_at": "2024-02-06T22:28:00.000Z"
+  },
+  {
+    "lesson_id": 105,
+    "word": "get along",
+    "meaning": "to have a good relationship",
+    "example_sentence": "Do you get along with your boss?",
+    "created_at": "2024-02-06T23:30:00.000Z",
+    "updated_at": "2024-02-06T23:30:00.000Z"
+  },
+  {
+    "lesson_id": 106,
+    "word": "adjective order",
+    "meaning": "the rule for ordering multiple adjectives",
+    "example_sentence": "Opinion, size, age, color is the order.",
+    "created_at": "2024-02-07T00:32:00.000Z",
+    "updated_at": "2024-02-07T00:32:00.000Z"
+  },
+  {
+    "lesson_id": 106,
+    "word": "opinion",
+    "meaning": "what you think of something",
+    "example_sentence": "Expensive is an opinion.",
+    "created_at": "2024-02-07T01:34:00.000Z",
+    "updated_at": "2024-02-07T01:34:00.000Z"
+  },
+  {
+    "lesson_id": 106,
+    "word": "size",
+    "meaning": "how big or small something is",
+    "example_sentence": "Large is a size.",
+    "created_at": "2024-02-07T02:36:00.000Z",
+    "updated_at": "2024-02-07T02:36:00.000Z"
+  },
+  {
+    "lesson_id": 106,
+    "word": "age",
+    "meaning": "how old something is",
+    "example_sentence": "An old is an age.",
+    "created_at": "2024-02-07T03:38:00.000Z",
+    "updated_at": "2024-02-07T03:38:00.000Z"
+  },
+  {
+    "lesson_id": 106,
+    "word": "color",
+    "meaning": "the color of something",
+    "example_sentence": "A red is a color.",
+    "created_at": "2024-02-07T04:40:00.000Z",
+    "updated_at": "2024-02-07T04:40:00.000Z"
+  },
+  {
+    "lesson_id": 107,
+    "word": "negative question",
+    "meaning": "a question that expects a positive answer",
+    "example_sentence": "Aren't you tired?",
+    "created_at": "2024-02-07T05:42:00.000Z",
+    "updated_at": "2024-02-07T05:42:00.000Z"
+  },
+  {
+    "lesson_id": 107,
+    "word": "isn't it",
+    "meaning": "a tag used as a negative check",
+    "example_sentence": "Nice weather, isn't it?",
+    "created_at": "2024-02-07T06:44:00.000Z",
+    "updated_at": "2024-02-07T06:44:00.000Z"
+  },
+  {
+    "lesson_id": 107,
+    "word": "surprise",
+    "meaning": "an unexpected reaction",
+    "example_sentence": "The negative question showed surprise.",
+    "created_at": "2024-02-07T07:46:00.000Z",
+    "updated_at": "2024-02-07T07:46:00.000Z"
+  },
+  {
+    "lesson_id": 107,
+    "word": "confirm",
+    "meaning": "to verify information",
+    "example_sentence": "Use it to confirm a feeling.",
+    "created_at": "2024-02-07T08:48:00.000Z",
+    "updated_at": "2024-02-07T08:48:00.000Z"
+  },
+  {
+    "lesson_id": 107,
+    "word": "don't you",
+    "meaning": "a way to check agreement",
+    "example_sentence": "You like coffee, don't you?",
+    "created_at": "2024-02-07T09:50:00.000Z",
+    "updated_at": "2024-02-07T09:50:00.000Z"
+  },
+  {
+    "lesson_id": 108,
+    "word": "symptom",
+    "meaning": "a sign of a problem",
+    "example_sentence": "A fever is a symptom of flu.",
+    "created_at": "2024-02-07T10:52:00.000Z",
+    "updated_at": "2024-02-07T10:52:00.000Z"
+  },
+  {
+    "lesson_id": 108,
+    "word": "pain",
+    "meaning": "a hurting feeling",
+    "example_sentence": "Where is your pain?",
+    "created_at": "2024-02-07T11:54:00.000Z",
+    "updated_at": "2024-02-07T11:54:00.000Z"
+  },
+  {
+    "lesson_id": 108,
+    "word": "fever",
+    "meaning": "a high body temperature",
+    "example_sentence": "They have a fever.",
+    "created_at": "2024-02-07T12:56:00.000Z",
+    "updated_at": "2024-02-07T12:56:00.000Z"
+  },
+  {
+    "lesson_id": 108,
+    "word": "dizzy",
+    "meaning": "feeling like you might fall",
+    "example_sentence": "I feel dizzy now.",
+    "created_at": "2024-02-07T13:58:00.000Z",
+    "updated_at": "2024-02-07T13:58:00.000Z"
+  },
+  {
+    "lesson_id": 108,
+    "word": "prescription",
+    "meaning": "a doctor's written medicine order",
+    "example_sentence": "I need a new prescription.",
+    "created_at": "2024-02-07T15:00:00.000Z",
+    "updated_at": "2024-02-07T15:00:00.000Z"
+  },
+  {
+    "lesson_id": 109,
+    "word": "present perfect",
+    "meaning": "the tense for experiences linked to now",
+    "example_sentence": "I have just scheduled it.",
+    "created_at": "2024-02-07T16:02:00.000Z",
+    "updated_at": "2024-02-07T16:02:00.000Z"
+  },
+  {
+    "lesson_id": 109,
+    "word": "have scheduled",
+    "meaning": "already arranged",
+    "example_sentence": "I have scheduled a visit.",
+    "created_at": "2024-02-07T17:04:00.000Z",
+    "updated_at": "2024-02-07T17:04:00.000Z"
+  },
+  {
+    "lesson_id": 109,
+    "word": "just",
+    "meaning": "a moment ago",
+    "example_sentence": "I have just arrived.",
+    "created_at": "2024-02-07T18:06:00.000Z",
+    "updated_at": "2024-02-07T18:06:00.000Z"
+  },
+  {
+    "lesson_id": 109,
+    "word": "recently",
+    "meaning": "in the recent past",
+    "example_sentence": "She has been sick recently.",
+    "created_at": "2024-02-07T19:08:00.000Z",
+    "updated_at": "2024-02-07T19:08:00.000Z"
+  },
+  {
+    "lesson_id": 109,
+    "word": "already",
+    "meaning": "sooner than expected",
+    "example_sentence": "They have already left.",
+    "created_at": "2024-02-07T20:10:00.000Z",
+    "updated_at": "2024-02-07T20:10:00.000Z"
+  },
+  {
+    "lesson_id": 110,
+    "word": "could",
+    "meaning": "used for ability",
+    "example_sentence": "I could swim when I was five.",
+    "created_at": "2024-02-07T21:12:00.000Z",
+    "updated_at": "2024-02-07T21:12:00.000Z"
+  },
+  {
+    "lesson_id": 110,
+    "word": "ability",
+    "meaning": "the skill to do something",
+    "example_sentence": "His ability is very strong.",
+    "created_at": "2024-02-07T22:14:00.000Z",
+    "updated_at": "2024-02-07T22:14:00.000Z"
+  },
+  {
+    "lesson_id": 111,
+    "word": "dentist",
+    "meaning": "a person who checks teeth",
+    "example_sentence": "I am going to the dentist.",
+    "created_at": "2024-02-07T23:16:00.000Z",
+    "updated_at": "2024-02-07T23:16:00.000Z"
+  },
+  {
+    "lesson_id": 111,
+    "word": "cavity",
+    "meaning": "a hole in a tooth",
+    "example_sentence": "She had a cavity filled.",
+    "created_at": "2024-02-08T00:18:00.000Z",
+    "updated_at": "2024-02-08T00:18:00.000Z"
+  },
+  {
+    "lesson_id": 111,
+    "word": "filling",
+    "meaning": "a repair in a tooth",
+    "example_sentence": "The filling hurt for a few days.",
+    "created_at": "2024-02-08T01:20:00.000Z",
+    "updated_at": "2024-02-08T01:20:00.000Z"
+  },
+  {
+    "lesson_id": 111,
+    "word": "toothache",
+    "meaning": "pain in a tooth",
+    "example_sentence": "A toothache means you need to go.",
+    "created_at": "2024-02-08T02:22:00.000Z",
+    "updated_at": "2024-02-08T02:22:00.000Z"
+  },
+  {
+    "lesson_id": 111,
+    "word": "checkup",
+    "meaning": "a regular medical visit",
+    "example_sentence": "I have a dental checkup today.",
+    "created_at": "2024-02-08T03:24:00.000Z",
+    "updated_at": "2024-02-08T03:24:00.000Z"
+  },
+  {
+    "lesson_id": 112,
+    "word": "will",
+    "meaning": "used for predictions",
+    "example_sentence": "It will snow tomorrow.",
+    "created_at": "2024-02-08T04:26:00.000Z",
+    "updated_at": "2024-02-08T04:26:00.000Z"
+  },
+  {
+    "lesson_id": 112,
+    "word": "going to",
+    "meaning": "used for plans and evidence",
+    "example_sentence": "It is going to be late.",
+    "created_at": "2024-02-08T05:28:00.000Z",
+    "updated_at": "2024-02-08T05:28:00.000Z"
+  },
+  {
+    "lesson_id": 112,
+    "word": "prediction",
+    "meaning": "a guess about the future",
+    "example_sentence": "My prediction is that it is late.",
+    "created_at": "2024-02-08T06:30:00.000Z",
+    "updated_at": "2024-02-08T06:30:00.000Z"
+  },
+  {
+    "lesson_id": 112,
+    "word": "plan",
+    "meaning": "something you intend to do",
+    "example_sentence": "I plan to take a taxi.",
+    "created_at": "2024-02-08T07:32:00.000Z",
+    "updated_at": "2024-02-08T07:32:00.000Z"
+  },
+  {
+    "lesson_id": 112,
+    "word": "forecast",
+    "meaning": "an expert prediction",
+    "example_sentence": "The forecast says it will be ready.",
+    "created_at": "2024-02-08T08:34:00.000Z",
+    "updated_at": "2024-02-08T08:34:00.000Z"
+  },
+  {
+    "lesson_id": 113,
+    "word": "preposition",
+    "meaning": "a word that links to place or time",
+    "example_sentence": "In, on, and at are prepositions.",
+    "created_at": "2024-02-08T09:36:00.000Z",
+    "updated_at": "2024-02-08T09:36:00.000Z"
+  },
+  {
+    "lesson_id": 113,
+    "word": "in",
+    "meaning": "used for enclosed spaces",
+    "example_sentence": "In the building.",
+    "created_at": "2024-02-08T10:38:00.000Z",
+    "updated_at": "2024-02-08T10:38:00.000Z"
+  },
+  {
+    "lesson_id": 113,
+    "word": "on",
+    "meaning": "used for surfaces",
+    "example_sentence": "On the table.",
+    "created_at": "2024-02-08T11:40:00.000Z",
+    "updated_at": "2024-02-08T11:40:00.000Z"
+  },
+  {
+    "lesson_id": 113,
+    "word": "at",
+    "meaning": "used for places or times",
+    "example_sentence": "At the station.",
+    "created_at": "2024-02-08T12:42:00.000Z",
+    "updated_at": "2024-02-08T12:42:00.000Z"
+  },
+  {
+    "lesson_id": 113,
+    "word": "place",
+    "meaning": "a location",
+    "example_sentence": "Use the right preposition for the place.",
+    "created_at": "2024-02-08T13:44:00.000Z",
+    "updated_at": "2024-02-08T13:44:00.000Z"
+  },
+  {
+    "lesson_id": 114,
+    "word": "infinitive",
+    "meaning": "the to form of a verb",
+    "example_sentence": "I decided to go.",
+    "created_at": "2024-02-08T14:46:00.000Z",
+    "updated_at": "2024-02-08T14:46:00.000Z"
+  },
+  {
+    "lesson_id": 114,
+    "word": "gerund",
+    "meaning": "an -ing verb used as a noun",
+    "example_sentence": "I enjoy cooking.",
+    "created_at": "2024-02-08T15:48:00.000Z",
+    "updated_at": "2024-02-08T15:48:00.000Z"
+  },
+  {
+    "lesson_id": 114,
+    "word": "like to",
+    "meaning": "used with a preference for action",
+    "example_sentence": "I like to run in the morning.",
+    "created_at": "2024-02-08T16:50:00.000Z",
+    "updated_at": "2024-02-08T16:50:00.000Z"
+  },
+  {
+    "lesson_id": 114,
+    "word": "enjoy -ing",
+    "meaning": "used for activities you like",
+    "example_sentence": "She enjoys dancing.",
+    "created_at": "2024-02-08T17:52:00.000Z",
+    "updated_at": "2024-02-08T17:52:00.000Z"
+  },
+  {
+    "lesson_id": 114,
+    "word": "verb pattern",
+    "meaning": "how verbs combine with words",
+    "example_sentence": "Check the verb pattern before answering.",
+    "created_at": "2024-02-08T18:54:00.000Z",
+    "updated_at": "2024-02-08T18:54:00.000Z"
+  },
+  {
+    "lesson_id": 115,
+    "word": "alliteration",
+    "meaning": "the repetition of initial sounds",
+    "example_sentence": "Alliteration makes phrases catchy.",
+    "created_at": "2024-02-08T19:56:00.000Z",
+    "updated_at": "2024-02-08T19:56:00.000Z"
+  },
+  {
+    "lesson_id": 115,
+    "word": "sound",
+    "meaning": "a noise or pronunciation",
+    "example_sentence": "The sound fits well.",
+    "created_at": "2024-02-08T20:58:00.000Z",
+    "updated_at": "2024-02-08T20:58:00.000Z"
+  },
+  {
+    "lesson_id": 115,
+    "word": "repetition",
+    "meaning": "saying something again",
+    "example_sentence": "Repetition helps memory.",
+    "created_at": "2024-02-08T22:00:00.000Z",
+    "updated_at": "2024-02-08T22:00:00.000Z"
+  },
+  {
+    "lesson_id": 115,
+    "word": "tongue twister",
+    "meaning": "a word game",
+    "example_sentence": "Try a tongue twister with S sounds.",
+    "created_at": "2024-02-08T23:02:00.000Z",
+    "updated_at": "2024-02-08T23:02:00.000Z"
+  },
+  {
+    "lesson_id": 115,
+    "word": "catchy",
+    "meaning": "easy to remember",
+    "example_sentence": "Use a catchy phrase.",
+    "created_at": "2024-02-09T00:04:00.000Z",
+    "updated_at": "2024-02-09T00:04:00.000Z"
+  }
+]
