@@ -15,3 +15,16 @@ export async function registerUser({ name, username, email, password }) {
 
   return { user: data.user, token: data.token };
 }
+
+/**
+ * POST /api/auth/login
+ * Response 200: { user: { id, name, username }, token }
+ */
+export async function loginUser({ email, password }) {
+  const { data } = await axios.post(`${baseUrl}/auth/login`, {
+    email: email.trim(),
+    password,
+  });
+
+  return { user: data.user, token: data.token };
+}
