@@ -1,0 +1,38 @@
+[
+  {
+    "conversation_id": 1,
+    "user_id": 1,
+    "strengths": "Good pronunciation.",
+    "evaluation": "Practice more 'how are you' follow-ups.",
+    "score": 4,
+    "created_at": "2024-01-15T21:24:00.000Z",
+    "updated_at": "2024-01-15T21:24:00.000Z"
+  },
+  {
+    "conversation_id": 1,
+    "user_id": 3,
+    "strengths": "Strong listening skills.",
+    "evaluation": "Try expanding answers.",
+    "score": 3,
+    "created_at": "2024-01-15T21:24:00.000Z",
+    "updated_at": "2024-01-15T21:24:00.000Z"
+  },
+  {
+    "conversation_id": 2,
+    "user_id": 2,
+    "strengths": "Clear job description.",
+    "evaluation": "Add 'where do you live'.",
+    "score": 5,
+    "created_at": "2024-01-15T22:26:00.000Z",
+    "updated_at": "2024-01-15T22:26:00.000Z"
+  },
+  {
+    "conversation_id": 2,
+    "user_id": 4,
+    "strengths": "Confident answers.",
+    "evaluation": "More detail next time.",
+    "score": 4,
+    "created_at": "2024-01-15T22:26:00.000Z",
+    "updated_at": "2024-01-15T22:26:00.000Z"
+  }
+]

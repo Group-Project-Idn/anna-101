@@ -1,0 +1,38 @@
+[
+  {
+    "conversation_id": 1,
+    "user_id": 1,
+    "joined_at": "2024-01-15T19:20:00.000Z",
+    "updated_at": "2024-01-15T19:20:00.000Z"
+  },
+  {
+    "conversation_id": 1,
+    "user_id": 3,
+    "joined_at": "2024-01-15T19:20:00.000Z",
+    "updated_at": "2024-01-15T19:20:00.000Z"
+  },
+  {
+    "conversation_id": 2,
+    "user_id": 2,
+    "joined_at": "2024-01-15T20:22:00.000Z",
+    "updated_at": "2024-01-15T20:22:00.000Z"
+  },
+  {
+    "conversation_id": 2,
+    "user_id": 4,
+    "joined_at": "2024-01-15T20:22:00.000Z",
+    "updated_at": "2024-01-15T20:22:00.000Z"
+  },
+  {
+    "conversation_id": 3,
+    "user_id": 4,
+    "joined_at": "2024-01-16T06:42:00.000Z",
+    "updated_at": "2024-01-16T06:42:00.000Z"
+  },
+  {
+    "conversation_id": 3,
+    "user_id": 1,
+    "joined_at": "2024-01-16T06:42:00.000Z",
+    "updated_at": "2024-01-16T06:42:00.000Z"
+  }
+]
