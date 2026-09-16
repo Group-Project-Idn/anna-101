@@ -1,7 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
-import PlaceholderPage from "./pages/PlaceholderPage";
+import PathwaysPage from "./pages/PathwaysPage";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
           <Route path="/" element={<Navigate to="/register" replace />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/pathways" element={<PlaceholderPage />} />
+          <Route path="/pathways" element={<PathwaysPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

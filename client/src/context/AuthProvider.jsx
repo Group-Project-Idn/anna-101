@@ -73,9 +73,17 @@ export default function AuthProvider({ children }) {
     }
   }, []);
 
+  const logout = useCallback(() => {
+    setUser(null);
+    setToken(null);
+    setStatus("idle");
+    localStorage.removeItem(USER_KEY);
+    localStorage.removeItem(TOKEN_KEY);
+  }, []);
+
   const value = useMemo(
-    () => ({ user, token, status, register, login }),
-    [user, token, status, register, login],
+    () => ({ user, token, status, register, login, logout }),
+    [user, token, status, register, login, logout],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

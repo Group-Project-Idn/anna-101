@@ -2,9 +2,7 @@ import { Link, useLocation } from "react-router";
 import AuthNavbar from "../components/AuthNavbar";
 import { useAuth } from "../hooks/useAuth";
 
-const PAGE_LABELS = {
-  "/pathways": "Halaman pathways",
-};
+const PAGE_LABELS = {};
 
 export default function PlaceholderPage() {
   const { pathname } = useLocation();
