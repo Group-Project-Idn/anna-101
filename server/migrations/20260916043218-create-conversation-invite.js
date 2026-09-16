@@ -2,42 +2,49 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Users', {
+    await queryInterface.createTable('ConversationInvites', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      username: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true
-      },
-      email: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true
-      },
-      password_hash: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      current_pathway_id: {
+      lesson_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
-          model: 'Pathways',
+          model: 'Lessons',
           key: 'id'
         }
+      },
+      from_user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Users',
+          key: 'id'
+        }
+      },
+      to_user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Users',
+          key: 'id'
+        }
+      },
+      status: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue: 'pending'
       },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE,
         field: 'created_at'
+      },
+      responded_at: {
+        type: Sequelize.DATE
       },
       updated_at: {
         allowNull: false,
@@ -48,6 +55,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('ConversationInvites');
   }
 };
