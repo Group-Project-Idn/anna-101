@@ -68,7 +68,7 @@ export default function PathwayCard({ pathway, meta }) {
           {meta.done} dari {meta.total} lesson selesai
         </p>
         <Link
-          to={`/lessons?pathway=${pathway.id}`}
+          to={`/lessons/${pathway.id}`}
           className={`btn mt-4 w-full font-display ${CTA_STYLES[meta.ctaStyle]}`}
         >
           {meta.cta}
