@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
 import { AuthContext } from "./AuthContext";
+import { markJustLoggedOut } from "../utils/logoutFlag";
 import { loginUser, registerUser } from "../services/authService";
 
 const TOKEN_KEY = "anna101_token";
@@ -79,6 +80,7 @@ export default function AuthProvider({ children }) {
     setStatus("idle");
     localStorage.removeItem(USER_KEY);
     localStorage.removeItem(TOKEN_KEY);
+    markJustLoggedOut();
   }, []);
 
   const value = useMemo(

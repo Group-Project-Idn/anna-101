@@ -14,9 +14,7 @@ export default function AppNavbar({ backTo }) {
 
   function handleLogout() {
     logout();
-    // Tandai navigasi ini berasal dari logout supaya guard halaman
-    // (Pathways/Lessons) tidak menampilkan toast "Silakan masuk dulu...".
-    navigate("/login", { state: { fromLogout: true }, replace: true });
+    navigate("/login", { replace: true });
   }
 
   // Sembunyikan tombol Keluar di halaman yang tidak butuh auth

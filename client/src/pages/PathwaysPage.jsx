@@ -1,24 +1,25 @@
 import { useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import AppNavbar from "../components/AppNavbar";
 import PathwayCard from "../components/PathwayCard";
 import { useAuth } from "../hooks/useAuth";
 import { usePathways } from "../hooks/usePathways";
 import { getPathwayMeta } from "../constant/pathwayMeta";
+import { consumeJustLoggedOut } from "../utils/logoutFlag";
 import { showErrorToast } from "../utils/toast";
 
 export default function PathwaysPage() {
   const { token } = useAuth();
   const { pathways, status, error, fetchPathways } = usePathways();
   const navigate = useNavigate();
-  const location = useLocation();
   const isLoading = status === "idle" || status === "loading";
 
   useEffect(() => {
     if (!token) {
-      // Jangan tampilkan toast kalau baru saja logout — user memang
-      // sengaja ke /login, bukan "ditolak masuk".
-      if (!location.state?.fromLogout) {
+      // Lewatkan toast sekali setelah logout — user memang sengaja ke
+      // /login, bukan "ditolak masuk". Akses tanpa token di lain waktu
+      // tetap menampilkan toast seperti biasa.
+      if (!consumeJustLoggedOut()) {
         showErrorToast("Silakan masuk dulu untuk melihat pathway.");
       }
       navigate("/login", { replace: true });
@@ -37,7 +38,7 @@ export default function PathwaysPage() {
     return () => {
       cancelled = true;
     };
-  }, [token, fetchPathways, navigate, location.state]);
+  }, [token, fetchPathways, navigate]);
 
   return (
     <div className="bg-slate-100 min-h-screen font-sans text-slate-800">
