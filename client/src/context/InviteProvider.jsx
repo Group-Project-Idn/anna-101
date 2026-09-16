@@ -66,6 +66,9 @@ export default function InviteProvider({ children }) {
       setIncoming(sortNewestFirst(data.incoming));
       setOutgoing(sortNewestFirst(data.outgoing));
       setStatus("success");
+      // Lepas guard supaya fetch berikutnya (refetch setelah kirim undangan,
+      // tombol coba lagi) tidak menjadi no-op.
+      requestRef.current = false;
       return { ok: true };
     } catch (err) {
       requestRef.current = false;
@@ -146,19 +149,45 @@ export default function InviteProvider({ children }) {
     return socket;
   }, []);
 
-  const sendInvite = useCallback(
-    (payload) => {
-      const socket = socketRef.current;
+  // Kirim undangan via socket DAN tunggu acknowledgement dari server.
+  // Emit Socket.io itu fire-and-forget — { ok: true } hanya valid setelah
+  // server mengonfirmasi via ack bahwa invite benar-benar dibuat. Timeout
+  // mencegah UI menggantung bila server tidak pernah membalas ack.
+  const sendInvite = useCallback((payload) => {
+    const socket = socketRef.current;
 
-      if (socket?.connected) {
-        socket.emit("invite:send", payload);
-        return { ok: true, via: "socket" };
-      }
+    if (!socket?.connected) {
+      return Promise.resolve({
+        ok: false,
+        via: "socket",
+        message: "Socket belum terhubung.",
+      });
+    }
 
-      return { ok: false, via: "socket", message: "Socket belum terhubung." };
-    },
-    [],
-  );
+    return new Promise((resolve) => {
+      const timer = setTimeout(() => {
+        resolve({
+          ok: false,
+          via: "socket",
+          message: "Server tidak merespons undangan. Coba lagi.",
+        });
+      }, 5000);
+
+      socket.emit("invite:send", payload, (ack) => {
+        clearTimeout(timer);
+
+        if (ack?.ok) {
+          resolve({ ok: true, via: "socket", data: ack.invite ?? null });
+        } else {
+          resolve({
+            ok: false,
+            via: "socket",
+            message: ack?.message || "Gagal mengirim undangan. Coba lagi.",
+          });
+        }
+      });
+    });
+  }, []);
 
   const respondInvite = useCallback(async (inviteId, action) => {
     const socket = socketRef.current;
