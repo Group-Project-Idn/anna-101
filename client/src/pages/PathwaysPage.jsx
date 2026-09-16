@@ -4,13 +4,14 @@ import AppNavbar from "../components/AppNavbar";
 import PathwayCard from "../components/PathwayCard";
 import { useAuth } from "../hooks/useAuth";
 import { usePathways } from "../hooks/usePathways";
-import { getPathwayMeta } from "../constant/pathwayMeta";
+import { getPathwayMeta, resolvePathwayCta } from "../constant/pathwayMeta";
 import { consumeJustLoggedOut } from "../utils/logoutFlag";
 import { showErrorToast } from "../utils/toast";
 
 export default function PathwaysPage() {
   const { token } = useAuth();
-  const { pathways, status, error, fetchPathways } = usePathways();
+  const { pathways, progressByPathway, status, error, fetchPathways } =
+    usePathways();
   const navigate = useNavigate();
   const isLoading = status === "idle" || status === "loading";
 
@@ -109,6 +110,10 @@ export default function PathwaysPage() {
                 key={pathway.id}
                 pathway={pathway}
                 meta={getPathwayMeta(pathway.level)}
+                resolved={resolvePathwayCta(
+                  progressByPathway[pathway.id],
+                  getPathwayMeta(pathway.level),
+                )}
               />
             ))}
           </div>

@@ -12,3 +12,16 @@ export async function fetchPathways(token) {
 
   return data;
 }
+
+/**
+ * GET /api/pathways/progress (butuh Bearer token) — USULAN di api-contract.
+ * Response 200: [{ pathway_id, total_lessons, completed_lessons, unlocked_lesson_id }]
+ * Belum diimplementasikan server: panggil dalam try/catch sendiri, 404 = pakai dummy.
+ */
+export async function fetchPathwayProgress(token) {
+  const { data } = await axios.get(`${baseUrl}/pathways/progress`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  return data;
+}

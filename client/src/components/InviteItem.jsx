@@ -1,24 +1,60 @@
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import { useInvites } from "../hooks/useInvites";
+import { showErrorToast, showSuccessToast } from "../utils/toast";
 
 function InviteItemActions({ invite }) {
   const { respondInvite } = useInvites();
+  const navigate = useNavigate();
+  const [busy, setBusy] = useState(false);
+
+  async function handleRespond(action) {
+    if (busy) {
+      return;
+    }
+
+    setBusy(true);
+
+    const result = await respondInvite(invite.id, action);
+
+    setBusy(false);
+
+    if (!result.ok) {
+      showErrorToast(result.message);
+      return;
+    }
+
+    // Via socket: server broadcast invite:status yang mengupdate list.
+    // Via REST fallback: list sudah diupdate provider, langsung navigasi.
+    if (action === "accept") {
+      if (result.via === "rest" && result.data?.conversation_id) {
+        showSuccessToast("Undangan diterima. Masuk ke room...");
+        navigate(`/chat-room/${result.data.conversation_id}`);
+      } else {
+        showSuccessToast("Respons terkirim. Menunggu room...");
+      }
+    } else {
+      showSuccessToast("Undangan ditolak.");
+    }
+  }
 
   return (
     <div className="flex items-center gap-2">
       <button
         type="button"
-        onClick={() => respondInvite(invite.id, "accept")}
-        className="btn btn-xs bg-emerald-500 hover:bg-emerald-600 text-white font-display border-b-2 border-emerald-700 active:border-b-0 rounded-xl shadow-sm"
+        disabled={busy}
+        onClick={() => handleRespond("accept")}
+        className="btn btn-xs bg-emerald-500 hover:bg-emerald-600 text-white font-display border-b-2 border-emerald-700 active:border-b-0 rounded-xl shadow-sm disabled:opacity-60"
       >
-        Terima ✅
+        {busy ? "…" : "Terima ✅"}
       </button>
       <button
         type="button"
-        onClick={() => respondInvite(invite.id, "reject")}
-        className="btn btn-xs bg-white hover:bg-slate-100 text-slate-600 border-2 border-slate-200 rounded-xl font-bold"
+        disabled={busy}
+        onClick={() => handleRespond("reject")}
+        className="btn btn-xs bg-white hover:bg-slate-100 text-slate-600 border-2 border-slate-200 rounded-xl font-bold disabled:opacity-60"
       >
-        Tolak
+        {busy ? "…" : "Tolak"}
       </button>
     </div>
   );

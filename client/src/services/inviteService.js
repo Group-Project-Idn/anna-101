@@ -35,3 +35,32 @@ export async function createInvite(token, { lessonId, toUsername }) {
 
   return data;
 }
+
+/**
+ * PATCH /api/invites/:id/accept -> 200 { conversation_id, ... }
+ * Fallback REST bila socket invite:respond tidak tersedia.
+ * Dipakai InviteProvider.respondInvite bila socket belum terhubung.
+ */
+export async function acceptInviteRest(token, inviteId) {
+  const { data } = await axios.patch(
+    `${baseUrl}/invites/${inviteId}/accept`,
+    {},
+    authHeaders(token),
+  );
+
+  return data;
+}
+
+/**
+ * PATCH /api/invites/:id/reject -> 200 { ... }
+ * Fallback REST bila socket invite:respond tidak tersedia.
+ */
+export async function rejectInviteRest(token, inviteId) {
+  const { data } = await axios.patch(
+    `${baseUrl}/invites/${inviteId}/reject`,
+    {},
+    authHeaders(token),
+  );
+
+  return data;
+}
