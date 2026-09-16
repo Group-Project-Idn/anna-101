@@ -1,12 +1,14 @@
 require("dotenv").config();
 const express = require("express");
 const Controller = require("./controllers/controllerUser");
-const { InviteController } = require("./controllers/controllerInvite");
 const errorHandler = require("./middlewares/errorHandler");
 const authentication = require("./middlewares/authentication");
 const authorization = require("./middlewares/authorization");
 const app = express();
 const cors = require("cors");
+const ControllerPathways = require("./controllers/controllerPathway");
+const ControllerInvite = require("./controllers/controllerInvite");
+const ControllerConversation = require("./controllers/controllerConversation");
 
 app.use(
   express.urlencoded({
@@ -22,10 +24,19 @@ app.post("/api/auth/login", Controller.login);
 
 app.use(authentication);
 
-app.post("/api/invites", InviteController.create);
-app.get("/api/invites", InviteController.getAll);
-app.patch("/api/invites/:id/accept", InviteController.accept);
-app.patch("/api/invites/:id/reject", InviteController.reject);
+app.post("/api/pathways", ControllerPathways.read);
+app.get("/api/pathways/:id/lessons", ControllerPathways.readStatus);
+
+app.post("/api/invites", ControllerInvite.create);
+app.get("/api/invites", ControllerInvite.getAll);
+app.patch("/api/invites/:id/accept", ControllerInvite.accept);
+app.patch("/api/invites/:id/reject", ControllerInvite.reject);
+
+app.patch("/api/conversations/:id", ControllerConversation.read);
+app.patch(
+  "/api/conversations/:id/messages",
+  ControllerConversation.readMessages,
+);
 
 app.use(errorHandler);
 

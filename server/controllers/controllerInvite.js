@@ -1,10 +1,16 @@
-const { User, Lesson, ConversationInvite, UserLessonProgress, sequelize } = require('../models');
+const {
+  User,
+  Lesson,
+  ConversationInvite,
+  UserLessonProgress,
+  sequelize,
+} = require("../models");
 
-class InviteController {
+class ControllerInvite {
   static async lessonStatusForUser(lesson, user_id) {
     const lessons = await Lesson.findAll({
       where: { pathway_id: lesson.pathway_id },
-      order: [['order', 'ASC']],
+      order: [["order", "ASC"]],
     });
 
     const progresses = lessons.length
@@ -23,23 +29,23 @@ class InviteController {
       const progress = progressMap[item.id];
       let status;
 
-      if (progress && progress.status === 'completed') {
-        status = 'completed';
-      } else if (progress && progress.status === 'in_progress') {
-        status = 'unlocked';
+      if (progress && progress.status === "completed") {
+        status = "completed";
+      } else if (progress && progress.status === "in_progress") {
+        status = "unlocked";
       } else if (prevCompleted) {
-        status = 'unlocked';
+        status = "unlocked";
       } else {
-        status = 'locked';
+        status = "locked";
       }
 
-      prevCompleted = !!(progress && progress.status === 'completed');
+      prevCompleted = !!(progress && progress.status === "completed");
 
       return { id: item.id, status };
     });
 
     const found = statuses.find((item) => item.id === lesson.id);
-    return found ? found.status : 'unlocked';
+    return found ? found.status : "unlocked";
   }
 
   static async create(req, res, next) {
@@ -48,33 +54,39 @@ class InviteController {
       const { lesson_id, to_username } = req.body;
 
       if (!lesson_id || !to_username) {
-        throw { name: 'BadRequest', message: 'lesson_id and to_username are required.' };
+        throw {
+          name: "BadRequest",
+          message: "lesson_id and to_username are required.",
+        };
       }
 
       const lesson = await Lesson.findByPk(lesson_id);
       if (!lesson) {
-        throw { name: 'NotFound', message: 'Lesson not found.' };
+        throw { name: "NotFound", message: "Lesson not found." };
       }
 
       const toUser = await User.findOne({ where: { username: to_username } });
       if (!toUser) {
-        throw { name: 'BadRequest', message: 'Username not found.' };
+        throw { name: "BadRequest", message: "Username not found." };
       }
 
       if (toUser.id === user_id) {
-        throw { name: 'BadRequest', message: 'You cannot invite yourself.' };
+        throw { name: "BadRequest", message: "You cannot invite yourself." };
       }
 
-      const lessonStatus = await InviteController.lessonStatusForUser(lesson, user_id);
-      if (lessonStatus === 'locked') {
-        throw { name: 'BadRequest', message: 'Lesson is still locked.' };
+      const lessonStatus = await InviteController.lessonStatusForUser(
+        lesson,
+        user_id,
+      );
+      if (lessonStatus === "locked") {
+        throw { name: "BadRequest", message: "Lesson is still locked." };
       }
 
       const invite = await ConversationInvite.create({
         lesson_id: lesson.id,
         from_user_id: user_id,
         to_user_id: toUser.id,
-        status: 'pending',
+        status: "pending",
       });
 
       res.status(201).json({
@@ -95,19 +107,19 @@ class InviteController {
       const incoming = await ConversationInvite.findAll({
         where: { to_user_id: user_id },
         include: [
-          { model: User, as: 'from_user', attributes: ['username'] },
-          { model: Lesson, as: 'lesson', attributes: ['title'] },
+          { model: User, as: "from_user", attributes: ["username"] },
+          { model: Lesson, as: "lesson", attributes: ["title"] },
         ],
-        order: [['created_at', 'DESC']],
+        order: [["created_at", "DESC"]],
       });
 
       const outgoing = await ConversationInvite.findAll({
         where: { from_user_id: user_id },
         include: [
-          { model: User, as: 'to_user', attributes: ['username'] },
-          { model: Lesson, as: 'lesson', attributes: ['title'] },
+          { model: User, as: "to_user", attributes: ["username"] },
+          { model: Lesson, as: "lesson", attributes: ["title"] },
         ],
-        order: [['created_at', 'DESC']],
+        order: [["created_at", "DESC"]],
       });
 
       res.status(200).json({
@@ -136,19 +148,25 @@ class InviteController {
 
       const invite = await ConversationInvite.findByPk(id);
       if (!invite) {
-        throw { name: 'NotFound', message: 'Invite not found.' };
+        throw { name: "NotFound", message: "Invite not found." };
       }
 
       if (invite.to_user_id !== user_id) {
-        throw { name: 'Forbidden', message: 'Only the invited user can accept this invite.' };
+        throw {
+          name: "Forbidden",
+          message: "Only the invited user can accept this invite.",
+        };
       }
 
-      if (invite.status !== 'pending') {
-        throw { name: 'BadRequest', message: 'Invite has already been responded.' };
+      if (invite.status !== "pending") {
+        throw {
+          name: "BadRequest",
+          message: "Invite has already been responded.",
+        };
       }
 
       const conversation = await sequelize.transaction(async (t) => {
-        await invite.update({ status: 'accepted' }, { transaction: t });
+        await invite.update({ status: "accepted" }, { transaction: t });
 
         const [rows] = await sequelize.query(
           'INSERT INTO "Conversations" ("invite_id", "lesson_id", "status", "started_at", "created_at", "updated_at") VALUES (:invite_id, :lesson_id, \'active\', NOW(), NOW(), NOW()) RETURNING "id"',
@@ -165,8 +183,8 @@ class InviteController {
 
         const query =
           'INSERT INTO "ConversationParticipants" ("conversation_id", "user_id", "joined_at", "created_at", "updated_at") ' +
-          'VALUES (:conversation_id, :from_user_id, NOW(), NOW(), NOW()), ' +
-          '(:conversation_id, :to_user_id, NOW(), NOW(), NOW())';
+          "VALUES (:conversation_id, :from_user_id, NOW(), NOW(), NOW()), " +
+          "(:conversation_id, :to_user_id, NOW(), NOW(), NOW())";
 
         await sequelize.query(query, {
           replacements: {
@@ -182,7 +200,7 @@ class InviteController {
 
       res.status(200).json({
         invite_id: invite.id,
-        status: 'accepted',
+        status: "accepted",
         conversation_id: conversation.id,
       });
     } catch (error) {
@@ -197,22 +215,28 @@ class InviteController {
 
       const invite = await ConversationInvite.findByPk(id);
       if (!invite) {
-        throw { name: 'NotFound', message: 'Invite not found.' };
+        throw { name: "NotFound", message: "Invite not found." };
       }
 
       if (invite.to_user_id !== user_id) {
-        throw { name: 'Forbidden', message: 'Only the invited user can reject this invite.' };
+        throw {
+          name: "Forbidden",
+          message: "Only the invited user can reject this invite.",
+        };
       }
 
-      if (invite.status !== 'pending') {
-        throw { name: 'BadRequest', message: 'Invite has already been responded.' };
+      if (invite.status !== "pending") {
+        throw {
+          name: "BadRequest",
+          message: "Invite has already been responded.",
+        };
       }
 
-      await invite.update({ status: 'rejected' });
+      await invite.update({ status: "rejected" });
 
       res.status(200).json({
         invite_id: invite.id,
-        status: 'rejected',
+        status: "rejected",
       });
     } catch (error) {
       next(error);
@@ -220,4 +244,4 @@ class InviteController {
   }
 }
 
-module.exports = { InviteController };
+module.exports = ControllerInvite;
