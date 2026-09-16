@@ -150,7 +150,15 @@ Mengundang user lain untuk berlatih bareng di 1 lesson.
 
 ### GET `/api/invites`
 
-List undangan masuk & keluar milik user yang sedang login.
+List undangan masuk & keluar milik user yang sedang login. Mendukung
+pagination untuk scroll riwayat (terbaru paling atas, `created_at` desc).
+
+**Query params (opsional)**
+
+| Param | Default | Arti |
+| --- | --- | --- |
+| `limit` | `20` | Jumlah item per sisi (incoming/outgoing) |
+| `offset` | `0` | Loncat N item terbaru |
 
 **Response** `200`
 
@@ -159,21 +167,36 @@ List undangan masuk & keluar milik user yang sedang login.
   "incoming": [
     {
       "id": 31,
+      "from_user_id": 3,
       "from_username": "andi",
+      "lesson_id": 5,
       "lesson_title": "Talking About Sports",
-      "status": "pending"
+      "pathway_id": 1,
+      "pathway_level": 1,
+      "status": "pending",
+      "created_at": "2026-09-16T10:00:00.000Z"
     }
   ],
   "outgoing": [
     {
       "id": 30,
+      "to_user_id": 2,
       "to_username": "sari_21",
+      "lesson_id": 5,
       "lesson_title": "Talking About Sports",
-      "status": "pending"
+      "pathway_id": 1,
+      "pathway_level": 1,
+      "status": "pending",
+      "created_at": "2026-09-16T09:00:00.000Z"
     }
-  ]
+  ],
+  "meta": { "limit": 20, "offset": 0 }
 }
 ```
+
+> Field `pathway_id`/`pathway_level` dipakai dropdown level di form kirim
+> undangan. Field `created_at` dipakai untuk urutan terbaru-paling-atas.
+> `status`: `pending` | `accepted` | `rejected`.
 
 ### PATCH `/api/invites/:id/accept`
 

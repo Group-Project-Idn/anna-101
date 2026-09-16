@@ -3,6 +3,7 @@ import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import PathwaysPage from "./pages/PathwaysPage";
 import LessonsPage from "./pages/LessonsPage";
+import InvitePage from "./pages/InvitePage";
 import NotFound from "./pages/NotFound";
 import HomeRoute from "./components/HomeRoute";
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/pathways" element={<PathwaysPage />} />
           <Route path="/lessons/:id" element={<LessonsPage />} />
+          <Route path="/invite" element={<InvitePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
