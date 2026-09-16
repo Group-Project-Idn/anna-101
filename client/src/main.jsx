@@ -5,12 +5,15 @@ import "toastify-js/src/toastify.css";
 import App from "./App.jsx";
 import AuthProvider from "./context/AuthProvider.jsx";
 import PathwayProvider from "./context/PathwayProvider.jsx";
+import LessonProvider from "./context/LessonProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
       <PathwayProvider>
-        <App />
+        <LessonProvider>
+          <App />
+        </LessonProvider>
       </PathwayProvider>
     </AuthProvider>
   </StrictMode>,
