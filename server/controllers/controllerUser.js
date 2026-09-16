@@ -6,7 +6,6 @@ class Controller {
   static async register(req, res, next) {
     try {
       const { name, username, email, password, current_pathway_id } = req.body;
-      console.log(name, username, email, password);
 
       const data = await User.create({
         name,
@@ -16,9 +15,21 @@ class Controller {
         current_pathway_id,
       });
 
-      res.status(201).json({ id: data.id, email: data.email });
+      const payload = {
+        id: data.id,
+        name: data.name,
+        email: data.email,
+      };
+
+      const token = signToken(payload);
+
+      res
+        .status(201)
+        .json({
+          user: { id: data.id, name: data.name, username: data.username },
+          token,
+        });
     } catch (error) {
-      console.log(error);
       next(error);
     }
   }
@@ -32,23 +43,23 @@ class Controller {
 
       const user = await User.findOne({ where: { email } });
 
-      if (!user) throw { name: "Unauthorized" };
+      if (!user) throw { name: "LoginError" };
 
-      if (!comparePass(password, user.password)) throw { name: "Unauthorized" };
+      if (!comparePass(password, user.password)) throw { name: "LoginError" };
 
       const payload = {
         id: user.id,
         name: user.name,
         email: user.email,
       };
-      console.log(payload);
 
-      const access_token = signToken(payload);
+      const token = signToken(payload);
 
-      res.status(200).json({ access_token: access_token });
+      res.status(200).json({
+        user: { id: user.id, name: user.name, username: user.username },
+        token,
+      });
     } catch (error) {
-      console.log(error);
-
       next(error);
     }
   }
