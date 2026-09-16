@@ -24,7 +24,7 @@ app.post("/api/auth/login", Controller.login);
 app.use(authentication);
 
 app.get("/api/pathways", ControllerPathways.read);
-app.get("/api/pathways", ControllerPathways.readStatus);
+app.get("/api/pathways/:id/lessons", ControllerPathways.readStatus);
 
 app.get("/api/conversations/:id", ControllerConversation.read);
 app.get("/api/conversations/:id/messages", ControllerConversation.readMessages);
