@@ -1,13 +1,18 @@
 const { Server } = require('socket.io');
+const { Op } = require('sequelize');
 const {
   Conversation,
   ConversationParticipant,
+  ConversationInvite,
+  Lesson,
   Message,
   SessionEvaluation,
   User,
   UserLessonProgress,
+  sequelize,
 } = require('../models');
 const { verifyToken } = require('../helpers/jwt');
+const ControllerInvite = require('../controllers/controllerInvite');
 
 let io = null;
 
@@ -107,6 +112,52 @@ const sendToUser = (userId, event, payload) => {
   });
 };
 
+// Room "invite:pending:{id}" bersifat sementara (kontrak api-contract.md §5):
+// di-join selama user punya invite pending, di-leave saat sudah tidak ada.
+const pendingRoomFor = (userId) => `invite:pending:${userId}`;
+
+const socketsOfUser = (userId) => {
+  const socketIds = userSockets.get(userId);
+  if (!socketIds) return [];
+
+  return [...socketIds]
+    .map((id) => io.sockets.sockets.get(id))
+    .filter(Boolean);
+};
+
+const joinPendingRoom = (userId) => {
+  socketsOfUser(userId).forEach((socket) => socket.join(pendingRoomFor(userId)));
+};
+
+const leavePendingRoomIfNoPending = async (userId) => {
+  const pending = await ConversationInvite.count({
+    where: {
+      status: 'pending',
+      [Op.or]: [{ to_user_id: userId }, { from_user_id: userId }],
+    },
+  });
+
+  if (pending === 0) {
+    socketsOfUser(userId).forEach((socket) => socket.leave(pendingRoomFor(userId)));
+  }
+};
+
+// Payload invite:new sesuai kontrak — frontend meng-upsert list masuk/terkirim
+// dari data ini, jadi bentuknya harus konsisten dengan GET /api/invites.
+const buildInviteNewPayload = ({ invite, lesson, fromUser, toUser }) => ({
+  id: invite.id,
+  lesson_id: lesson.id,
+  lesson_title: lesson.title,
+  pathway_id: lesson.pathway ? lesson.pathway.id : null,
+  pathway_level: lesson.pathway ? lesson.pathway.level : null,
+  from_user_id: fromUser.id,
+  from_username: fromUser.username,
+  to_user_id: toUser.id,
+  to_username: toUser.username,
+  status: invite.status,
+  created_at: invite.created_at,
+});
+
 const generateDemoScript = () => {
   const dialogue = DEMO_DIALOGUES[Math.floor(Math.random() * DEMO_DIALOGUES.length)];
   const lines = [];
@@ -168,9 +219,14 @@ const initSocket = (httpServer) => {
   io.use(async (socket, next) => {
     try {
       const { authorization } = socket.handshake.headers;
-      const token =
+      // Client (services/socket.js) mengirim auth.token dengan prefix "Bearer ",
+      // sedangkan header authorization sudah di-split sebelumnya. Strip prefix
+      // di sini supaya kedua bentuk diterima dan handshake tidak selalu gagal.
+      const rawToken =
         (socket.handshake.auth && socket.handshake.auth.token) ||
-        (authorization && authorization.split(' ')[1]);
+        (authorization && authorization.split(' ')[1]) ||
+        '';
+      const token = rawToken.replace(/^Bearer\s+/i, '');
 
       if (!token) throw new Error('unauthorized');
 
@@ -197,6 +253,10 @@ const initSocket = (httpServer) => {
     }
     userSockets.get(socket.userId).add(socket.id);
 
+    // Room personal "user:{id}" — tujuan event personal (invite:new,
+    // invite:status) selama socket ini terhubung.
+    socket.join(`user:${socket.userId}`);
+
     // Join room conversation -> kirim demo script kalau room masih fase demo.
     socket.on('conversation:join', async ({ conversationId }) => {
       try {
@@ -222,6 +282,163 @@ const initSocket = (httpServer) => {
       } catch (error) {
         console.error('[Socket] conversation:join error:', error.message);
         emitError(socket, error.message);
+      }
+    });
+
+    // ============ Invite realtime (kontrak api-contract.md §5) ============
+    // Catatan: error bisnis (username tidak ada, lesson locked, dst) TIDAK
+    // di-emit ke event 'error' karena client menganggap event itu masalah
+    // koneksi. Error bisnis cukup lewat ack { ok: false, message } ke pengirim.
+
+    // Gabung ke room personal + room pending bila masih punya invite pending.
+    socket.on('invite:join', async ({ userId } = {}, callback) => {
+      try {
+        if (userId != null && Number(userId) !== socket.userId) {
+          throw new Error('userId mismatch');
+        }
+
+        socket.join(`user:${socket.userId}`);
+
+        const pending = await ConversationInvite.count({
+          where: {
+            status: 'pending',
+            [Op.or]: [
+              { to_user_id: socket.userId },
+              { from_user_id: socket.userId },
+            ],
+          },
+        });
+
+        if (pending > 0) {
+          socket.join(pendingRoomFor(socket.userId));
+        }
+
+        if (typeof callback === 'function') callback({ ok: true });
+      } catch (error) {
+        console.error('[Socket] invite:join error:', error.message);
+
+        if (typeof callback === 'function') {
+          callback({ ok: false, message: error.message });
+        }
+      }
+    });
+
+    // Kirim undangan: validasi sama seperti POST /api/invites, simpan invite
+    // pending, lalu broadcast invite:new ke pengirim & penerima.
+    socket.on('invite:send', async ({ lesson_id, to_username } = {}, callback) => {
+      try {
+        if (!lesson_id || !to_username) {
+          throw new Error('lesson_id and to_username are required.');
+        }
+
+        const lesson = await Lesson.findByPk(lesson_id, { include: 'pathway' });
+        if (!lesson) throw new Error('Lesson not found.');
+
+        const toUser = await User.findOne({ where: { username: to_username } });
+        if (!toUser) throw new Error('Username not found.');
+
+        if (toUser.id === socket.userId) {
+          throw new Error('You cannot invite yourself.');
+        }
+
+        const fromUser = await User.findByPk(socket.userId);
+
+        const lessonStatus = await ControllerInvite.lessonStatusForUser(
+          lesson,
+          socket.userId,
+        );
+        if (lessonStatus === 'locked') {
+          throw new Error('Lesson is still locked.');
+        }
+
+        const invite = await ConversationInvite.create({
+          lesson_id: lesson.id,
+          from_user_id: socket.userId,
+          to_user_id: toUser.id,
+          status: 'pending',
+        });
+
+        const payload = buildInviteNewPayload({ invite, lesson, fromUser, toUser });
+
+        // Aktifkan room pending kedua sisi untuk broadcast badge berikutnya.
+        joinPendingRoom(toUser.id);
+        joinPendingRoom(socket.userId);
+
+        sendToUser(toUser.id, 'invite:new', payload);
+        sendToUser(socket.userId, 'invite:new', payload);
+
+        if (typeof callback === 'function') callback({ ok: true, invite: payload });
+      } catch (error) {
+        console.error('[Socket] invite:send error:', error.message);
+
+        if (typeof callback === 'function') {
+          callback({ ok: false, message: error.message });
+        }
+      }
+    });
+
+    // Terima/tolak undangan: update status (+ buat conversation bila accept),
+    // lalu broadcast invite:status ke kedua sisi.
+    socket.on('invite:respond', async ({ inviteId, action } = {}, callback) => {
+      try {
+        if (!inviteId) throw new Error('inviteId is required.');
+
+        if (action !== 'accept' && action !== 'reject') {
+          throw new Error('action must be "accept" or "reject".');
+        }
+
+        const invite = await ConversationInvite.findByPk(inviteId);
+        if (!invite) throw new Error('Invite not found.');
+
+        if (invite.to_user_id !== socket.userId) {
+          throw new Error('Only the invited user can respond to this invite.');
+        }
+
+        if (invite.status !== 'pending') {
+          throw new Error('Invite has already been responded.');
+        }
+
+        const status = action === 'accept' ? 'accepted' : 'rejected';
+        let conversationId = null;
+
+        if (action === 'accept') {
+          const conversation = await sequelize.transaction(async (t) => {
+            await invite.update({ status: 'accepted' }, { transaction: t });
+            return ControllerInvite.createConversationFromInvite(invite, t);
+          });
+          conversationId = conversation.id;
+        } else {
+          await invite.update({ status: 'rejected' });
+        }
+
+        const [fromUser, toUser] = await Promise.all([
+          User.findByPk(invite.from_user_id),
+          User.findByPk(invite.to_user_id),
+        ]);
+
+        const payload = {
+          invite_id: invite.id,
+          status,
+          lesson_id: invite.lesson_id,
+          ...(conversationId ? { conversation_id: conversationId } : {}),
+          from_username: fromUser ? fromUser.username : null,
+          to_username: toUser ? toUser.username : null,
+        };
+
+        // Reset room pending bila user sudah tidak punya invite pending lain.
+        await leavePendingRoomIfNoPending(invite.from_user_id);
+        await leavePendingRoomIfNoPending(invite.to_user_id);
+
+        sendToUser(invite.from_user_id, 'invite:status', payload);
+        sendToUser(invite.to_user_id, 'invite:status', payload);
+
+        if (typeof callback === 'function') callback({ ok: true, ...payload });
+      } catch (error) {
+        console.error('[Socket] invite:respond error:', error.message);
+
+        if (typeof callback === 'function') {
+          callback({ ok: false, message: error.message });
+        }
       }
     });
 

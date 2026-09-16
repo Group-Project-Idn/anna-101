@@ -141,6 +141,40 @@ class ControllerInvite {
     }
   }
 
+  // Buat Conversation + 2 ConversationParticipants dari invite yang sudah
+  // accepted. HARUS dipanggil di dalam transaction yang sama dengan update
+  // status invite — dipakai bersama oleh REST accept dan socket invite:respond.
+  static async createConversationFromInvite(invite, transaction) {
+    const [rows] = await sequelize.query(
+      'INSERT INTO "Conversations" ("invite_id", "lesson_id", "status", "started_at", "created_at", "updated_at") VALUES (:invite_id, :lesson_id, \'active\', NOW(), NOW(), NOW()) RETURNING "id"',
+      {
+        replacements: {
+          invite_id: invite.id,
+          lesson_id: invite.lesson_id,
+        },
+        transaction,
+      },
+    );
+
+    const created = { id: rows[0].id };
+
+    const query =
+      'INSERT INTO "ConversationParticipants" ("conversation_id", "user_id", "joined_at", "created_at", "updated_at") ' +
+      "VALUES (:conversation_id, :from_user_id, NOW(), NOW(), NOW()), " +
+      "(:conversation_id, :to_user_id, NOW(), NOW(), NOW())";
+
+    await sequelize.query(query, {
+      replacements: {
+        conversation_id: created.id,
+        from_user_id: invite.from_user_id,
+        to_user_id: invite.to_user_id,
+      },
+      transaction,
+    });
+
+    return created;
+  }
+
   static async accept(req, res, next) {
     try {
       const { userId: user_id } = req.loginInfo;
@@ -167,35 +201,7 @@ class ControllerInvite {
 
       const conversation = await sequelize.transaction(async (t) => {
         await invite.update({ status: "accepted" }, { transaction: t });
-
-        const [rows] = await sequelize.query(
-          'INSERT INTO "Conversations" ("invite_id", "lesson_id", "status", "started_at", "created_at", "updated_at") VALUES (:invite_id, :lesson_id, \'active\', NOW(), NOW(), NOW()) RETURNING "id"',
-          {
-            replacements: {
-              invite_id: invite.id,
-              lesson_id: invite.lesson_id,
-            },
-            transaction: t,
-          },
-        );
-
-        const created = { id: rows[0].id };
-
-        const query =
-          'INSERT INTO "ConversationParticipants" ("conversation_id", "user_id", "joined_at", "created_at", "updated_at") ' +
-          "VALUES (:conversation_id, :from_user_id, NOW(), NOW(), NOW()), " +
-          "(:conversation_id, :to_user_id, NOW(), NOW(), NOW())";
-
-        await sequelize.query(query, {
-          replacements: {
-            conversation_id: created.id,
-            from_user_id: invite.from_user_id,
-            to_user_id: invite.to_user_id,
-          },
-          transaction: t,
-        });
-
-        return created;
+        return ControllerInvite.createConversationFromInvite(invite, t);
       });
 
       res.status(200).json({

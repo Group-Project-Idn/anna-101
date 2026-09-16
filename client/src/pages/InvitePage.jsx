@@ -94,13 +94,23 @@ export default function InvitePage() {
 
     setSending(true);
 
-    // Jalur utama: socket realtime. Fallback: REST bila socket belum siap.
-    const socketResult = sendInvite({
-      lesson_id: Number(lessonId),
-      to_username: cleanUsername,
-    });
+    try {
+      // Jalur utama: socket realtime — TUNGGU ack server sebelum toast sukses.
+      const socketResult = await sendInvite({
+        lesson_id: Number(lessonId),
+        to_username: cleanUsername,
+      });
 
-    if (!socketResult.ok) {
+      if (socketResult.ok) {
+        showSuccessToast(`Undangan untuk @${cleanUsername} terkirim.`);
+        setToUsername("");
+        // List sudah ter-update lewat event invite:new; refetch sebagai
+        // jaring pengaman bila broadcast tidak sampai.
+        await fetchInvites(token);
+        return;
+      }
+
+      // Fallback: REST bila socket gagal / tidak direspons server.
       try {
         await createInvite(token, {
           lessonId: Number(lessonId),
@@ -111,17 +121,14 @@ export default function InvitePage() {
         await fetchInvites(token);
       } catch (err) {
         showErrorToast(
-          err.response?.data?.message || "Gagal mengirim undangan. Coba lagi.",
+          err.response?.data?.message ||
+            socketResult.message ||
+            "Gagal mengirim undangan. Coba lagi.",
         );
-      } finally {
-        setSending(false);
       }
-      return;
+    } finally {
+      setSending(false);
     }
-
-    showSuccessToast(`Undangan untuk @${cleanUsername} terkirim.`);
-    setToUsername("");
-    setSending(false);
   }
 
   return (
