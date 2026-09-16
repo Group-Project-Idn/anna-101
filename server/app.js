@@ -24,7 +24,7 @@ app.post("/api/auth/login", Controller.login);
 
 app.use(authentication);
 
-app.post("/api/pathways", ControllerPathways.read);
+app.get("/api/pathways", ControllerPathways.read);
 app.get("/api/pathways/:id/lessons", ControllerPathways.readStatus);
 
 app.post("/api/invites", ControllerInvite.create);
@@ -32,8 +32,8 @@ app.get("/api/invites", ControllerInvite.getAll);
 app.patch("/api/invites/:id/accept", ControllerInvite.accept);
 app.patch("/api/invites/:id/reject", ControllerInvite.reject);
 
-app.patch("/api/conversations/:id", ControllerConversation.read);
-app.patch(
+app.get("/api/conversations/:id", ControllerConversation.read);
+app.get(
   "/api/conversations/:id/messages",
   ControllerConversation.readMessages,
 );
