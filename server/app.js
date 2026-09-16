@@ -1,5 +1,6 @@
+require("dotenv").config();
 const express = require("express");
-const Controller = require("./controllers/controller");
+const Controller = require("./controllers/controllerUser");
 const errorHandler = require("./middlewares/errorHandler");
 const authentication = require("./middlewares/authentication");
 const authorization = require("./middlewares/authorization");
