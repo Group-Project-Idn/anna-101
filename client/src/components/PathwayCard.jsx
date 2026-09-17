@@ -16,7 +16,12 @@ export default function PathwayCard({ pathway, meta, resolved }) {
     locked: meta.locked,
     lockNote: meta.lockNote,
   };
-  const percent = view.total > 0 ? Math.round((view.done / view.total) * 100) : 0;
+  const total = view.total ?? 0;
+  const done = typeof view.done === "number" ? view.done : 0;
+  const percent = total > 0 ? Math.round((done / total) * 100) : 0;
+  // total 0 = data progress belum termuat (atau pathway belum punya lesson),
+  // jadi jangan tampilkan angka palsu.
+  const hasProgressData = total > 0;
 
   if (view.locked) {
     return (
@@ -73,7 +78,9 @@ export default function PathwayCard({ pathway, meta, resolved }) {
           ></div>
         </div>
         <p className="text-[11px] font-bold text-slate-400 mt-2">
-          {view.done} dari {view.total} lesson selesai
+          {hasProgressData
+            ? `${done} dari ${total} lesson selesai`
+            : "Progress belum tersedia"}
         </p>
         <Link
           to={`/lessons/${pathway.id}`}

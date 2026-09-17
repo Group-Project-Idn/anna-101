@@ -14,9 +14,12 @@ export async function fetchPathways(token) {
 }
 
 /**
- * GET /api/pathways/progress (butuh Bearer token) — USULAN di api-contract.
- * Response 200: [{ pathway_id, total_lessons, completed_lessons, unlocked_lesson_id }]
- * Belum diimplementasikan server: panggil dalam try/catch sendiri, 404 = pakai dummy.
+ * GET /api/pathways/progress (butuh Bearer token) — agregat progres user.
+ * Response 200: [{ pathway_id, name, level, cefr_level, total_lessons,
+ *                  completed_lessons, progress_rate, unlocked_lesson_id,
+ *                  last_attempt }]
+ * Dipakai kartu pathway untuk label CTA + progress bar. Kalau request gagal,
+ * pemanggil memakai nilai netral (lihat resolvePathwayCta).
  */
 export async function fetchPathwayProgress(token) {
   const { data } = await axios.get(`${baseUrl}/pathways/progress`, {
