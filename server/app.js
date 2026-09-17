@@ -25,6 +25,7 @@ app.post("/api/auth/login", Controller.login);
 app.use(authentication);
 
 app.get("/api/pathways", ControllerPathways.read);
+app.get("/api/pathways/progress", ControllerPathways.getProgress);
 app.get("/api/pathways/:id/lessons", ControllerPathways.readStatus);
 
 app.post("/api/invites", ControllerInvite.create);
