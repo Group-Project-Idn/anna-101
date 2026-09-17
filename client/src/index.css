@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* DaisyUI v5 — tema disamakan dengan template di folder /static (cupcake) */
+@plugin "daisyui" {
+  themes: cupcake --default;
+}
+
+/* Design token font, mengikuti template /static: Fredoka (display) + Nunito (sans) */
+@theme {
+  --font-display: "Fredoka", sans-serif;
+  --font-sans: "Nunito", sans-serif;
+}

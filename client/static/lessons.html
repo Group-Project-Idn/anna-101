@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="cupcake">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anna-101 — Lesson Journey</title>
+  <!-- Tailwind CSS & DaisyUI CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Fredoka', 'sans-serif'],
+            sans: ['Nunito', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-100 min-h-screen font-sans text-slate-800">
+
+  <!-- NAVIGASI UTAMA -->
+  <header class="bg-white border-b-2 border-slate-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-5xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
+      <a href="./pathways.html" class="flex items-center gap-2.5 shrink-0">
+        <div class="w-9 h-9 rounded-2xl bg-amber-400 flex items-center justify-center text-lg shadow-sm">🦉</div>
+        <div class="leading-tight">
+          <p class="font-display font-bold text-base text-slate-800">Anna-101</p>
+          <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Belajar Berdua + AI</p>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-1 text-xs font-bold text-slate-500">
+        <a href="./pathways.html" class="px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-slate-800">Pathways</a>
+        <a href="./lessons.html" class="px-3 py-2 rounded-xl bg-amber-100 text-amber-900">Lesson</a>
+        <a href="./invite.html" class="px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-slate-800">Invite</a>
+        <a href="./chat-room.html" class="px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-slate-800">Chat Room</a>
+        <a href="./evaluation.html" class="px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-slate-800">Evaluasi</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <div class="hidden sm:block text-right leading-tight">
+          <p class="text-xs font-bold text-slate-700">Budi</p>
+          <p class="text-[10px] font-mono text-slate-400">@budi99</p>
+        </div>
+        <div class="w-9 h-9 rounded-full bg-amber-400 text-slate-900 flex items-center justify-center font-display font-bold border-2 border-white shadow-sm">B</div>
+        <a href="./login.html" class="btn btn-ghost btn-sm rounded-xl text-xs font-bold text-slate-500">Keluar</a>
+      </div>
+    </div>
+    <nav class="md:hidden flex items-center gap-1 overflow-x-auto px-4 pb-2 text-xs font-bold text-slate-500">
+      <a href="./pathways.html" class="px-3 py-1.5 rounded-xl bg-slate-100 shrink-0">Pathways</a>
+      <a href="./lessons.html" class="px-3 py-1.5 rounded-xl bg-amber-100 text-amber-900 shrink-0">Lesson</a>
+      <a href="./invite.html" class="px-3 py-1.5 rounded-xl bg-slate-100 shrink-0">Invite</a>
+      <a href="./chat-room.html" class="px-3 py-1.5 rounded-xl bg-slate-100 shrink-0">Chat Room</a>
+      <a href="./evaluation.html" class="px-3 py-1.5 rounded-xl bg-slate-100 shrink-0">Evaluasi</a>
+    </nav>
+  </header>
+
+  <!-- KONTEN LESSON JOURNEY -->
+  <main class="max-w-5xl mx-auto px-4 py-8 sm:py-10 grid gap-6 lg:grid-cols-[1fr_300px]">
+
+    <div>
+      <a href="./pathways.html" class="btn btn-ghost btn-sm rounded-xl text-xs font-bold text-slate-500 -ml-2">← Kembali ke Pathways</a>
+      <p class="text-[11px] font-extrabold uppercase tracking-widest text-slate-400 mt-3">Level 1 • Absolute Beginner • CEFR A1</p>
+      <h1 class="font-display font-bold text-3xl sm:text-4xl mt-1">Perjalanan Lesson 🗺</h1>
+      <p class="text-sm font-semibold text-slate-500 mt-1">
+        Selesaikan berurutan — lesson berikutnya terbuka setelah teacher menandai sesi selesai.
+      </p>
+
+      <ol class="mt-6 space-y-3">
+
+        <!-- Lesson 1: Selesai -->
+        <li class="flex gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center font-display font-bold shadow-sm shrink-0">✓</div>
+          <div class="flex-1 bg-white border-2 border-slate-200 rounded-2xl p-4 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <p class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600">Lesson 01 • Selesai • Skor 5/5</p>
+                <h2 class="font-display font-bold text-lg text-slate-800">Greeting People 👋</h2>
+              </div>
+              <a href="./invite.html" class="btn btn-xs bg-slate-100 hover:bg-slate-200 text-slate-600 border-2 border-slate-200 rounded-xl font-bold">Ulangi</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Lesson 2: Selesai -->
+        <li class="flex gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center font-display font-bold shadow-sm shrink-0">✓</div>
+          <div class="flex-1 bg-white border-2 border-slate-200 rounded-2xl p-4 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <p class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600">Lesson 02 • Selesai • Skor 4/5</p>
+                <h2 class="font-display font-bold text-lg text-slate-800">Asking About Hobbies 🎨</h2>
+              </div>
+              <a href="./invite.html" class="btn btn-xs bg-slate-100 hover:bg-slate-200 text-slate-600 border-2 border-slate-200 rounded-xl font-bold">Ulangi</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Lesson 3: Selesai -->
+        <li class="flex gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center font-display font-bold shadow-sm shrink-0">✓</div>
+          <div class="flex-1 bg-white border-2 border-slate-200 rounded-2xl p-4 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <p class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600">Lesson 03 • Selesai • Skor 5/5</p>
+                <h2 class="font-display font-bold text-lg text-slate-800">Ordering Food 🍔</h2>
+              </div>
+              <a href="./invite.html" class="btn btn-xs bg-slate-100 hover:bg-slate-200 text-slate-600 border-2 border-slate-200 rounded-xl font-bold">Ulangi</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Lesson 4: Selesai -->
+        <li class="flex gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center font-display font-bold shadow-sm shrink-0">✓</div>
+          <div class="flex-1 bg-white border-2 border-slate-200 rounded-2xl p-4 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <p class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600">Lesson 04 • Selesai • Skor 3/5</p>
+                <h2 class="font-display font-bold text-lg text-slate-800">Daily Routines ☀</h2>
+              </div>
+              <a href="./invite.html" class="btn btn-xs bg-slate-100 hover:bg-slate-200 text-slate-600 border-2 border-slate-200 rounded-xl font-bold">Ulangi</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Lesson 5: Sedang Berjalan (aktif / unlocked) -->
+        <li class="flex gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-900 flex items-center justify-center font-display font-bold shadow-sm shrink-0 ring-4 ring-amber-100">5</div>
+          <div class="flex-1 bg-white border-2 border-amber-300 rounded-2xl p-4 shadow-md">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <p class="text-[10px] font-extrabold uppercase tracking-wider text-amber-700">Lesson 05 • Sedang Berjalan</p>
+                <h2 class="font-display font-bold text-lg text-slate-800">Talking About Sports &amp; Favorite Teams ⚽</h2>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge badge-warning badge-xs font-bold">football</span>
+                  <span class="badge badge-info badge-xs font-bold text-white">basketball</span>
+                  <span class="badge bg-slate-100 text-slate-500 border-none badge-xs font-bold">swimming</span>
+                </div>
+              </div>
+              <a href="./invite.html" class="btn btn-sm bg-emerald-500 hover:bg-emerald-600 text-white font-display border-b-2 border-emerald-700 active:border-b-0 rounded-xl shadow-sm">Latihan 💬</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Lesson 6: Terkunci -->
+        <li class="flex gap-3 opacity-70">
+          <div class="w-12 h-12 rounded-2xl bg-slate-200 text-slate-400 flex items-center justify-center font-display font-bold shadow-sm shrink-0">🔒</div>
+          <div class="flex-1 bg-white border-2 border-slate-200 rounded-2xl p-4 shadow-sm">
+            <p class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">Lesson 06 • Terkunci</p>
+            <h2 class="font-display font-bold text-lg text-slate-400">Making Weekend Plans </h2>
+            <p class="text-[11px] font-semibold text-slate-400 mt-1">Selesaikan Lesson 05 dulu untuk membuka lesson ini.</p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+
+    <!-- Sidebar Bantuan Sesi -->
+    <aside class="space-y-4">
+      <div class="bg-white border-2 border-slate-200 rounded-3xl p-5 shadow-sm">
+        <p class="font-display font-bold text-sm text-slate-800">🤖 Cara Kerja Sesi</p>
+        <ul class="mt-3 space-y-2 text-[11px] font-semibold text-slate-500">
+          <li>Ketik <span class="font-mono font-bold text-emerald-700">"Anna, minta saran jawaban"</span> kapan pun kamu butuh bantuan.</li>
+          <li>Ketik <span class="font-mono font-bold text-rose-600">"Anna finish"</span> untuk menutup sesi dan menerima evaluasi.</li>
+        </ul>
+      </div>
+      <div class="bg-slate-800 text-white rounded-3xl p-5 shadow-sm">
+        <p class="font-display font-bold text-sm">👥 Butuh Partner?</p>
+        <p class="text-[11px] font-semibold text-slate-300 mt-2">Latihan selalu berdua. Undang temanmu lewat username.</p>
+        <a href="./invite.html" class="btn btn-sm mt-3 w-full bg-amber-400 hover:bg-amber-500 text-slate-900 font-display border-b-2 border-amber-600 active:border-b-0 rounded-xl shadow-sm">Undang Partner →</a>
+      </div>
+    </aside>
+
+  </main>
+
+</body>
+</html>

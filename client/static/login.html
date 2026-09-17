@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="cupcake">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anna-101 — Masuk</title>
+  <!-- Tailwind CSS & DaisyUI CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Fredoka', 'sans-serif'],
+            sans: ['Nunito', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-100 min-h-screen font-sans text-slate-800">
+
+  <!-- NAVIGASI UTAMA -->
+  <header class="bg-white border-b-2 border-slate-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-5xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
+      <a href="./pathways.html" class="flex items-center gap-2.5 shrink-0">
+        <div class="w-9 h-9 rounded-2xl bg-amber-400 flex items-center justify-center text-lg shadow-sm">🦉</div>
+        <div class="leading-tight">
+          <p class="font-display font-bold text-base text-slate-800">Anna-101</p>
+          <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Belajar Berdua + AI</p>
+        </div>
+      </a>
+      <div class="flex items-center gap-2">
+        <a href="./login.html" class="btn btn-ghost btn-sm rounded-xl text-xs font-bold text-slate-500">Masuk</a>
+        <a href="./register.html" class="btn btn-sm bg-emerald-500 hover:bg-emerald-600 text-white font-display border-b-2 border-emerald-700 rounded-xl shadow-sm text-xs active:scale-95">Daftar Gratis</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- KONTEN LOGIN -->
+  <main class="max-w-5xl mx-auto px-4 py-8 sm:py-12 grid lg:grid-cols-2 gap-8 items-center">
+
+    <!-- Sisi Kiri: Penjelasan Produk -->
+    <section>
+      <span class="badge bg-amber-400 text-slate-900 border-none font-extrabold text-[11px] px-3 py-2">
+        🤖 AI TEACHER BAHASA INGGRIS
+      </span>
+      <h1 class="font-display font-bold text-4xl sm:text-5xl leading-tight mt-4">
+        Latihan percakapan <span class="text-emerald-600">berdua</span>, dibimbing Anna.
+      </h1>
+      <p class="mt-3 text-sm sm:text-base font-semibold text-slate-500 max-w-md">
+        Kurikulum American English Level 1–4 dengan cara yang seru: dua orang belajar, satu room chat live, dan AI yang membimbing sekaligus menilai.
+      </p>
+
+      <div class="flex flex-wrap gap-2 mt-5 text-[11px] font-bold text-slate-600">
+        <span class="bg-white border-2 border-slate-200 rounded-xl px-3 py-1.5">📚 Level 1–4</span>
+        <span class="bg-white border-2 border-slate-200 rounded-xl px-3 py-1.5">🎯 CEFR A1–B2</span>
+        <span class="bg-white border-2 border-slate-200 rounded-xl px-3 py-1.5">&#128101; 2 user + Anna</span>
+      </div>
+
+      <!-- Contoh dialog demo yang nanti digenerate Anna -->
+      <div class="mt-6 bg-gradient-to-r from-amber-50 to-sky-50 border-2 border-amber-300 rounded-3xl p-4 shadow-sm max-w-sm">
+        <p class="text-[11px] font-extrabold uppercase tracking-wider text-amber-700">Contoh dialog demo dari Anna</p>
+        <p class="font-display font-semibold text-lg text-slate-800 mt-1 italic">
+          "Hi Sari! Do you like watching football on weekends?"
+        </p>
+        <p class="text-[10px] font-bold text-slate-400 mt-2">Lesson 5 • Talking About Sports</p>
+      </div>
+    </section>
+
+    <!-- Sisi Kanan: Form Login -->
+    <section class="bg-white border-2 border-slate-200 rounded-3xl p-6 sm:p-7 shadow-sm">
+      <h2 class="font-display font-bold text-2xl text-slate-800">Masuk ke akunmu</h2>
+      <p class="text-xs font-bold text-slate-400 mt-1">Lanjutkan pathway dan undang partner latihanmu.</p>
+
+      <form action="./pathways.html" class="mt-5 space-y-4">
+        <label class="block">
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Email</span>
+          <input type="email" value="budi@mail.com"
+            class="input input-bordered w-full h-12 mt-1 rounded-2xl border-2 border-slate-200 focus:border-emerald-400 focus:outline-none text-sm font-semibold text-slate-800 pl-4" />
+        </label>
+        <label class="block">
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Password</span>
+          <input type="password" value="secret123"
+            class="input input-bordered w-full h-12 mt-1 rounded-2xl border-2 border-slate-200 focus:border-emerald-400 focus:outline-none text-sm font-semibold text-slate-800 pl-4" />
+        </label>
+        <button type="submit"
+          class="btn w-full bg-emerald-500 hover:bg-emerald-600 text-white font-display border-b-4 border-emerald-700 active:border-b-0 rounded-2xl shadow h-12">
+          Masuk 🚀
+        </button>
+      </form>
+
+      <p class="text-xs font-bold text-slate-500 mt-4 text-center">
+        Belum punya akun? <a href="./register.html" class="text-emerald-700 underline">Daftar sekarang</a>
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+[
+  {
+    "lesson_id": 1,
+    "from_user_id": 1,
+    "to_user_id": 3,
+    "status": "accepted",
+    "created_at": "2024-01-15T19:20:00.000Z",
+    "responded_at": "2024-01-15T19:20:00.000Z",
+    "updated_at": "2024-01-15T19:20:00.000Z"
+  },
+  {
+    "lesson_id": 2,
+    "from_user_id": 2,
+    "to_user_id": 4,
+    "status": "accepted",
+    "created_at": "2024-01-15T20:22:00.000Z",
+    "responded_at": "2024-01-15T20:22:00.000Z",
+    "updated_at": "2024-01-15T20:22:00.000Z"
+  },
+  {
+    "lesson_id": 4,
+    "from_user_id": 1,
+    "to_user_id": 2,
+    "status": "pending",
+    "created_at": "2024-01-15T21:24:00.000Z",
+    "responded_at": null,
+    "updated_at": "2024-01-15T21:24:00.000Z"
+  },
+  {
+    "lesson_id": 5,
+    "from_user_id": 3,
+    "to_user_id": 2,
+    "status": "rejected",
+    "created_at": "2024-01-15T22:26:00.000Z",
+    "responded_at": "2024-01-15T22:26:00.000Z",
+    "updated_at": "2024-01-15T22:26:00.000Z"
+  },
+  {
+    "lesson_id": 36,
+    "from_user_id": 4,
+    "to_user_id": 1,
+    "status": "accepted",
+    "created_at": "2024-01-16T06:42:00.000Z",
+    "responded_at": "2024-01-16T06:42:00.000Z",
+    "updated_at": "2024-01-16T06:42:00.000Z"
+  }
+]
