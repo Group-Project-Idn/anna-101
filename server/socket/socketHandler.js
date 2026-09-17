@@ -13,6 +13,7 @@ const {
 } = require('../models');
 const { verifyToken } = require('../helpers/jwt');
 const ControllerInvite = require('../controllers/controllerInvite');
+const { generateDemoScript, generateSuggestion, generateEvaluation } = require('../services/geminiService');
 
 let io = null;
 
@@ -158,30 +159,6 @@ const buildInviteNewPayload = ({ invite, lesson, fromUser, toUser }) => ({
   created_at: invite.created_at,
 });
 
-const generateDemoScript = () => {
-  const dialogue = DEMO_DIALOGUES[Math.floor(Math.random() * DEMO_DIALOGUES.length)];
-  const lines = [];
-
-  for (let i = 0; i < dialogue.a.length; i += 1) {
-    lines.push({ speaker: 'A', text: dialogue.a[i] });
-    lines.push({ speaker: 'B', text: dialogue.b[i] });
-  }
-
-  return lines;
-};
-
-const generateSuggestion = () => {
-  return SUGGESTIONS[Math.floor(Math.random() * SUGGESTIONS.length)];
-};
-
-const generateEvaluation = () => {
-  const strengths = STRENGTHS[Math.floor(Math.random() * STRENGTHS.length)];
-  const evaluation = EVALUATIONS[Math.floor(Math.random() * EVALUATIONS.length)];
-  const score = 3 + Math.floor(Math.random() * 3); // 3 - 5
-
-  return { strengths, evaluation, score };
-};
-
 // Conversation boleh diakses hanya oleh partisipannya — sama seperti controllerConversation.
 const getConversationForUser = async (conversationId, userId) => {
   const conversation = await Conversation.findByPk(conversationId, {
@@ -269,7 +246,7 @@ const initSocket = (httpServer) => {
         if (!demoDone.has(conversationId) && conversation.status !== 'finished') {
           if (!demoScripts.has(conversationId)) {
             demoScripts.set(conversationId, {
-              lines: generateDemoScript(),
+              lines: await generateDemoScript({ lesson: conversation }),
               readyUsers: new Set(),
             });
           }
@@ -532,13 +509,23 @@ const initSocket = (httpServer) => {
           return emitError(socket, 'Finish the demo first');
         }
 
+        // Get recent messages for context
+        const recentMessages = await Message.findAll({
+          where: { conversation_id: conversationId },
+          order: [['created_at', 'DESC']],
+          limit: 6,
+        }).then(messages => messages.reverse());
+
         const message = await Message.create({
           conversation_id: conversationId,
           sender_id: null,
           sender_type: 'ai',
           message_type: 'suggestion',
           role: 'ai',
-          content: generateSuggestion(),
+          content: await generateSuggestion({
+            lesson: conversation,
+            messages: recentMessages.map(m => ({ role: m.role, content: m.content })),
+          }),
         });
 
         io.to(`conversation:${conversationId}`).emit('message:new', {
@@ -572,40 +559,54 @@ const initSocket = (httpServer) => {
 
         await conversation.update({ status: 'finished', ended_at: new Date() });
 
-        for (const userId of participantIds) {
-          const { strengths, evaluation, score } = generateEvaluation();
-
-          const [sessionEvaluation] = await SessionEvaluation.findOrCreate({
-            where: { conversation_id: conversationId, user_id: userId },
-            defaults: { conversation_id: conversationId, user_id: userId, strengths, evaluation, score },
-          });
-
-          const [progress, created] = await UserLessonProgress.findOrCreate({
-            where: { user_id: userId, lesson_id: conversation.lesson_id },
-            defaults: {
-              user_id: userId,
-              lesson_id: conversation.lesson_id,
-              status: 'completed',
-              score: sessionEvaluation.score,
-              completed_at: new Date(),
-            },
-          });
-
-          if (!created) {
-            await progress.update({
-              status: 'completed',
-              score: sessionEvaluation.score,
-              completed_at: new Date(),
+        const evaluations = await Promise.all(
+          participantIds.map(async (userId) => {
+            // Get user's messages for evaluation
+            const userMessages = await Message.findAll({
+              where: { conversation_id: conversationId, sender_id: userId },
+              order: [['created_at', 'ASC']],
             });
-          }
 
-          // Dikirim ke MASING-MASING user, isinya evaluasi dia sendiri.
+            const { strengths, evaluation, score } = await generateEvaluation({
+              lesson: conversation,
+              messages: userMessages.map(m => m.content),
+            });
+
+            const [sessionEvaluation] = await SessionEvaluation.findOrCreate({
+              where: { conversation_id: conversationId, user_id: userId },
+              defaults: { conversation_id: conversationId, user_id: userId, strengths, evaluation, score },
+            });
+
+            const [progress, created] = await UserLessonProgress.findOrCreate({
+              where: { user_id: userId, lesson_id: conversation.lesson_id },
+              defaults: {
+                user_id: userId,
+                lesson_id: conversation.lesson_id,
+                status: 'completed',
+                score: sessionEvaluation.score,
+                completed_at: new Date(),
+              },
+            });
+
+            if (!created) {
+              await progress.update({
+                status: 'completed',
+                score: sessionEvaluation.score,
+                completed_at: new Date(),
+              });
+            }
+
+            return { userId, strengths: sessionEvaluation.strengths, evaluation: sessionEvaluation.evaluation, score: sessionEvaluation.score };
+          }),
+        );
+
+        for (const { userId, strengths, evaluation, score } of evaluations) {
           sendToUser(userId, 'session:evaluation', {
             conversationId,
             user_id: userId,
-            strengths: sessionEvaluation.strengths,
-            evaluation: sessionEvaluation.evaluation,
-            score: sessionEvaluation.score,
+            strengths,
+            evaluation,
+            score,
           });
         }
       } catch (error) {
