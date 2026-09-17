@@ -5,6 +5,7 @@ const {
   UserLessonProgress,
   sequelize,
 } = require("../models");
+const db = require("../models");
 
 class ControllerInvite {
   static async lessonStatusForUser(lesson, user_id) {
@@ -103,38 +104,69 @@ class ControllerInvite {
   static async getAll(req, res, next) {
     try {
       const { userId: user_id } = req.loginInfo;
+      const limit = parseInt(req.query.limit, 10) || 20;
+      const offset = parseInt(req.query.offset, 10) || 0;
 
       const incoming = await ConversationInvite.findAll({
         where: { to_user_id: user_id },
         include: [
-          { model: User, as: "from_user", attributes: ["username"] },
-          { model: Lesson, as: "lesson", attributes: ["title"] },
+          { model: User, as: "from_user", attributes: ["id", "username"] },
+          {
+            model: Lesson,
+            as: "lesson",
+            attributes: ["id", "title"],
+            include: [
+              { model: db.Pathway, as: "pathway", attributes: ["id", "level"] },
+            ],
+          },
         ],
         order: [["created_at", "DESC"]],
+        limit,
+        offset,
       });
 
       const outgoing = await ConversationInvite.findAll({
         where: { from_user_id: user_id },
         include: [
-          { model: User, as: "to_user", attributes: ["username"] },
-          { model: Lesson, as: "lesson", attributes: ["title"] },
+          { model: User, as: "to_user", attributes: ["id", "username"] },
+          {
+            model: Lesson,
+            as: "lesson",
+            attributes: ["id", "title"],
+            include: [
+              { model: db.Pathway, as: "pathway", attributes: ["id", "level"] },
+            ],
+          },
         ],
         order: [["created_at", "DESC"]],
+        limit,
+        offset,
       });
 
       res.status(200).json({
         incoming: incoming.map((invite) => ({
           id: invite.id,
-          from_username: invite.from_user ? invite.from_user.username : null,
-          lesson_title: invite.lesson ? invite.lesson.title : null,
+          from_user_id: invite.from_user?.id || null,
+          from_username: invite.from_user?.username || null,
+          lesson_id: invite.lesson?.id || null,
+          lesson_title: invite.lesson?.title || null,
+          pathway_id: invite.lesson?.pathway?.id || null,
+          pathway_level: invite.lesson?.pathway?.level || null,
           status: invite.status,
+          created_at: invite.created_at,
         })),
         outgoing: outgoing.map((invite) => ({
           id: invite.id,
-          to_username: invite.to_user ? invite.to_user.username : null,
-          lesson_title: invite.lesson ? invite.lesson.title : null,
+          to_user_id: invite.to_user?.id || null,
+          to_username: invite.to_user?.username || null,
+          lesson_id: invite.lesson?.id || null,
+          lesson_title: invite.lesson?.title || null,
+          pathway_id: invite.lesson?.pathway?.id || null,
+          pathway_level: invite.lesson?.pathway?.level || null,
           status: invite.status,
+          created_at: invite.created_at,
         })),
+        meta: { limit, offset },
       });
     } catch (error) {
       next(error);
