@@ -1,43 +1,29 @@
-require("dotenv").config();
-const express = require("express");
-const Controller = require("./controllers/controllerUser");
-const errorHandler = require("./middlewares/errorHandler");
-const authentication = require("./middlewares/authentication");
-const authorization = require("./middlewares/authorization");
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+const express = require('express');
+const cors = require('cors');
+const router = require('./routes');
+const errorHandler = require('./middlewares/errorHandler');
 const app = express();
-const cors = require("cors");
-const ControllerPathways = require("./controllers/controllerPathway");
-const ControllerInvite = require("./controllers/controllerInvite");
-const ControllerConversation = require("./controllers/controllerConversation");
 
 app.use(
-  express.urlencoded({
-    extended: true,
+  cors({
+    origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173',
+    credentials: true,
+    // PATCH ditambahkan karena invites accept/reject memakai method itu.
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   }),
 );
 
 app.use(express.json());
-app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 
-app.post("/api/auth/register", Controller.register);
-app.post("/api/auth/login", Controller.login);
+app.use('/api', router);
 
-app.use(authentication);
-
-app.get("/api/pathways", ControllerPathways.read);
-app.get("/api/pathways/:id/lessons", ControllerPathways.readStatus);
-
-app.post("/api/invites", ControllerInvite.create);
-app.get("/api/invites", ControllerInvite.getAll);
-app.patch("/api/invites/:id/accept", ControllerInvite.accept);
-app.patch("/api/invites/:id/reject", ControllerInvite.reject);
-
-app.get("/api/conversations/:id", ControllerConversation.read);
-app.get(
-  "/api/conversations/:id/messages",
-  ControllerConversation.readMessages,
-);
-
+// Error handler terakhir supaya error dari route di atas sampai ke sini.
 app.use(errorHandler);
 
 module.exports = app;
