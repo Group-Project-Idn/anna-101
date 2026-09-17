@@ -25,13 +25,14 @@ export default function PathwayProvider({ children }) {
       const list = await fetchPathwaysRequest(token);
       setPathways(list ?? []);
 
-      // Progress endpoint masih usulan server — gagal = diam-diam pakai dummy.
-      // try/catch sendiri supaya 404 progress tidak menggagalkan pathways.
+      // Progress per pathway dari server (GET /api/pathways/progress) —
+      // sumber angka "x dari y lesson selesai" dan label CTA. try/catch
+      // sendiri supaya kegagalan progress tidak menggagalkan daftar pathways.
       try {
         const progress = await fetchPathwayProgress(token);
         const mapped = {};
 
-        for (const item of progress ?? []) {
+        for (const item of Array.isArray(progress) ? progress : []) {
           if (item?.pathway_id != null) {
             mapped[item.pathway_id] = item;
           }
@@ -43,6 +44,10 @@ export default function PathwayProvider({ children }) {
       }
 
       setStatus("success");
+      // Lepas guard supaya fetch berikutnya (navigasi balik ke /pathways
+      // setelah menyelesaikan lesson, tombol coba lagi) tidak jadi no-op —
+      // tanpa ini angka progress tetap basi walau lesson sudah selesai.
+      requestRef.current = false;
       return { ok: true };
     } catch (err) {
       requestRef.current = false;

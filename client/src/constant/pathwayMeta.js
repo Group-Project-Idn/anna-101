@@ -1,8 +1,12 @@
 /**
  * Data presentasi per level pathway.
  * API GET /api/pathways hanya mengembalikan { id, name, level, cefr_level },
- * jadi judul pendek, subtitle, warna, dan progress dummy dipetakan di sini
- * supaya tampilannya identik dengan template /static/pathways.html.
+ * jadi judul pendek, subtitle, dan warna dipetakan di sini supaya tampilannya
+ * identik dengan template /static/pathways.html.
+ *
+ * Angka progress TIDAK lagi dipalsukan di sini: sumbernya
+ * GET /api/pathways/progress (lihat resolvePathwayCta). done/total 0 hanya
+ * nilai netral kalau data progress belum sempat termuat.
  */
 export const PATHWAY_META = {
   1: {
@@ -12,10 +16,10 @@ export const PATHWAY_META = {
     badgeText: "text-amber-900",
     titleText: "text-slate-900",
     barBg: "bg-amber-400",
-    cta: "Lanjutkan →",
-    ctaStyle: "emerald",
-    done: 4,
-    total: 6,
+    cta: "Mulai →",
+    ctaStyle: "ghost",
+    done: 0,
+    total: 0,
     locked: false,
   },
   2: {
@@ -27,8 +31,8 @@ export const PATHWAY_META = {
     barBg: "bg-sky-400",
     cta: "Mulai →",
     ctaStyle: "ghost",
-    done: 1,
-    total: 6,
+    done: 0,
+    total: 0,
     locked: false,
   },
   3: {
@@ -38,10 +42,10 @@ export const PATHWAY_META = {
     badgeText: "text-emerald-900",
     titleText: "text-white",
     barBg: "bg-emerald-500",
-    cta: "Jelajahi →",
+    cta: "Mulai →",
     ctaStyle: "ghost",
     done: 0,
-    total: 6,
+    total: 0,
     locked: false,
   },
   4: {
@@ -54,7 +58,7 @@ export const PATHWAY_META = {
     cta: "Terkunci",
     ctaStyle: "disabled",
     done: 0,
-    total: 6,
+    total: 0,
     locked: true,
     lockNote: "Terbuka setelah Level 3 selesai",
   },
@@ -80,18 +84,20 @@ export function getPathwayMeta(level) {
 
 /**
  * Hitung label CTA + progress bar dari data progress server.
- * Aturan sesuai api-contract (GET /api/pathways/progress):
+ * Sumber: GET /api/pathways/progress (per pathway: total_lessons,
+ * completed_lessons). Aturan sesuai api-contract:
  * terkunci -> "Terkunci", 0 selesai -> "Mulai", sebagian -> "Lanjutkan",
- * penuh -> "Ulangi". Tanpa progress (endpoint belum ada) -> pakai meta dummy.
+ * penuh -> "Ulangi". Kalau response progress tidak tersedia sama sekali,
+ * dipakai nilai netral (0 dari 0) — bukan angka karangan.
  */
 export function resolvePathwayCta(progress, meta) {
   if (!progress) {
     return {
-      cta: meta.cta,
-      ctaStyle: meta.ctaStyle,
-      done: meta.done,
-      total: meta.total,
-      locked: meta.locked,
+      cta: meta.locked ? "Terkunci" : "Mulai →",
+      ctaStyle: meta.locked ? "disabled" : "ghost",
+      done: 0,
+      total: 0,
+      locked: !!meta.locked,
       lockNote: meta.lockNote,
     };
   }

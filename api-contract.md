@@ -69,30 +69,45 @@ Authorization: Bearer <jwt_token>
 ]
 ```
 
-> Catatan frontend: response ini belum membawa progress user, jadi label
-> CTA kartu pathway ("Mulai" / "Lanjutkan") dan progress bar untuk saat ini
-> memakai data presentasi lokal di client. Kalau nanti butuh progress nyata,
-> ajukan endpoint `GET /api/pathways/progress` (usulan response di bawah)
-> agar label CTA bisa dihitung dari data server, bukan dummy.
+> Catatan frontend: response ini belum membawa progress user. Angka progress &
+> label CTA kartu pathway dihitung dari `GET /api/pathways/progress` di bawah,
+> bukan lagi data presentasi lokal.
 
-### GET `/api/pathways/progress` (USULAN — belum diimplementasikan)
+### GET `/api/pathways/progress`
 
 Agregat progres user login per pathway, dipakai untuk menentukan label CTA
 kartu ("Mulai" vs "Lanjutkan") dan mengisi progress bar tanpa 4x request
 `GET /api/pathways/:id/lessons`.
 
-**Response** `200` (usulan)
+Semua pathway selalu dikembalikan — termasuk yang belum punya progres sama
+sekali (`completed_lessons: 0`) — supaya client tidak perlu menebak total
+lesson.
+
+**Response** `200`
 
 ```json
 [
   {
     "pathway_id": 1,
-    "total_lessons": 6,
-    "completed_lessons": 4,
-    "unlocked_lesson_id": 5
+    "name": "Level 1 American English",
+    "level": 1,
+    "cefr_level": "A1",
+    "total_lessons": 35,
+    "completed_lessons": 2,
+    "progress_rate": 0.06,
+    "unlocked_lesson_id": 3,
+    "last_attempt": "2026-09-17T04:26:06.294Z"
   }
 ]
 ```
+
+| Field | Arti |
+| --- | --- |
+| `total_lessons` | jumlah lesson di pathway tersebut (dari tabel `Lessons`) |
+| `completed_lessons` | jumlah lesson user dengan status `completed` |
+| `progress_rate` | `completed_lessons / total_lessons` (0–1, dibulatkan 2 desimal) |
+| `unlocked_lesson_id` | lesson pertama yang belum selesai (kandidat "lanjutkan di sini"), `null` kalau semua selesai |
+| `last_attempt` | timestamp progres terakhir user di pathway itu, `null` kalau belum ada |
 
 Aturan label CTA yang disepakati (dihitung di client dari response di atas):
 
@@ -230,13 +245,18 @@ Frontend langsung `join room` socket.io pakai `conversation_id` ini.
 {
   "id": 101,
   "lesson_id": 5,
-  "status": "active",
+  "status": "demo",
   "participants": [
     { "user_id": 1, "username": "budi99" },
     { "user_id": 2, "username": "sari_21" }
   ]
 }
 ```
+
+> `status`: `demo` (conversation baru — fase contoh percakapan Anna) |
+> `active` (obrolan berlangsung, setelah KEDUA peserta menekan
+> "Anna Ready") | `finished`. Pesan chat hanya diterima server saat
+> `status: "active"`.
 
 ### GET `/api/conversations/:id/messages`
 
@@ -362,7 +382,9 @@ socket.emit("conversation:join", { conversationId: 101 });
 
 ### Fase demo (opening greeting contoh)
 
-Digenerate AI saat room baru terbentuk, **tidak disimpan ke DB** — cuma ditampilkan sementara.
+Conversation baru dibuat dengan `status: "demo"` — demo digenerate AI saat
+room pertama kali di-join, **tidak disimpan ke DB** — cuma ditampilkan
+sementara. Status naik ke `"active"` setelah KEDUA peserta `demo:ready`.
 
 ```js
 socket.on("demo:script", (data) => {

@@ -61,7 +61,8 @@ export default function PathwaysPage() {
             </p>
           </div>
 
-          {/* Ringkasan Progress User dihapus — menunggu endpoint progress resmi. */}
+          {/* Angka progress per kartu diambil dari GET /api/pathways/progress
+              (lihat PathwayProvider + resolvePathwayCta). */}
         </div>
 
         {isLoading ? (
