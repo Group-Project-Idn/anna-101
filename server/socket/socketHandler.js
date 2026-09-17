@@ -6,6 +6,7 @@ const {
   ConversationInvite,
   Lesson,
   Message,
+  Pathway,
   SessionEvaluation,
   User,
   UserLessonProgress,
@@ -161,8 +162,16 @@ const buildInviteNewPayload = ({ invite, lesson, fromUser, toUser }) => ({
 
 // Conversation boleh diakses hanya oleh partisipannya — sama seperti controllerConversation.
 const getConversationForUser = async (conversationId, userId) => {
+  // Include lesson + pathway supaya prompt Gemini membawa topik & CEFR asli.
   const conversation = await Conversation.findByPk(conversationId, {
     attributes: { exclude: ['user_id'] },
+    include: [
+      {
+        model: Lesson,
+        as: 'lesson',
+        include: [{ model: Pathway, as: 'pathway' }],
+      },
+    ],
   });
 
   if (!conversation) throw new Error('Data not found');
@@ -246,7 +255,7 @@ const initSocket = (httpServer) => {
         if (!demoDone.has(conversationId) && conversation.status !== 'finished') {
           if (!demoScripts.has(conversationId)) {
             demoScripts.set(conversationId, {
-              lines: await generateDemoScript({ lesson: conversation }),
+              lines: await generateDemoScript({ lesson: conversation.lesson }),
               readyUsers: new Set(),
             });
           }
@@ -523,7 +532,7 @@ const initSocket = (httpServer) => {
           message_type: 'suggestion',
           role: 'ai',
           content: await generateSuggestion({
-            lesson: conversation,
+            lesson: conversation.lesson,
             messages: recentMessages.map(m => ({ role: m.role, content: m.content })),
           }),
         });
@@ -559,46 +568,55 @@ const initSocket = (httpServer) => {
 
         await conversation.update({ status: 'finished', ended_at: new Date() });
 
-        const evaluations = await Promise.all(
-          participantIds.map(async (userId) => {
-            // Get user's messages for evaluation
-            const userMessages = await Message.findAll({
-              where: { conversation_id: conversationId, sender_id: userId },
-              order: [['created_at', 'ASC']],
-            });
+        // Evaluasi per partisipan dengan guard terpisah — satu user gagal
+        // (mis. DB error) tidak boleh menggagalkan partisipan lain.
+        const evaluations = (
+          await Promise.all(
+            participantIds.map(async (userId) => {
+              try {
+                // Get user's messages for evaluation
+                const userMessages = await Message.findAll({
+                  where: { conversation_id: conversationId, sender_id: userId },
+                  order: [['created_at', 'ASC']],
+                });
 
-            const { strengths, evaluation, score } = await generateEvaluation({
-              lesson: conversation,
-              messages: userMessages.map(m => m.content),
-            });
+                const { strengths, evaluation, score } = await generateEvaluation({
+                  lesson: conversation.lesson,
+                  messages: userMessages.map((m) => m.content),
+                });
 
-            const [sessionEvaluation] = await SessionEvaluation.findOrCreate({
-              where: { conversation_id: conversationId, user_id: userId },
-              defaults: { conversation_id: conversationId, user_id: userId, strengths, evaluation, score },
-            });
+                const [sessionEvaluation] = await SessionEvaluation.findOrCreate({
+                  where: { conversation_id: conversationId, user_id: userId },
+                  defaults: { conversation_id: conversationId, user_id: userId, strengths, evaluation, score },
+                });
 
-            const [progress, created] = await UserLessonProgress.findOrCreate({
-              where: { user_id: userId, lesson_id: conversation.lesson_id },
-              defaults: {
-                user_id: userId,
-                lesson_id: conversation.lesson_id,
-                status: 'completed',
-                score: sessionEvaluation.score,
-                completed_at: new Date(),
-              },
-            });
+                const [progress, created] = await UserLessonProgress.findOrCreate({
+                  where: { user_id: userId, lesson_id: conversation.lesson_id },
+                  defaults: {
+                    user_id: userId,
+                    lesson_id: conversation.lesson_id,
+                    status: 'completed',
+                    score: sessionEvaluation.score,
+                    completed_at: new Date(),
+                  },
+                });
 
-            if (!created) {
-              await progress.update({
-                status: 'completed',
-                score: sessionEvaluation.score,
-                completed_at: new Date(),
-              });
-            }
+                if (!created) {
+                  await progress.update({
+                    status: 'completed',
+                    score: sessionEvaluation.score,
+                    completed_at: new Date(),
+                  });
+                }
 
-            return { userId, strengths: sessionEvaluation.strengths, evaluation: sessionEvaluation.evaluation, score: sessionEvaluation.score };
-          }),
-        );
+                return { userId, strengths: sessionEvaluation.strengths, evaluation: sessionEvaluation.evaluation, score: sessionEvaluation.score };
+              } catch (error) {
+                console.error(`[Socket] session:finish error for user ${userId}:`, error.message);
+                return null;
+              }
+            }),
+          )
+        ).filter(Boolean);
 
         for (const { userId, strengths, evaluation, score } of evaluations) {
           sendToUser(userId, 'session:evaluation', {
