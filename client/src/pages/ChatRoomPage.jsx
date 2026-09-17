@@ -17,7 +17,7 @@ export default function ChatRoomPage() {
 }
 
 function RoomSession({ id }) {
-  const { openSession, status, conversation, messages, evaluation, pending, connected, error, reconnect } = useChat();
+  const { openSession, status, conversation, messages, lines, evaluation, pending, connected, error, reconnect } = useChat();
   const [attempt, setAttempt] = useState(0);
   const endRef = useRef(null);
   useEffect(() => openSession(id), [id, openSession, attempt]);
@@ -41,7 +41,7 @@ function RoomSession({ id }) {
         {conversation?.status !== "active" && conversation?.status !== "completed" && <ChatDemo />}
         <section aria-label="Riwayat percakapan" className="space-y-4 my-2 px-1 flex-1">
           <p className="text-center text-xs font-bold text-slate-500">Sesi {id} • {conversation?.status === "completed" ? "Selesai" : conversation?.status === "active" ? "Obrolan dimulai" : "Persiapan latihan"}</p>
-          {!messages.length && <p className="text-center text-sm text-slate-500 py-8">Belum ada pesan. Mulai percakapan setelah sesi aktif.</p>}
+          {!messages.length && !lines.length && <p className="text-center text-sm text-slate-500 py-8">Belum ada pesan. Mulai percakapan setelah sesi aktif.</p>}
           {messages.map((message) => <ChatMessage key={message.id} message={message} />)}
           {pending && <p role="status" className="flex items-center gap-2 text-xs font-bold text-slate-500 bg-white px-3 py-2 rounded-full w-fit mx-auto"><span className="loading loading-dots loading-xs text-amber-500" />{pending === "finish" ? "Anna sedang menyiapkan evaluasi…" : pending === "suggestion" ? "Menunggu saran dari Anna…" : pending === "ready" ? "Menunggu sesi aktif…" : "Menunggu konfirmasi pesan…"}</p>}
           <div ref={endRef} />

@@ -252,17 +252,26 @@ const initSocket = (httpServer) => {
 
         socket.join(`conversation:${conversationId}`);
 
-        if (!demoDone.has(conversationId) && conversation.status !== 'finished') {
+        // Fase demo hanya untuk conversation berstatus 'demo' (baru dibuat).
+        // Conversation legacy 'active' langsung bisa chat tanpa demo.
+        if (conversation.status === 'demo') {
           if (!demoScripts.has(conversationId)) {
-            demoScripts.set(conversationId, {
-              lines: await generateDemoScript({ lesson: conversation.lesson }),
-              readyUsers: new Set(),
-            });
+            // Simpan Promise-nya SEBELUM await — join paralel dari kedua
+            // peserta tidak memicu panggilan Gemini duplikat.
+            demoScripts.set(
+              conversationId,
+              generateDemoScript({ lesson: conversation.lesson }).then((lines) => ({
+                lines,
+                readyUsers: new Set(),
+              })),
+            );
           }
+
+          const demo = await demoScripts.get(conversationId);
 
           socket.emit('demo:script', {
             conversationId,
-            lines: demoScripts.get(conversationId).lines,
+            lines: demo.lines,
           });
         }
       } catch (error) {
@@ -435,7 +444,8 @@ const initSocket = (httpServer) => {
         if (!conversationId) return emitError(socket, 'conversationId is required');
 
         const conversation = await getConversationForUser(conversationId, socket.userId);
-        const demo = demoScripts.get(conversationId);
+        // Entry bisa berupa Promise (join paralel masih menunggu Gemini).
+        const demo = await demoScripts.get(conversationId);
 
         if (!demo) {
           socket.emit('conversation:active', { conversationId });

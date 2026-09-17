@@ -70,6 +70,7 @@ erDiagram
     int lesson_id FK
     int invite_id FK
     string status
+    %% status: demo (fase contoh Anna) | active | finished
     datetime started_at
     datetime ended_at
   }

@@ -178,7 +178,7 @@ class ControllerInvite {
   // status invite — dipakai bersama oleh REST accept dan socket invite:respond.
   static async createConversationFromInvite(invite, transaction) {
     const [rows] = await sequelize.query(
-      'INSERT INTO "Conversations" ("invite_id", "lesson_id", "status", "started_at", "created_at", "updated_at") VALUES (:invite_id, :lesson_id, \'active\', NOW(), NOW(), NOW()) RETURNING "id"',
+      'INSERT INTO "Conversations" ("invite_id", "lesson_id", "status", "started_at", "created_at", "updated_at") VALUES (:invite_id, :lesson_id, \'demo\', NOW(), NOW(), NOW()) RETURNING "id"',
       {
         replacements: {
           invite_id: invite.id,
