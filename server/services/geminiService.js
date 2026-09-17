@@ -128,78 +128,85 @@ const requestJson = async (systemInstruction, userPayload) => {
   throw lastError;
 };
 
-const generateDemoScript = async ({ lesson, messages }) => {
-  if (!ai) {
-    // Fallback to local generator when API key is not configured
-    const dialogue = LOCAL_DEMO_DIALOGUES[Math.floor(Math.random() * LOCAL_DEMO_DIALOGUES.length)];
-    const lines = [];
+// Jalankan panggilan Gemini; kalau gagal (key kosong, API error, rate limit,
+// atau respons tidak valid) jatuh ke generator lokal supaya fitur chat tetap
+// hidup — bukan cuma saat key belum dikonfigurasi.
+const withGemini = (aiCall, localFallback) => {
+  if (!ai) return localFallback();
 
-    for (let i = 0; i < dialogue.a.length; i += 1) {
-      lines.push({ speaker: 'A', text: dialogue.a[i] });
-      lines.push({ speaker: 'B', text: dialogue.b[i] });
-    }
+  return aiCall().catch((error) => {
+    console.error('[Gemini] request failed, using local fallback:', error.message);
+    return localFallback();
+  });
+};
 
-    return lines;
+const buildLocalDemoScript = () => {
+  const dialogue = LOCAL_DEMO_DIALOGUES[Math.floor(Math.random() * LOCAL_DEMO_DIALOGUES.length)];
+  const lines = [];
+
+  for (let i = 0; i < dialogue.a.length; i += 1) {
+    lines.push({ speaker: 'A', text: dialogue.a[i] });
+    lines.push({ speaker: 'B', text: dialogue.b[i] });
   }
 
-  const systemInstruction = `You are Anna, an English conversation tutor.
+  return lines;
+};
+
+const generateDemoScript = ({ lesson, messages } = {}) =>
+  withGemini(
+    async () => {
+      const systemInstruction = `You are Anna, an English conversation tutor.
 Create a short English example conversation that matches the lesson topic and CEFR level.
 Return ONLY valid JSON with this shape:
 {"lines":[{"speaker":"A","text":"..."},{"speaker":"B","text":"..."}]}
 Alternate A and B for at least 10 lines each, keep sentences simple and natural.`;
 
-  const payload = {
-    lesson_title: lesson?.title || 'Conversation practice',
-    cefr_level: lesson?.pathway?.cefr_level || lesson?.cefr_level || 'A1',
-    message_count: messages?.length || 0,
-  };
+      const payload = {
+        lesson_title: lesson?.title || 'Conversation practice',
+        cefr_level: lesson?.pathway?.cefr_level || lesson?.cefr_level || 'A1',
+        message_count: messages?.length || 0,
+      };
 
-  const result = await requestJson(systemInstruction, payload);
-  if (!result || !Array.isArray(result.lines)) {
-    throw new Error('Invalid demo script from AI.');
-  }
+      const result = await requestJson(systemInstruction, payload);
+      if (!result || !Array.isArray(result.lines)) {
+        throw new Error('Invalid demo script from AI.');
+      }
 
-  return result.lines.slice(0, 20);
-};
+      return result.lines.slice(0, 20);
+    },
+    buildLocalDemoScript,
+  );
 
-const generateSuggestion = async ({ lesson, messages }) => {
-  if (!ai) {
-    // Fallback to local generator when API key is not configured
-    return LOCAL_SUGGESTIONS[Math.floor(Math.random() * LOCAL_SUGGESTIONS.length)];
-  }
-
-  const systemInstruction = `You are Anna, an English conversation tutor.
+const generateSuggestion = ({ lesson, messages } = {}) =>
+  withGemini(
+    async () => {
+      const systemInstruction = `You are Anna, an English conversation tutor.
 Suggest ONE natural next English reply for the learner, based on the lesson topic and recent chat messages.
 Return ONLY valid JSON:
 {"suggestion":"Try: '...'"}
 
 If there are no messages yet, suggest a simple opening greeting.`;
 
-  const payload = {
-    lesson_title: lesson?.title || 'Conversation practice',
-    cefr_level: lesson?.pathway?.cefr_level || lesson?.cefr_level || 'A1',
-    recent_messages: messages?.slice(-6) || [],
-  };
+      const payload = {
+        lesson_title: lesson?.title || 'Conversation practice',
+        cefr_level: lesson?.pathway?.cefr_level || lesson?.cefr_level || 'A1',
+        recent_messages: messages?.slice(-6) || [],
+      };
 
-  const result = await requestJson(systemInstruction, payload);
-  if (!result || typeof result.suggestion !== 'string') {
-    throw new Error('Invalid suggestion from AI.');
-  }
+      const result = await requestJson(systemInstruction, payload);
+      if (!result || typeof result.suggestion !== 'string') {
+        throw new Error('Invalid suggestion from AI.');
+      }
 
-  return result.suggestion;
-};
+      return result.suggestion;
+    },
+    () => LOCAL_SUGGESTIONS[Math.floor(Math.random() * LOCAL_SUGGESTIONS.length)],
+  );
 
-const generateEvaluation = async ({ lesson, messages }) => {
-  if (!ai) {
-    // Fallback to local generator when API key is not configured
-    const strengths = LOCAL_STRENGTHS[Math.floor(Math.random() * LOCAL_STRENGTHS.length)];
-    const evaluation = LOCAL_EVALUATIONS[Math.floor(Math.random() * LOCAL_EVALUATIONS.length)];
-    const score = 3 + Math.floor(Math.random() * 3); // 3 - 5
-
-    return { strengths, evaluation, score };
-  }
-
-  const systemInstruction = `You are Anna, an English conversation tutor.
+const generateEvaluation = ({ lesson, messages } = {}) =>
+  withGemini(
+    async () => {
+      const systemInstruction = `You are Anna, an English conversation tutor.
 Evaluate ONLY the learner's English chat messages.
 Return ONLY valid JSON:
 {"strengths":"...","evaluation":"...","score":1}
@@ -207,22 +214,30 @@ Return ONLY valid JSON:
 Score must be 1-5 based on grammar, vocabulary, relevance, and CEFR-appropriate naturalness.
 Be constructive and specific. If there are no user messages, score 1 and explain why.`;
 
-  const payload = {
-    lesson_title: lesson?.title || 'Conversation practice',
-    cefr_level: lesson?.pathway?.cefr_level || lesson?.cefr_level || 'A1',
-    user_messages: messages || [],
-  };
+      const payload = {
+        lesson_title: lesson?.title || 'Conversation practice',
+        cefr_level: lesson?.pathway?.cefr_level || lesson?.cefr_level || 'A1',
+        user_messages: messages || [],
+      };
 
-  const result = await requestJson(systemInstruction, payload);
-  if (!result || typeof result.strengths !== 'string' || typeof result.evaluation !== 'string' || !Number.isInteger(result.score)) {
-    throw new Error('Invalid evaluation from AI.');
-  }
+      const result = await requestJson(systemInstruction, payload);
+      if (!result || typeof result.strengths !== 'string' || typeof result.evaluation !== 'string' || !Number.isInteger(result.score)) {
+        throw new Error('Invalid evaluation from AI.');
+      }
 
-  return {
-    strengths: result.strengths,
-    evaluation: result.evaluation,
-    score: result.score,
-  };
-};
+      return {
+        strengths: result.strengths,
+        evaluation: result.evaluation,
+        score: result.score,
+      };
+    },
+    () => {
+      const strengths = LOCAL_STRENGTHS[Math.floor(Math.random() * LOCAL_STRENGTHS.length)];
+      const evaluation = LOCAL_EVALUATIONS[Math.floor(Math.random() * LOCAL_EVALUATIONS.length)];
+      const score = 3 + Math.floor(Math.random() * 3); // 3 - 5
+
+      return { strengths, evaluation, score };
+    },
+  );
 
 module.exports = { generateDemoScript, generateSuggestion, generateEvaluation };
