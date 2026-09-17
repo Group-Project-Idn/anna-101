@@ -75,13 +75,13 @@ Authorization: Bearer <jwt_token>
 > ajukan endpoint `GET /api/pathways/progress` (usulan response di bawah)
 > agar label CTA bisa dihitung dari data server, bukan dummy.
 
-### GET `/api/pathways/progress` (USULAN — belum diimplementasikan)
+### GET `/api/pathways/progress`
 
 Agregat progres user login per pathway, dipakai untuk menentukan label CTA
 kartu ("Mulai" vs "Lanjutkan") dan mengisi progress bar tanpa 4x request
 `GET /api/pathways/:id/lessons`.
 
-**Response** `200` (usulan)
+**Response** `200`
 
 ```json
 [
